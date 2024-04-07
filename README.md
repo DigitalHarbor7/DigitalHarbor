@@ -17,9 +17,14 @@ The cost to build your site is $100, then the my options are:
 
 ## QR Codes
 
+Here are some examples of QR Codes
+
+An old site [old one](https://doompony.github.io/little-link-qr-template/)
 ![Example 1](dist/qr/carribbean-kings/example1/qr-example.png)
 
+QR code for [1man1band.com](https://1man1band.com)
 ![Example 2](dist/qr/1man1band/image.png)
 
+Another QR code for [1man1band.com](https://1man1band.com)
 ![Example 3](dist/qr/1man1band/image(1).png)
 
