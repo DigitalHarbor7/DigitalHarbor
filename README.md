@@ -19,3 +19,7 @@ The cost to build your site is $100, then the my options are:
 
 ![Example 1](dist/qr/carribbean-kings/example1/qr-example.png)
 
+![Example 2](dist/qr/1man1band/image.png)
+
+![Example 3](dist/qr/1man1band/image(1).png)
+
