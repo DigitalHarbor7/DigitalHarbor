@@ -31,3 +31,9 @@ QR code for [1man1band.com](https://1man1band.com)
 Another QR code for [1man1band.com](https://1man1band.com)
 ![Example 3](dist/qr/1man1band/image(1).png)
 
+
+## Services
+
+1. Your Digital Harbor is a [Little Link](https://littlelink.io) page
+2. I host your page for you (the main service of Digital Harbor)
+3. Artisanal QR Codes generated with Stable Diffusion
