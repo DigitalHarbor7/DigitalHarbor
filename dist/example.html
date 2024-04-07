@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Page Information -->
+  <meta charset="utf-8" />
+  <title>Digital Harbors</title>
+  <meta name="description" content="Anchor your links in your digital harbor" />
+  <meta name="author" content="My Digital Harbor, Inc." />
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/skeleton-dark.css" />
+  <link rel="stylesheet" href="css/brands.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+  <style>
+    /* Add background flair */
+    body {
+      /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/bacgkround.svg"); */
+      background-color: linear-gradient(rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.7));
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      /* Set the height to at least the viewport height */
+      margin: 0;
+    }
+
+    /* Center content in a container */
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Limit the maximum width of the content on larger screens */
+    .column {
+      max-width: 100%;
+    }
+
+    /* Add a glow border to the YouTube video */
+    iframe {
+      border: 5px solid #808080;
+      box-shadow: 0 0 15px #808080;
+      max-width: 100%;
+      /* Make sure the video is responsive */
+    }
+
+    /* Style the buttons */
+    .button {
+      width: 100%;
+      /* Make buttons take up the full width */
+      max-width: 560px;
+      /* Limit the maximum width */
+      height: 60px;
+      text-align: center;
+      margin: 10px auto;
+      display: block;
+      line-height: 60px;
+      text-decoration: none;
+      /* Remove underlines from links */
+      color: #ffffff;
+      /* Text color */
+      background-color: #007bff;
+      /* Button background color */
+      border: none;
+      /* Remove button borders */
+      border-radius: 5px;
+      /* Add some border radius */
+    }
+
+    /* Adjust the position of the image within the button */
+    .button img {
+      vertical-align: middle;
+    }
+
+    /* Set a max-width for the biography container */
+    .bio-container {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Style the heading */
+    h1 {
+      color: #ffffff;
+      /* Text color */
+    }
+
+    /* Style the paragraph */
+    p {
+      color: #ffffff;
+      /* Text color */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <!-- Your Image Here -->
+        <img src="images/dh.png" srcset="images/dh.png 2x" alt="Digital Harbor" width="150" height="150" />
+
+        <!-- Title -->
+        <h1>TODO: TITLE FOR PAGE</h1>
+
+        <!-- Short Bio -->
+        <!-- <p>👋 Hello! Here's the places to find me!</p> -->
+        <!-- Wrap the biography text in a container -->
+        <div class="bio-container">
+          <p>We'll put a short bio here</p>
+        </div>
+
+        <!-- Instagram -->
+        <a class="button button-instagram" href="http://instagram.com/TODO" target="_blank" rel="noopener"><img
+            class="icon" src="images/icons/instagram.svg" alt="Instagram Logo" />Instagram</a>
+        <br />
+
+        <!-- Facebook -->
+        <a class="button button-faceb" href="https://www.facebook.com/TODO" target="_blank" rel="noopener"><img
+            class="icon" src="images/icons/facebook.svg" alt="Facebook Logo" />Facebook</a>
+        <br />
+
+        <!-- Email -->
+        <a class="button button-default" href="mailto:TODO@domain.com" target="_blank" rel="noopener">
+          <img class="icon" src="images/icons/email.svg" alt="Email Icon" />
+          Email Me!
+        </a>
+        <br />
+        <!-- commenting out this button that copies the emailAddress to the user's clipboard -->
+        <!-- <button class="button" id="copyButton"> -->
+        <!--   Copy Email to Clipboard if ☝️ didn't work! -->
+        <!-- </button> -->
+        <!-- <br /> -->
+        <!---->
+        <!-- <script> -->
+        <!--   document -->
+        <!--     .getElementById("copyButton") -->
+        <!--     .addEventListener("click", function () { -->
+        <!--       // Get the email address -->
+        <!--       var emailAddress = "JoshPayneMusic@gmail.com"; -->
+        <!---->
+        <!--       // Create a new textarea element -->
+        <!--       var tempTextarea = document.createElement("textarea"); -->
+        <!--       tempTextarea.value = emailAddress; -->
+        <!---->
+        <!--       // Append the textarea to the DOM -->
+        <!--       document.body.appendChild(tempTextarea); -->
+        <!---->
+        <!--       // Select the text inside the textarea -->
+        <!--       tempTextarea.select(); -->
+        <!---->
+        <!--       try { -->
+        <!--         // Attempt to copy the text to the clipboard -->
+        <!--         document.execCommand("copy"); -->
+        <!--         alert("Email address copied to clipboard: " + emailAddress); -->
+        <!--       } catch (err) { -->
+        <!--         console.error("Unable to copy to clipboard", err); -->
+        <!--       } finally { -->
+        <!--         // Remove the temporary textarea -->
+        <!--         document.body.removeChild(tempTextarea); -->
+        <!--       } -->
+        <!--     }); -->
+        <!-- </script> -->
+
+        <!-- YouTube -->
+        <a class="button button-yt" href="https://www.youtube.com/@TODO" target="_blank" rel="noopener"><img
+            class="icon" src="images/icons/youtube.svg" alt="YouTube Logo" />YouTube</a>
+        <br />
+        <!-- <!-- Patreon -->
+        <a class="button button-patreon" href="http://patreon.com/TODO" target="_blank" rel="noopener"><img class="icon"
+            src="images/icons/patreon.svg" alt="Patreon Logo" />Patreon</a>
+        <br />
+        <!---->
+        <!-- <!-- Signal -->
+        <!-- -->
+        <!-- <a -->
+        <!--   class="button button-signal" -->
+        <!--   href="#" -->
+        <!--   target="_blank" -->
+        <!--   rel="noopener" -->
+        <!--   ><img -->
+        <!--     class="icon" -->
+        <!--     src="images/icons/signal.svg" -->
+        <!--     alt="Signal Logo" -->
+        <!--   />Signal</a -->
+        <!-- > -->
+        <!-- <br /> -->
+
+        <!-- Venmo -->
+        <a class="button button-venmo" href="https://www.venmo.com/TODO" target="_blank" rel="noopener"><img
+            class="icon" src="images/icons/venmo.svg" alt="Venmo Logo" />Venmo</a>
+        <br />
+
+        <!-- Cash App Dollar -->
+        <a class="button button-cashapp" href="https://cash.app/TODO/amount" target="_blank" rel="noopener"><img
+            class="icon" src="images/icons/cashapp_dollar.svg" alt="Cash App Logo" />Cash App</a>
+        <br />
+
+        <!-- <br /> -->
+        <!---->
+        <!-- <iframe -->
+        <!--   width="560" -->
+        <!--   height="315" -->
+        <!--   src="https://www.youtube.com/embed/_LX3-kJiLn0?si=bEhW09RQyhTgtS3B" -->
+        <!--   title="YouTube video player" -->
+        <!--   frameborder="0" -->
+        <!--   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" -->
+        <!--   allowfullscreen -->
+        <!-- ></iframe> -->
+        <!-- <br /> -->
+
+        <br />
+        <p>Email - mdh@pype.dev</p>
+        <p>
+          View source
+          <a href="https://github.com/doompony/DigitalHarbor" target="_blank" rel="noopener">here</a>.
+        </p>
+        <p>
+          Build your own by forking
+          <a href="https://littlelink.io" target="_blank" rel="noopener">LittleLink</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

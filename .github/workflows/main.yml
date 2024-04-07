@@ -1,0 +1,24 @@
+---
+name: 🌱 Deploy site
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: move
+        run: mv dist docs
+      - name: commit to gh-pages
+        run: |-
+          git config --global user.email "publish@doompony.links.com"
+          git config --global user.name "Publisher"
+          git checkout -b gh-pages
+          git add .
+          git commit -m "update harbor"
+          git push -u origin gh-pages --force
