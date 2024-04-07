@@ -19,6 +19,8 @@ The cost to build your site is $100, then the my options are:
 
 Here are some examples of QR Codes
 
+>I will generate QR Codes for you for $25/code that you choose to use
+
 An old site [old one](https://doompony.github.io/little-link-qr-template/)
 
 ![Example 1](dist/qr/carribbean-kings/example1/qr-example.png)
