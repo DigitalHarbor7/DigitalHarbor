@@ -22,6 +22,18 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
+
+  <script>
+    var baseUrl = "http://localhost:8000/";
+    // var baseUrl = "https://doompony.github.io/";
+    // var baseUrl = "https://mydigitalharbor.com/";
+
+    function goToPage(page) {
+      event.preventDefault(); // Prevent default behavior of anchor tag
+      window.open(baseUrl + page, '_blank').focus();
+    }
+  </script>
+
   <style>
     /* Add background flair */
     body {
@@ -133,8 +145,10 @@
         <br>
 
         <!-- example -->
-        <a class="button button-web" href="https://doompony.github.io/DigitalHarbor/example.html" target="_blank"
-          rel="noopener"><img class="icon" src="images/unicorn.png" alt="Example">Example Digital Harbor</a>
+        <!-- <a class="button button-web" href="https://doompony.github.io/DigitalHarbor/example.html" target="_blank" -->
+        <a class="button button-web" href="javascript:void(0);" onclick="goToPage('example.html')" target="_blank"
+          rel="noopener"><img class="icon" src="images/unicorn.png" alt="Example">Example Digital
+          Harbor</a>
         <br>
 
         <!-- 1man1band -->
@@ -142,21 +156,24 @@
             src="images/other-harbors/1man1band.jpg" alt="1man1band Picture">1man1band</a>
         <br>
 
-        <a class="button button-web" href="https://doompony.github.io/DigitalHarbor/carribbean-kings.html"
-          target="_blank" <!-- Carribian -->
-          rel="noopener"><img class="icon" src="images/other-harbors/carribbean-kings/jamaica.png"
+        <!-- Caribbean Kings -->
+        <!-- <a class="button button-web" href="https://doompony.github.io/DigitalHarbor/carribbean-kings.html" -->
+        <a class="button button-web" href="javascript:void(0);" onclick="goToPage('carribbean-kings.html')"
+          target=" _blank" rel="noopener"><img class="icon" src="images/other-harbors/carribbean-kings/jamaica.png"
             alt="Caribbean Kings Picture">Caribbean Kings</a>
         <br>
 
         <br />
-        <p>
-          View source
-          <a href="https://github.com/doompony/DigitalHarbor" target="_blank" rel="noopener">here</a>.
-        </p>
-        <p>
-          Build your own by forking
-          <a href="https://littlelink.io" target="_blank" rel="noopener">LittleLink</a>.
-        </p>
+        <footer>
+          <p>
+            View source
+            <a href="https://github.com/doompony/DigitalHarbor" target="_blank" rel="noopener">here</a>.
+          </p>
+          <p>
+            Build your own by forking
+            <a href="https://littlelink.io" target="_blank" rel="noopener">LittleLink</a>.
+          </p>
+        </footer>
       </div>
     </div>
   </div>
