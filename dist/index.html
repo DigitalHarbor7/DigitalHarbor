@@ -24,9 +24,10 @@
 
 
   <script>
-    // var baseUrl = "http://localhost:8000/";
     var baseUrl = "https://doompony.github.io/DigitalHarbor/";
     // var baseUrl = "https://mydigitalharbor.com/";
+    // uncomment when doing local - don't commit it though
+    var baseUrl = "http://localhost:8000/";
 
     function goToPage(page) {
       event.preventDefault(); // Prevent default behavior of anchor tag
@@ -139,7 +140,12 @@
         <!-- Wrap the biography text in a container -->
         <div class="bio-container">
           <p>Digital Harbor is a simple place to drop anchor. Bring your links to your harbor and let your audience set
-            sail from there to find you online ⛵</p>
+            sail from there to find you online ⛵.
+            <br>
+            <br>
+            I offer hosting, link page building, and custom QR codes to set you apart in the digital ocean. See the
+            GitHub page for QR Code examples!
+          </p>
         </div>
 
         <!-- Email -->
@@ -147,6 +153,13 @@
           <img class="icon" src="images/icons/email.svg" alt="Email Icon" />
           Inquire via Email!
         </a>
+        <br>
+
+
+        <!-- Github -->
+        <a class="button button-github" href="https://www.github.com/doompony/DigitalHarbor" target="_blank"
+          rel="noopener"><img class="icon" src="images/icons/github.svg" alt="GitHub Logo">GitHub + QR Code
+          Examples!</a>
         <br>
 
         <!-- example -->
