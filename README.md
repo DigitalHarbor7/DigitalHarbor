@@ -14,3 +14,8 @@ The cost to build your site is $100, then the my options are:
 1. hand it off - you handle hosting
 2. host it at `https://doompony.github.io/DigitalHarbor/{Your Route}.html` for $5/month. [Example](https://doompony.github.io/DigitalHarbor/example.html)
 4. host it at a custom domain: $200 Domain Setup (DNS, SSL, etc.) + $10/month + Domain Cost [1man1band.com](https://1man1band.com)
+
+## QR Codes
+
+![Example 1](dist/qr/carribbean-kings/example1/qr-example.png)
+![Example 2](dist/qr/carribbean-kings/example2/qr-example.png)
