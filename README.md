@@ -18,4 +18,4 @@ The cost to build your site is $100, then the my options are:
 ## QR Codes
 
 ![Example 1](dist/qr/carribbean-kings/example1/qr-example.png)
-![Example 2](dist/qr/carribbean-kings/example2/qr-example.png)
+
