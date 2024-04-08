@@ -8,7 +8,7 @@
 3. Practice with terraform namecheap provider
     * deploy something to GH Pages with SSL and custom domain 
     * setup DNS to GH Pages from namecheap with terraform
-4. think about repo setup... a monorepo would be ideal ,just a folder for each site
+4. create markata template from index.html and code to use Markdown and build with Markata
 
 ## Links
 
@@ -19,6 +19,7 @@
 0. Buy domain from namecheap
 1. Terraform namecheap for DNS setup
   * I can plan to just import what I setup for GH pages and then change it via terraform to my VM)
+
 ## Server deployment
 
 0. Ansible for server setup
