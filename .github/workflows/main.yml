@@ -27,16 +27,16 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
         # The jekyll build would output to _site so I'm following that for ease
-      - name: move to _site
-        run: mv dist _site
-      - name: commit to gh-pages
-        run: |-
-          git config --global user.email "publish@doompony.links.com"
-          git config --global user.name "Publisher"
-          git checkout -b gh-pages
-          git add .
-          git commit -m "update harbor"
-          git push -u origin gh-pages --force
+      # - name: move to _site
+      #   run: mv dist _site
+      # - name: commit to gh-pages
+      #   run: |-
+      #     git config --global user.email "publish@doompony.links.com"
+      #     git config --global user.name "Publisher"
+      #     git checkout -b gh-pages
+      #     git add .
+      #     git commit -m "update harbor"
+      #     git push -u origin gh-pages --force
 
   # Single deploy job since we're just deploying
   deploy:
