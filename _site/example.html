@@ -5,19 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Harbors</title>
-  <!-- CSS -->
-  <!-- <link rel="stylesheet" href="css/new-brands.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
   <!-- Include the Tailwind CSS framework -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
   <style>
-    /* Add background flair */
     body {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/bacgkround.svg");
-      background-size: cover;
-      background-attachment: fixed;
+      background: linear-gradient(to bottom, #2c3e50, #2c3e50);
+      /* Gradient with dark slate gray */
+    }
+
+    .button {
+      margin-bottom: 20px;
+    }
+
+    .bg-patreon-gradient {
+      background-image: linear-gradient(to bottom right, #FF8C00, #FFA500);
+      transition: background-color 0.3s ease;
+    }
+
+    .bg-patreon-gradient:hover {
+      background-image: linear-gradient(to bottom right, #FFA500, #FFD700);
     }
 
     .icon {
@@ -42,53 +51,57 @@
 
         <!-- Discord Button with Tailwind CSS classes and enhanced gradient background -->
         <a href="https://discord.com/channels/957226093155336204/957226093696393278" target="_blank" rel="noopener"
-          class="button bg-gradient-to-br from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-2 px-4 rounded-full block mb-2">
+          class="button bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-700 hover:to-indigo-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
           <img class="icon inline-block align-middle mr-2" src="images/icons/discord.svg" alt="Discord Logo">
           <span class="button-label">Discord</span>
         </a>
-
         <!-- Instagram Button with Tailwind CSS classes -->
         <a href="http://instagram.com/TODO" target="_blank" rel="noopener"
-          class="button bg-gradient-to-br from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-bold py-2 px-4 rounded-full block mb-2">
+          class="button bg-gradient-to-br from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
           <img class="icon inline-block align-middle mr-2" src="images/icons/instagram.svg" alt="Instagram Logo">
           <span class="button-label">Instagram</span>
         </a>
 
         <!-- Cash App Button with Tailwind CSS classes -->
         <a href="https://cash.app/TODO/amount" target="_blank" rel="noopener"
-          class="button bg-gradient-to-br from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-2 px-4 rounded-full block mb-2">
+          class="button bg-gradient-to-br from-green-500 to-green-700 hover:from-green-700 hover:to-green-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
           <img class="icon inline-block align-middle mr-2" src="images/icons/cashapp_dollar.svg" alt="Cash App Logo">
           <span class="button-label">Cash App</span>
         </a>
 
         <!-- Facebook Button with Tailwind CSS classes -->
         <a href="https://www.facebook.com/TODO" target="_blank" rel="noopener"
-          class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-2">
+          class="button bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
           <img class="icon inline-block align-middle mr-2" src="images/icons/facebook.svg" alt="Facebook Logo">
           <span class="button-label">Facebook</span>
         </a>
 
         <a href="mailto:TODO@domain.com" target="_blank" rel="noopener"
-          class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-2">
-          <img class="icon inline-block mr-2" src="images/icons/email.svg" alt="Email Icon">Email Me!
+          class="button bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/email.svg" alt="Email Icon">
+          <span class="button-label">Email Me!</span>
         </a>
+
         <a href="https://www.youtube.com/@TODO" target="_blank" rel="noopener"
-          class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-2">
-          <img class="icon inline-block mr-2" src="images/icons/youtube.svg" alt="YouTube Logo">YouTube
+          class="button bg-gradient-to-br from-red-500 to-red-700 hover:from-red-700 hover:to-red-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/youtube.svg" alt="YouTube Logo">
+          <span class="button-label">YouTube</span>
         </a>
+        <!-- Patreon Button with Tailwind CSS classes -->
         <a href="http://patreon.com/TODO" target="_blank" rel="noopener"
-          class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-2">
-          <img class="icon inline-block align-middle mr-2" src="images/icons/patreon.svg" alt="Patreon Logo"
-            style="width: 24px; height: 24px;">Patreon
+          class="button bg-gradient-to-br from-yellow-500 to-yellow-700 hover:from-yellow-700 hover:to-yellow-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/patreon.svg" alt="Patreon Logo">
+          <span class="button-label">Patreon</span>
         </a>
         <a href="https://www.twitch.tv/pypeaday" target="_blank" rel="noopener"
-          class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-2">
-          <img class="icon inline-block mr-2" src="images/icons/twitch.svg" alt="Twitch Logo">Twitch
+          class="button bg-gradient-to-br from-purple-500 to-purple-700 hover:from-purple-700 hover:to-purple-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/twitch.svg" alt="Twitch Logo">
+          <span class="button-label">Twitch</span>
         </a>
         <a href="https://gitea.paynepride.com" target="_blank" rel="noopener"
-          class="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full block mb-2">
-          <img class="icon inline-block align-middle mr-2" src="images/icons/gitea.svg" alt="Gitea Logo"
-            style="width: 24px; height: 24px;">Gitea (coming soon!)
+          class="button bg-gradient-to-br from-gray-500 to-green-700 hover:from-green-700 hover:to-gray-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/gitea.svg" alt="Gitea Logo">
+          <span class="button-label">Gitea</span>
         </a>
       </div>
       <div class="mt-8">
