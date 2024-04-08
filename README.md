@@ -7,7 +7,7 @@ links related to you - YouTube, Patreon, Venmo, Show Calendar, etc. You'd also
 like a kick-awesome QR Code for your followers to simply scan and be brought to
 that site... But you aren't sure where to start!
 
-I'm here to help by building your [Digital Harbor](https://doompony.github.io/DigitalHarbor)
+I'm here to help by building your [Digital Harbor](https://mydigitalharbor.com)
 
 The cost to build your site is $100, then the my options are:
 
