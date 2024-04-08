@@ -18,7 +18,7 @@
 
     - name: Copy HTML files
       copy:
-        src: /home/nic/work/DigitalHarbor/_site
+        src: "{{ static_website_path }}"
         dest: /var/www/html
 
     - name: Restart NGINX
