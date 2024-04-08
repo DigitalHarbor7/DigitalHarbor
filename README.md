@@ -25,7 +25,7 @@ QR code for [Digital Harbor](https://mydigitalharbor.com)
 ![Example](dist/qr/digital-harbor/qr1.png)
 
 QR code for [Digital Harbor](https://mydigitalharbor.com)
-![Example](dist/qr/digital-harbor/qr1.png)
+![Example](dist/qr/digital-harbor/qr2.png)
 
 QR code for [1man1band.com](https://1man1band.com)
 ![Example](dist/qr/1man1band/image.png)
