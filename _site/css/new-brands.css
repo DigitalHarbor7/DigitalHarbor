@@ -1,0 +1,51 @@
+/*
+* mydigitalharbor.com
+* Skeleton V0.0.1
+* Copyright 2024, My Digital Harbor, Inc.
+*/
+
+/* Instagram Gradient Colors */
+.instagram-button {
+    background-image: linear-gradient(to right, #feda75, #d62976);
+}
+
+.instagram-button:hover {
+    background-image: linear-gradient(to right, #d62976, #d62976);
+}
+
+/* Facebook Gradient Colors */
+.facebook-button {
+    background-image: linear-gradient(to right, #1877f2, #385898);
+}
+
+.facebook-button:hover {
+    background-image: linear-gradient(to right, #385898, #385898);
+}
+
+/* Cash App Gradient Colors */
+.cashapp-button {
+    background-image: linear-gradient(to right, #25d366, #00acee);
+}
+
+.cashapp-button:hover {
+    background-image: linear-gradient(to right, #00acee, #00acee);
+}
+
+/* Common Button Styles */
+.button {
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px; /* Adjusted border radius */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 1; /* Changed to default line-height */
+    letter-spacing: 0.1px;
+    white-space: nowrap; /* Changed to nowrap */
+    cursor: pointer;
+}
