@@ -1,5 +1,9 @@
 # Digital Harbor
 
+## Deployment
+
+[![🌱 Deploy site](https://github.com/doompony/DigitalHarbor/actions/workflows/main.yml/badge.svg)](https://github.com/doompony/DigitalHarbor/actions/workflows/main.yml)
+
 ## Sales Pitch
 
 Problem: You want a simple website to serve as a one-stop shop for all the
