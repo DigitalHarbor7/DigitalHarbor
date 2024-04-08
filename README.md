@@ -31,6 +31,8 @@ QR code for [1man1band.com](https://1man1band.com)
 Another QR code for [1man1band.com](https://1man1band.com)
 ![Example 3](dist/qr/1man1band/image(1).png)
 
+QR code for [Digital Harbor](https://mydigitalharbor.com)
+![Example 3](dist/qr/digital-harbor/qr1.png)
 
 ## Services
 
