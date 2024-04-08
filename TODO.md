@@ -10,6 +10,10 @@
     * setup DNS to GH Pages from namecheap with terraform
 4. think about repo setup... a monorepo would be ideal ,just a folder for each site
 
+## Links
+
+1. Add to example all the buttons I can support
+
 ## Domain and DNS
 
 0. Buy domain from namecheap

@@ -1,345 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Page Information -->
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caribbean Kings</title>
-  <meta name="description" content="Find us online!" />
-  <meta name="author" content="Caribbean Kings" />
-
-  <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet" />
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/skeleton-dark.css" />
-  <link rel="stylesheet" href="css/brands.css" />
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+  <!-- Include the Tailwind CSS framework -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/jamaica.png" />
+  <link rel="icon" type="image/png" href="images/other-harbord/carribbean-kings/jamaica.png" />
 
   <style>
-    /* Add background flair */
     body {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
+      background: linear-gradient(to bottom, #73972D, #F9D457, #000000);
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(to bottom right, #b30000, #e6e600, #004d00);
-      z-index: -2;
-      /* Ensure the gradient is behind the content */
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url("images/pic2.jpeg") no-repeat center center / contain;
-      z-index: -1;
-      /* Ensure the image is behind the content and the gradient */
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: rgba(0,
-          0,
-          0,
-          0.5);
-      /* Adjust the opacity and color as needed */
-      z-index: 0;
-      /* Ensure the overlay is behind the content */
-    }
-
-    /* Center content in a container */
-    .container {
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* Limit the maximum width of the content on larger screens */
-    .column {
-      max-width: 100%;
-    }
-
-    /* Add a glow border to the YouTube video and local MP4 video */
-    .video {
-      border: 5px solid #808080;
-      box-shadow: 0 0 15px #808080;
-      border-radius: 8px;
-      max-width: 640px;
-      /* Set a max-width for the video container */
-      width: 100%;
-      /* Make sure the video is responsive */
-    }
-
-    /* Style the buttons */
     .button {
-      width: 100%;
-      /* Make buttons take up the full width */
-      max-width: 560px;
-      /* Limit the maximum width */
-      height: 60px;
-      text-align: center;
-      margin: 10px auto;
-      display: block;
-      line-height: 60px;
-      text-decoration: none;
-      /* Remove underlines from links */
-      color: #ffffff;
-      /* Text color */
-      background-color: #007bff;
-      /* Button background color */
-      border: none;
-      /* Remove button borders */
-      border-radius: 5px;
-      /* Add some border radius */
+      margin-bottom: 20px;
     }
 
-    /* Adjust the position of the image within the button */
-    .button img {
-      vertical-align: middle;
-    }
-
-    /* Set a max-width for the biography container */
-    .bio-container {
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    /* Style the heading */
-    h1 {
-      color: #ffffff;
-      /* Text color */
-    }
-
-    /* Style the paragraph */
-    p {
-      color: #ffffff;
-      /* Text color */
-    }
-
-    footer p {
-      font-size: 12px;
-      margin: 5px 0;
+    .icon {
+      width: 24px;
+      /* Adjust to the desired width */
+      height: 24px;
+      /* Adjust to the desired height */
     }
   </style>
+
 </head>
 
-<body>
-  <div class="overlay"></div>
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="column">
-        <!-- Your Image Here -->
-        <img src="images/other-harbors/carribbean-kings/pic4.jpeg" srcset="images/pic4.jpeg 2x" alt="LittleLink Logo"
-          width="300" height="270" />
+<body class="flex justify-center items-center min-h-screen">
+  <div class="container mx-auto">
+    <div class="max-w-lg mx-auto text-center">
 
-        <!-- Title -->
-        <h1>👑Caribbean Kings👑</h1>
+      <img src="images/other-harbors/carribbean-kings/pic4.jpeg" alt="Digital Harbor" width="300" height="300"
+        class="mx-auto">
+      <h1 class="text-3xl text-white font-bold mt-4">👑Caribbean Kings👑</h1>
+      <div class="text-white mt-4">
+        <p>We are the Caribbean Kings entertainment group
+        </p>
+      </div>
+      <div class="mt-8">
 
-        <!-- Short Bio -->
-        <!-- <p>👋 Hello! Here's the places to find me!</p> -->
-        <!-- Wrap the biography text in a container -->
-        <div class="bio-container">
-          <p>TODO: FILL IN SHORT BIO</p>
+        <!-- Instagram  -->
+        <a href="http://instagram.com/caribbean_kingss" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/instagram.svg" alt="Instagram Logo">
+          <span class="button-label">Instagram</span>
+        </a>
+        <!-- YouTube video -->
+        <div class="flex justify-center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/_4WcbWNFQpo?si=dcZHTtOpBFrHKm-8"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen class="video"></iframe>
         </div>
 
-        <!-- Instagram -->
-        <a class="button button-instagram" href="http://instagram.com/caribbean_kingss" target="_blank"
-          rel="noopener"><img class="icon" src="images/icons/instagram.svg" alt="Instagram Logo" />Instagram</a>
-        <br />
-
-        <!-- Facebook -->
-        <!-- <a -->
-        <!--   class="button button-faceb" -->
-        <!--   href="https://www.facebook.com/TODO" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!--   ><img -->
-        <!--     class="icon" -->
-        <!--     src="images/icons/facebook.svg" -->
-        <!--     alt="Facebook Logo" -->
-        <!--   />Facebook</a -->
-        <!-- > -->
-        <!-- <br /> -->
-
-        <!-- Email -->
-        <!-- <a -->
-        <!--   class="button button-default" -->
-        <!--   href="mailto:TODO@domain.com" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!-- > -->
-        <!--   <img class="icon" src="images/icons/email.svg" alt="Email Icon" /> -->
-        <!--   Email Me! -->
-        <!-- </a> -->
-        <!-- <br /> -->
-        <!-- commenting out this button that copies the emailAddress to the user's clipboard -->
-        <!-- <button class="button" id="copyButton"> -->
-        <!--   Copy Email to Clipboard if ☝️ didn't work! -->
-        <!-- </button> -->
-        <!-- <br /> -->
-        <!---->
-        <!-- <script> -->
-        <!--   document -->
-        <!--     .getElementById("copyButton") -->
-        <!--     .addEventListener("click", function () { -->
-        <!--       // Get the email address -->
-        <!--       var emailAddress = "JoshPayneMusic@gmail.com"; -->
-        <!---->
-        <!--       // Create a new textarea element -->
-        <!--       var tempTextarea = document.createElement("textarea"); -->
-        <!--       tempTextarea.value = emailAddress; -->
-        <!---->
-        <!--       // Append the textarea to the DOM -->
-        <!--       document.body.appendChild(tempTextarea); -->
-        <!---->
-        <!--       // Select the text inside the textarea -->
-        <!--       tempTextarea.select(); -->
-        <!---->
-        <!--       try { -->
-        <!--         // Attempt to copy the text to the clipboard -->
-        <!--         document.execCommand("copy"); -->
-        <!--         alert("Email address copied to clipboard: " + emailAddress); -->
-        <!--       } catch (err) { -->
-        <!--         console.error("Unable to copy to clipboard", err); -->
-        <!--       } finally { -->
-        <!--         // Remove the temporary textarea -->
-        <!--         document.body.removeChild(tempTextarea); -->
-        <!--       } -->
-        <!--     }); -->
-        <!-- </script> -->
-
-        <!-- YouTube -->
-        <!-- <a -->
-        <!--   class="button button-yt" -->
-        <!--   href="https://www.youtube.com/@TODO" -->
-        <!--   href="https://youtu.be/_4WcbWNFQpo?si=FcCQ-jjpgx4CQ1xj" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!--   ><img -->
-        <!--     class="icon" -->
-        <!--     src="images/icons/youtube.svg" -->
-        <!--     alt="YouTube Logo" -->
-        <!--   />YouTube</a -->
-        <!-- > -->
-        <!-- <br /> -->
-        <!-- <!-- Patreon -->
-        <!-- <a -->
-        <!--   class="button button-patreon" -->
-        <!--   href="http://patreon.com/TODO" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!--   ><img -->
-        <!--     class="icon" -->
-        <!--     src="images/icons/patreon.svg" -->
-        <!--     alt="Patreon Logo" -->
-        <!--   />Patreon</a -->
-        <!-- > -->
-        <!-- <br /> -->
-        <!---->
-        <!-- <!-- Signal -->
-        <!-- -->
-        <!-- <a -->
-        <!--   class="button button-signal" -->
-        <!--   href="#" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!--   ><img -->
-        <!--     class="icon" -->
-        <!--     src="images/icons/signal.svg" -->
-        <!--     alt="Signal Logo" -->
-        <!--   />Signal</a -->
-        <!-- > -->
-        <!-- <br /> -->
-
-        <!-- Venmo -->
-        <!-- <a -->
-        <!--   class="button button-venmo" -->
-        <!--   href="https://www.venmo.com/TODO" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!--   ><img -->
-        <!--     class="icon" -->
-        <!--     src="images/icons/venmo.svg" -->
-        <!--     alt="Venmo Logo" -->
-        <!--   />Venmo</a -->
-        <!-- > -->
-        <!-- <br /> -->
-
-        <!-- Cash App Dollar -->
-        <!-- <a -->
-        <!--   class="button button-cashapp" -->
-        <!--   href="https://cash.app/TODO/amount" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!--   ><img -->
-        <!--     class="icon" -->
-        <!--     src="images/icons/cashapp_dollar.svg" -->
-        <!--     alt="Cash App Logo" -->
-        <!--   />Cash App</a -->
-        <!-- > -->
-        <!-- <br /> -->
-
-        <!-- <br /> -->
-        <!-- YouTube video -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/_4WcbWNFQpo?si=dcZHTtOpBFrHKm-8"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen class="video"></iframe>
-        <br />
-
-        <!-- Embedded video -->
-        <!-- <video controls class="video"> -->
-        <!--   <source -->
-        <!--     src="images/everythings-gonna-be-allright.mp4" -->
-        <!--     type="video/mp4" -->
-        <!--   /> -->
-        <!--   Your browser does not support the video tag. -->
-        <!-- </video> -->
-
-        <!-- <br /> -->
-        <!-- <p>Email - TODO@domain.com</p> -->
-        <footer>
-          <p>
-            View source
-            <a href="https://github.com/doompony/littlelink-carribbeankings" target="_blank" rel="noopener">here</a>.
-          </p>
-          <p>
-            Build your own by forking
-            <a href="https://littlelink.io" target="_blank" rel="noopener">LittleLink</a>.
-          </p>
+        <footer class="text-center mt-8">
+          <p class="text-gray-500">View source <a href="https://github.com/doompony/DigitalHarbor" target="_blank"
+              rel="noopener" class="text-blue-500 hover:text-blue-700">here</a>.</p>
+          <p>&copy; 2024 Digital Harbor. All rights reserved.</p>
         </footer>
       </div>
     </div>
+
   </div>
 
-  <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 
 </html>
