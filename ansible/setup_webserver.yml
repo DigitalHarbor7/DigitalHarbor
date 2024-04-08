@@ -1,0 +1,27 @@
+---
+- name: Setup webserver with Traefik and NGINX
+  hosts: koober
+  become: yes
+
+  vars_files:
+    - vars.yml
+
+  roles:
+    - role: geerlingguy.docker
+    - role: traefik
+
+  tasks:
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+
+    - name: Copy HTML files
+      copy:
+        src: /home/nic/work/DigitalHarbor/_site
+        dest: /var/www/html
+
+    - name: Restart NGINX
+      service:
+        name: nginx
+        state: restarted
