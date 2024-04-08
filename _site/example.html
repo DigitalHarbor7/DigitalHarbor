@@ -1,455 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Page Information -->
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Harbors</title>
-  <meta name="description" content="Anchor your links in your digital harbor" />
-  <meta name="author" content="My Digital Harbor, Inc." />
-
-  <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet" />
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/skeleton-dark.css" />
-  <link rel="stylesheet" href="css/brands.css" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+  <!-- Include the Tailwind CSS framework -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
   <style>
-    /* Add background flair */
     body {
-      /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/bacgkround.svg"); */
-      background-color: linear-gradient(rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.7));
-      background-size: cover;
-      background-attachment: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      /* Set the height to at least the viewport height */
-      margin: 0;
+      background: linear-gradient(to bottom, #2c3e50, #2c3e50);
+      /* Gradient with dark slate gray */
     }
 
-    /* Center content in a container */
-    .container {
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* Limit the maximum width of the content on larger screens */
-    .column {
-      max-width: 100%;
-    }
-
-    /* Add a glow border to the YouTube video */
-    iframe {
-      border: 5px solid #808080;
-      box-shadow: 0 0 15px #808080;
-      max-width: 100%;
-      /* Make sure the video is responsive */
-    }
-
-    /* Style the buttons */
     .button {
-      width: 100%;
-      /* Make buttons take up the full width */
-      max-width: 560px;
-      /* Limit the maximum width */
-      height: 60px;
-      text-align: center;
-      margin: 10px auto;
-      display: block;
-      line-height: 60px;
-      text-decoration: none;
-      /* Remove underlines from links */
-      color: #ffffff;
-      /* Text color */
-      background-color: #007bff;
-      /* Button background color */
-      border: none;
-      /* Remove button borders */
-      border-radius: 5px;
-      /* Add some border radius */
+      margin-bottom: 20px;
     }
 
-    /* Adjust the position of the image within the button */
-    .button img {
-      vertical-align: middle;
+    .bg-patreon-gradient {
+      background-image: linear-gradient(to bottom right, #FF8C00, #FFA500);
+      transition: background-color 0.3s ease;
     }
 
-    /* Set a max-width for the biography container */
-    .bio-container {
-      max-width: 560px;
-      margin: 0 auto;
+    .bg-patreon-gradient:hover {
+      background-image: linear-gradient(to bottom right, #FFA500, #FFD700);
     }
 
-    /* Style the heading */
-    h1 {
-      color: #ffffff;
-      /* Text color */
-    }
-
-    /* Style the paragraph */
-    p {
-      color: #ffffff;
-      /* Text color */
-    }
-
-    footer p {
-      font-size: 12px;
-      margin: 5px 0;
+    .icon {
+      width: 24px;
+      /* Adjust to the desired width */
+      height: 24px;
+      /* Adjust to the desired height */
     }
   </style>
+
 </head>
 
-<body>
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="column">
-        <!-- Your Image Here -->
-        <img src="images/dh.png" srcset="images/dh.png 2x" alt="Digital Harbor" width="150" height="150" />
+<body class="flex justify-center items-center min-h-screen">
+  <div class="container mx-auto">
+    <div class="max-w-lg mx-auto text-center">
+      <img src="images/dh.png" alt="Digital Harbor" width="150" height="150" class="mx-auto">
+      <h1 class="text-3xl text-white font-bold mt-4">TODO: TITLE FOR PAGE</h1>
+      <div class="text-white mt-4">
+        <p>We'll put a short bio here</p>
+      </div>
+      <div class="mt-8">
 
-        <!-- Title -->
-        <h1>TODO: TITLE FOR PAGE</h1>
-
-        <!-- Short Bio -->
-        <!-- <p>👋 Hello! Here's the places to find me!</p> -->
-        <!-- Wrap the biography text in a container -->
-        <div class="bio-container">
-          <p>We'll put a short bio here</p>
-        </div>
-
-        <!-- Instagram -->
-        <a class="button button-instagram" href="http://instagram.com/TODO" target="_blank" rel="noopener"><img
-            class="icon" src="images/icons/instagram.svg" alt="Instagram Logo" />Instagram</a>
-        <br />
-
-        <!-- Facebook -->
-        <a class="button button-faceb" href="https://www.facebook.com/TODO" target="_blank" rel="noopener"><img
-            class="icon" src="images/icons/facebook.svg" alt="Facebook Logo" />Facebook</a>
-        <br />
-
-        <!-- Email -->
-        <a class="button button-default" href="mailto:TODO@domain.com" target="_blank" rel="noopener">
-          <img class="icon" src="images/icons/email.svg" alt="Email Icon" />
-          Email Me!
+        <!-- Discord Button with Tailwind CSS classes and enhanced gradient background -->
+        <a href="https://discord.com/channels/957226093155336204/957226093696393278" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-700 hover:to-indigo-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/discord.svg" alt="Discord Logo">
+          <span class="button-label">Discord</span>
         </a>
-        <br />
-        <!-- commenting out this button that copies the emailAddress to the user's clipboard -->
-        <!-- <button class="button" id="copyButton"> -->
-        <!--   Copy Email to Clipboard if ☝️ didn't work! -->
-        <!-- </button> -->
-        <!-- <br /> -->
-        <!---->
-        <!-- <script> -->
-        <!--   document -->
-        <!--     .getElementById("copyButton") -->
-        <!--     .addEventListener("click", function () { -->
-        <!--       // Get the email address -->
-        <!--       var emailAddress = "JoshPayneMusic@gmail.com"; -->
-        <!---->
-        <!--       // Create a new textarea element -->
-        <!--       var tempTextarea = document.createElement("textarea"); -->
-        <!--       tempTextarea.value = emailAddress; -->
-        <!---->
-        <!--       // Append the textarea to the DOM -->
-        <!--       document.body.appendChild(tempTextarea); -->
-        <!---->
-        <!--       // Select the text inside the textarea -->
-        <!--       tempTextarea.select(); -->
-        <!---->
-        <!--       try { -->
-        <!--         // Attempt to copy the text to the clipboard -->
-        <!--         document.execCommand("copy"); -->
-        <!--         alert("Email address copied to clipboard: " + emailAddress); -->
-        <!--       } catch (err) { -->
-        <!--         console.error("Unable to copy to clipboard", err); -->
-        <!--       } finally { -->
-        <!--         // Remove the temporary textarea -->
-        <!--         document.body.removeChild(tempTextarea); -->
-        <!--       } -->
-        <!--     }); -->
-        <!-- </script> -->
+        <!-- Instagram Button with Tailwind CSS classes -->
+        <a href="http://instagram.com/TODO" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/instagram.svg" alt="Instagram Logo">
+          <span class="button-label">Instagram</span>
+        </a>
 
-        <!-- YouTube -->
-        <a class="button button-yt" href="https://www.youtube.com/@TODO" target="_blank" rel="noopener"><img
-            class="icon" src="images/icons/youtube.svg" alt="YouTube Logo" />YouTube</a>
-        <br />
-        <!-- <!-- Patreon -->
-        <a class="button button-patreon" href="http://patreon.com/TODO" target="_blank" rel="noopener"><img class="icon"
-            src="images/icons/patreon.svg" alt="Patreon Logo" />Patreon</a>
-        <br />
-        <!---->
-        <!-- <!-- Signal -->
-        <!-- -->
-        <!-- <a -->
-        <!--   class="button button-signal" -->
-        <!--   href="#" -->
-        <!--   target="_blank" -->
-        <!--   rel="noopener" -->
-        <!--   ><img -->
-        <!--     class="icon" -->
-        <!--     src="images/icons/signal.svg" -->
-        <!--     alt="Signal Logo" -->
-        <!--   />Signal</a -->
-        <!-- > -->
-        <!-- <br /> -->
+        <!-- Cash App Button with Tailwind CSS classes -->
+        <a href="https://cash.app/TODO/amount" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-green-500 to-green-700 hover:from-green-700 hover:to-green-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/cashapp_dollar.svg" alt="Cash App Logo">
+          <span class="button-label">Cash App</span>
+        </a>
 
-        <!-- Venmo -->
-        <a class="button button-venmo" href="https://www.venmo.com/TODO" target="_blank" rel="noopener"><img
-            class="icon" src="images/icons/venmo.svg" alt="Venmo Logo" />Venmo</a>
-        <br />
+        <!-- Facebook Button with Tailwind CSS classes -->
+        <a href="https://www.facebook.com/TODO" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/facebook.svg" alt="Facebook Logo">
+          <span class="button-label">Facebook</span>
+        </a>
 
-        <!-- Cash App Dollar -->
-        <a class="button button-cashapp" href="https://cash.app/TODO/amount" target="_blank" rel="noopener"><img
-            class="icon" src="images/icons/cashapp_dollar.svg" alt="Cash App Logo" />Cash App</a>
-        <br />
+        <a href="mailto:TODO@domain.com" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/email.svg" alt="Email Icon">
+          <span class="button-label">Email Me!</span>
+        </a>
 
-        <!-- Github -->
-        <!-- <a class="button button-github" href="https://www.github.com/pypeaday" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/github.svg" alt="GitHub Logo">GitHub</a> -->
-        <!-- <br> -->
-        <!---->
-        <!-- Resume -->
-        <!-- <a class="button button-resume" href="https://github.com/pypeaday/AltaCV/blob/me/nic.pdf" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/resume.svg" alt="Resume Icon">Resume</a> -->
-        <!-- <br> -->
-        <!---->
-        <!-- Blog -->
-        <!-- <a class="button button-default" href="https://pype.dev/" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/blog.svg" alt="Blog Icon">Blog </a> -->
-        <!-- <br> -->
-        <!---->
-        <!-- Twitter -->
-        <!-- <a class="button button-twit" href="https://www.twitter.com/pypeaday" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/twitter.svg" alt="Twitter Logo">Twitter</a> -->
-        <!-- <br> -->
-        <!---->
-        <!-- Instagram -->
-        <!-- <a class="button button-instagram" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/instagram.svg" alt="Instagram Logo">Instagram</a> -->
-        <!-- <br> -->
-
-        <!-- Facebook -->
-        <!-- <a class="button button-faceb" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/facebook.svg" alt="Facebook Logo">Find us on Facebook</a> -->
-        <!-- <br> -->
-
-        <!-- Facebook Messenger -->
-        <!-- <a class="button button-messenger" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/messenger.svg" alt="Facebook Messenger Logo">Chat on Messenger</a> -->
-        <!-- <br> -->
-
-        <!-- LinkedIn -->
-        <!-- <a class="button button-linked" href="https://www.linkedin.com/in/nicholaspayne713" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/linkedin.svg" alt="LinkedIn Logo">LinkedIn</a> -->
-        <!-- <br> -->
-
-        <!-- YouTube -->
-        <!-- <a class="button button-yt" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/youtube.svg" alt="YouTube Logo">YouTube</a> -->
-        <!-- <br> -->
-
-        <!-- Discord -->
-        <a class="button button-discord" href="https://discord.com/channels/957226093155336204/957226093696393278"
-          target="_blank" rel="noopener"><img class="icon" src="images/icons/discord.svg" alt="Discord Logo">Discord</a>
-        <br>
-
-        <!-- Twitch -->
-        <a class="button button-twitch" href="https://www.twitch.tv/pypeaday" target="_blank" rel="noopener"><img
-            class="icon" src="images/icons/twitch.svg" alt="Twitch Logo">Twitch</a>
-        <br>
-
-        <!-- ProductHunt -->
-        <!-- <a class="button button-producthunt" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/producthunt.svg" alt="Product Hunt Logo">Product Hunt</a> -->
-        <!-- <br> -->
-
-        <!-- Snapchat -->
-        <!-- <a class="button button-snapchat" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/snapchat.svg" alt="Snapchat Logo">Snapchat</a> -->
-        <!-- <br> -->
-
-        <!-- Spotify -->
-        <!-- <a class="button button-spotify" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/spotify.svg" alt="Spotify Logo">Spotify</a> -->
-        <!-- <br> -->
-
-        <!-- Reddit -->
-        <!-- <a class="button button-reddit" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/reddit.svg" alt="Reddit Logo">Reddit</a> -->
-        <!-- <br> -->
-
-        <!-- Mastodon -->
-        <!-- <a class="button button-mastodon" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/mastodon.svg" alt="Mastodon Logo">Mastodon</a> -->
-        <!-- <br> -->
-
-        <!-- Medium -->
-        <!-- <a class="button button-medium" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/medium.svg" alt="Medium Logo">Medium</a> -->
-        <!-- <br> -->
-
-        <!-- Pinterest -->
-        <!-- <a class="button button-pinterest" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/pinterest.svg" alt="Pinterest Logo">Follow on Pinterest</a> -->
-        <!-- <br> -->
-
-        <!-- TikTok -->
-        <!-- <a class="button button-tiktok" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/tiktok.svg" alt="TikTok Logo">TikTok</a> -->
-        <!-- <br> -->
-
-        <!-- Email -->
-        <!-- <a class="button button-default" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/email.svg" alt="Email Icon">hello@littlelink.io</a> -->
-        <!-- <br> -->
-
-        <!-- Email Alternative -->
-        <!-- <a class="button button-default" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/email_alt.svg" alt="Email Icon">hello@littlelink.io</a> -->
-        <!-- <br> -->
-
-
-        <!-- SoundCloud -->
-        <!-- <a class="button button-soundcloud" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/soundcloud.svg" alt="SoundCloud Logo">SoundCloud</a> -->
-        <!-- <br> -->
-
-        <!-- Figma -->
-        <!-- <a class="button button-figma" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/figma.svg" alt="Figma Logo">Figma</a> -->
-        <!-- <br> -->
-
-        <!-- Kit -->
-        <!-- <a class="button button-kit" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/kit.svg" alt="Kit Logo">Kit</a> -->
-        <!-- <br> -->
-
-        <!-- Telegram -->
-        <!-- <a class="button button-telegram" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/telegram.svg" alt="Telegram Logo">Telegram</a> -->
-        <!-- <br> -->
-
-        <!-- Tumblr -->
-        <!-- <a class="button button-tumb" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/tumblr.svg" alt="Tumblr Logo">Tumblr</a> -->
-        <!-- <br> -->
-
-        <!-- Steam -->
-        <!-- <a class="button button-steam" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/steam.svg" alt="Steam Logo">Steam</a> -->
-        <!-- <br> -->
-
-        <!-- Vimeo -->
-        <!-- <a class="button button-vimeo" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/vimeo.svg" alt="Vimeo Logo">Vimeo</a> -->
-        <!-- <br> -->
-
-        <!-- PayPal-->
-        <!-- <a class="button button-paypal" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/paypal.svg" alt="PayPal Logo">PayPal</a> -->
-        <!-- <br> -->
-
-        <!-- WhatsApp -->
-        <!-- <a class="button button-whatsapp" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/whatsapp.svg" alt="WhatsApp Logo">WhatsApp</a> -->
-        <!-- <br> -->
-
-        <!-- Wordpress -->
-        <!-- <a class="button button-wordpress" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/wordpress.svg" alt="Wordpress Logo">Wordpress</a> -->
-        <!-- <br> -->
-
-        <!-- Goodreads -->
-        <!-- <a class="button button-goodreads" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/goodreads.svg" alt="Goodreads Logo">Goodreads</a> -->
-        <!-- <br> -->
-
-        <!-- Skoob -->
-        <!-- <a class="button button-skoob" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/skoob.svg" alt="Skoob Logo">Skoob</a> -->
-        <!-- <br> -->
-
-        <!-- Gitea -->
-        <a class="button button-gitea" href="https://gitea.paynepride.com" target="_blank" rel="noopener"><img
-            class="icon" src="images/icons/gitea.svg" alt="Gitea Logo">Gitea (coming soon!)</a>
-        <br>
-
-        <!-- <!-1- Gitlab -1-> -->
-        <!-- <a class="button button-gitlab" href="_blank" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/gitlab.svg" alt="GitLab Logo">GitLab</a> -->
-        <!-- <br> -->
-
-        <!-- XING -->
-        <!-- <a class="button button-xing" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/xing.svg" alt="xing Logo">Xing</a> -->
-        <!-- <br> -->
-
-        <!-- Bandcamp -->
-        <!-- <a class="button button-bandcamp" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/bandcamp.svg" alt="Bandcamp Logo">Bandcamp</a> -->
-        <!-- <br> -->
-
-        <!-- Patreon -->
-        <!-- <a class="button button-patreon" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/patreon.svg" alt="Patreon Logo">Patreon</a> -->
-        <!-- <br> -->
-
-        <!-- Signal -->
-        <a class="button button-signal" href="#" target="_blank" rel="noopener"><img class="icon"
-            src="images/icons/signal.svg" alt="Signal Logo">Signal</a>
-        <br>
-
-        <!-- Venmo -->
-        <!-- <a class="button button-venmo" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/venmo.svg" alt="Venmo Logo">Venmo</a> -->
-        <!-- <br> -->
-
-        <!-- Cash App Dollar -->
-        <!-- <a class="button button-cashapp" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/cashapp_dollar.svg" alt="Cash App Logo">Cash App Dollar</a> -->
-        <!-- <br> -->
-
-        <!-- Cash App Pound -->
-        <!-- <a class="button button-cashapp" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/cashapp_pound.svg" alt="Cash App Logo">Cash App Pound</a> -->
-        <!-- <br> -->
-
-        <!-- Cash App BTC -->
-        <!-- <a class="button button-cashapp" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/cashapp_btc.svg" alt="Cash App Logo">Cash App Bitcoin</a> -->
-        <!-- <br> -->
-
-        <!-- Web -->
-        <!-- <a class="button button-web" href="#" target="_blank" rel="noopener"><img class="icon" -->
-        <!--     src="images/icons/web.svg" alt="Web Logo">Website</a> -->
-        <!-- <br> -->
-
-        <!-- <br /> -->
-        <!---->
-        <!-- <iframe -->
-        <!--   width="560" -->
-        <!--   height="315" -->
-        <!--   src="https://www.youtube.com/embed/_LX3-kJiLn0?si=bEhW09RQyhTgtS3B" -->
-        <!--   title="YouTube video player" -->
-        <!--   frameborder="0" -->
-        <!--   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" -->
-        <!--   allowfullscreen -->
-        <!-- ></iframe> -->
-        <!-- <br /> -->
-
-        <br />
+        <a href="https://www.youtube.com/@TODO" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-red-500 to-red-700 hover:from-red-700 hover:to-red-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/youtube.svg" alt="YouTube Logo">
+          <span class="button-label">YouTube</span>
+        </a>
+        <!-- Patreon Button with Tailwind CSS classes -->
+        <a href="http://patreon.com/TODO" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-yellow-500 to-yellow-700 hover:from-yellow-700 hover:to-yellow-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/patreon.svg" alt="Patreon Logo">
+          <span class="button-label">Patreon</span>
+        </a>
+        <a href="https://www.twitch.tv/pypeaday" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-purple-500 to-purple-700 hover:from-purple-700 hover:to-purple-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/twitch.svg" alt="Twitch Logo">
+          <span class="button-label">Twitch</span>
+        </a>
+        <a href="https://gitea.paynepride.com" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-gray-500 to-green-700 hover:from-green-700 hover:to-gray-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="images/icons/gitea.svg" alt="Gitea Logo">
+          <span class="button-label">Gitea</span>
+        </a>
+      </div>
+      <div class="mt-8">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/_LX3-kJiLn0?si=bEhW09RQyhTgtS3B"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="mt-8 text-white text-center">
         <p>Email - mdh@pype.dev</p>
         <footer>
           <p>
@@ -460,14 +121,10 @@
             Build your own by forking
             <a href="https://littlelink.io" target="_blank" rel="noopener">LittleLink</a>.
           </p>
-
         </footer>
       </div>
     </div>
   </div>
-
-  <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 
 </html>
