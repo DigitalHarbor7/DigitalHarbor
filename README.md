@@ -21,18 +21,18 @@ Here are some examples of QR Codes
 
 >I will generate QR Codes for you for $25/code that you choose to use
 
-An old site [old one](https://doompony.github.io/little-link-qr-template/)
-
-![Example 1](dist/qr/carribbean-kings/example1/qr-example.png)
-
-QR code for [1man1band.com](https://1man1band.com)
-![Example 2](dist/qr/1man1band/image.png)
-
-Another QR code for [1man1band.com](https://1man1band.com)
-![Example 3](dist/qr/1man1band/image(1).png)
+QR code for [Digital Harbor](https://mydigitalharbor.com)
+![Example](dist/qr/digital-harbor/qr1.png)
 
 QR code for [Digital Harbor](https://mydigitalharbor.com)
-![Example 3](dist/qr/digital-harbor/qr1.png)
+![Example](dist/qr/digital-harbor/qr1.png)
+
+QR code for [1man1band.com](https://1man1band.com)
+![Example](dist/qr/1man1band/image.png)
+
+Another QR code for [1man1band.com](https://1man1band.com)
+![Example](dist/qr/1man1band/image(1).png)
+
 
 ## Services
 
