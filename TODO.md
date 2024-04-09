@@ -10,7 +10,7 @@
     * setup DNS to GH Pages from namecheap with terraform
 4. create markata template from index.html and code to use Markdown and build with Markata
 
-## Links
+## Links/buttons
 
 1. Add to example all the buttons I can support
 
@@ -38,3 +38,8 @@
 
 1. Actions Setup to deploy to GH Pages
 2. Terraform for namecheap DNS (I haven't done this successfully yet... need to practice)
+
+## QR generation
+
+1. play with locally hosted huggingface space
+2. a1111 docker project, use just the api and create qr code pipeline. I need to copy models in or edit the download script to get the ones I need... probably the controlnt extension too somehow which maybe I can just do manually and then ship the data folder along with the docker image, or build a second one?
