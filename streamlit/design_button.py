@@ -66,24 +66,23 @@ def main():
             <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
             <style>
                 body {{
-                    font-family: Arial, sans-serif;
-                    padding: 5px;
+                    font-family: 'Open Sans', Arial, sans-serif;
+                    padding: 0;
+                    margin: 0;
                 }}
                 .button {{
-                margin-bottom: 20px;
+                    margin-bottom: 20px;
                 }}
-
-
                 .icon {{
-                width: 24px;
-                height: 24px;
+                    width: 24px;
+                    height: 24px;
                 }}
             </style>
         </head>
-        <body class="flex justify-center items-center min-h-screen">
-        <div class="container mx-auto">
-            {html_link}
-        </div>
+        <body>
+            <div >
+                {html_link}
+            </div>
         </body>
         </html>
         """,
