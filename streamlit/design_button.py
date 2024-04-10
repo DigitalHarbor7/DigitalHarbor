@@ -14,7 +14,7 @@ def generate_html_link(
     """
     Function to generate an HTML link with specified parameters and Tailwind CSS styles.
     """
-    return f'<a href="{url}" target="_blank" rel="noopener" class="button bg-gradient-to-br from-{gradient_start_color}-{gradient_start_value} to-{gradient_end_color}-{gradient_end_value} hover:from-{gradient_end_color}-{gradient_end_value} hover:to-{gradient_start_color}-{gradient_start_value} text-{text_color} font-bold py-2 px-4 rounded-full block mb-2 text-{text_size_id} flex items-center justify-center"> <img class="icon inline-block align-middle mr-2" <img class="icon inline-block align-middle mr-2" src="https://cdn.simpleicons.org/instagram/black/white" /> <span class="button-label">Instagram</span> </a>'
+    return f'<a href="{url}" target="_blank" rel="noopener" class="button bg-gradient-to-br from-{gradient_start_color}-{gradient_start_value} to-{gradient_end_color}-{gradient_end_value} hover:from-{gradient_end_color}-{gradient_end_value} hover:to-{gradient_start_color}-{gradient_start_value} text-{text_color} font-bold py-2 px-4 rounded-full block mb-2 text-{text_size_id} flex items-center justify-center"> <img class="icon inline-block align-middle mr-2" <img class="icon inline-block align-middle mr-2" src="https://cdn.simpleicons.org/{text.lower()}/black/white" /> <span class="button-label">{text.title()}</span> </a>'
 
 
 def main():
@@ -26,15 +26,48 @@ def main():
     gradient_start_color = st.text_input(
         "Enter Gradient Start Color (e.g., pink):", "pink"
     )
-    gradient_start_value = st.text_input(
-        "Enter Gradient Start value (e.g., 600):", "600"
+    gradient_start_value = st.slider(
+        "Gradient Start Value:", min_value=100, max_value=900, step=100, value=600
+    )
+    gradient_end_value = st.slider(
+        "Gradient End Value:", min_value=100, max_value=900, step=100, value=600
     )
     gradient_end_color = st.text_input(
         "Enter Gradient End Color (e.g., indigo):", "indigo"
     )
-    gradient_end_value = st.text_input("Enter Gradient End value (e.g., 600):", "600")
-    text_color = st.text_input("Enter Text Color (e.g., white):", "white")
-    text_size_id = st.text_input("Enter Text Size (e.g., 2xl):", "2xl")
+    tailwind_colors = [
+        "white",
+        "black",
+        "gray",
+        "red",
+        "yellow",
+        "green",
+        "blue",
+        "indigo",
+        "purple",
+        "pink",
+    ]
+    text_color = st.selectbox(
+        "Select Text Color:", tailwind_colors, index=tailwind_colors.index("white")
+    )
+    tailwind_text_sizes = [
+        "xs",
+        "sm",
+        "base",
+        "lg",
+        "xl",
+        "2xl",
+        "3xl",
+        "4xl",
+        "5xl",
+        "6xl",
+        "7xl",
+        "8xl",
+        "9xl",
+    ]
+    text_size_id = st.selectbox(
+        "Select Text Size:", tailwind_text_sizes, index=tailwind_text_sizes.index("2xl")
+    )
 
     # Generate HTML link based on inputs
     html_link = generate_html_link(
