@@ -70,24 +70,6 @@ def generate_html_link(
 
 def main(icons_list: List[str]):
     st.title("Custom HTML Link Generator")
-
-    # Input fields for URL, link text, gradient start color, gradient end color, text color, and target
-    url = st.text_input("Enter URL:", "http://instagram.com/TODO")
-    text = st.selectbox(
-        "Select Link Text:", icons_list, index=icons_list.index("Instagram")
-    )
-    gradient_start_color = st.text_input(
-        "Enter Gradient Start Color (e.g., pink):", "pink"
-    )
-    gradient_start_value = st.slider(
-        "Gradient Start Value:", min_value=100, max_value=900, step=100, value=600
-    )
-    gradient_end_value = st.slider(
-        "Gradient End Value:", min_value=100, max_value=900, step=100, value=600
-    )
-    gradient_end_color = st.text_input(
-        "Enter Gradient End Color (e.g., indigo):", "indigo"
-    )
     tailwind_colors = [
         "white",
         "black",
@@ -100,6 +82,29 @@ def main(icons_list: List[str]):
         "purple",
         "pink",
     ]
+
+    # Input fields for URL, link text, gradient start color, gradient end color, text color, and target
+    url = st.text_input("Enter URL:", "http://instagram.com/TODO")
+    text = st.selectbox(
+        "Select Link Text:", icons_list, index=icons_list.index("Instagram")
+    )
+    gradient_start_color = st.selectbox(
+        "Enter Gradient Start Color (e.g., pink):",
+        tailwind_colors,
+        index=tailwind_colors.index("pink"),
+    )
+
+    gradient_start_value = st.slider(
+        "Gradient Start Value:", min_value=100, max_value=900, step=100, value=600
+    )
+    gradient_end_value = st.slider(
+        "Gradient End Value:", min_value=100, max_value=900, step=100, value=600
+    )
+    gradient_end_color = st.selectbox(
+        "Enter Gradient Start Color (e.g., indigo):",
+        tailwind_colors,
+        index=tailwind_colors.index("indigo"),
+    )
     text_color = st.selectbox(
         "Select Text Color:", tailwind_colors, index=tailwind_colors.index("white")
     )
@@ -133,10 +138,6 @@ def main(icons_list: List[str]):
         text_color,
         text_size_id,
     )
-
-    # Display the generated HTML link in plaintext
-    st.text("Generated HTML Link:")
-    st.text(html_link)
 
     # Display a static HTML page with the generated button embedded
     st.markdown("---")
@@ -174,6 +175,10 @@ def main(icons_list: List[str]):
         """,
         height=500,
     )
+    st.markdown("---")
+    # Display the generated HTML link in plaintext
+    st.text("Generated HTML Link:")
+    st.text(html_link)
 
 
 if __name__ == "__main__":
