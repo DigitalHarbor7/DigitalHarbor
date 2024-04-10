@@ -1,5 +1,22 @@
-variable "username" {}
-variable "api_key" {}
+# variable "github_token" {}
+# variable "github_user" {}
+#
+# provider "github" {
+#   owner = var.github_user
+#   token = var.github_token
+# }
+#
+# resource "github_repository" "digital-harbor-josh" {
+#   name        = "digital-harbor-josh"
+#   description = "Josh's digital harbor"
+#
+#   visibility = "public"
+#
+#   # pages {
+#   #   build_type = "workflow"
+#   #   cname      = "1man1band.com"
+#   # }
+# }
 
 provider "namecheap" {
   user_name = var.username
@@ -11,8 +28,8 @@ resource "namecheap_domain_records" "_1man1band-com" {
   domain     = "1man1band.com"
   email_type = "NONE"
 
+  # GH Pages servers
   dynamic "record" {
-    # GH Pages servers
     for_each = ["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]
 
     content {
@@ -26,17 +43,6 @@ resource "namecheap_domain_records" "_1man1band-com" {
     hostname = "www"
     type     = "CNAME"
     address  = "pypeaday.github.io"
-  }
-}
-
-resource "namecheap_domain_records" "_1man1-band" {
-  domain     = "1man1.band"
-  email_type = "NONE"
-
-  record {
-    hostname = "www"
-    type     = "CNAME"
-    address  = "1man1band.com"
   }
 }
 
