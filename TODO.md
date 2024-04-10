@@ -1,5 +1,10 @@
 # TODOs
 
+## Git
+
+1. move everything off doomopny to pypeaday
+2. look for any reerences to pages on doompony gh
+
 
 ## Initial setup I need to do
 
@@ -31,13 +36,13 @@
 
 ## Hosting Roadmap
 
+0. TODO: digitalharbor.com running on my server to handle stripe and stuff... currently it's static on gh pages (no terraform - would be nice to import)
+
 v1 - digitalharbor.com/customer/ only
 
 1. this is on GH pages, so SSL is handled for me on my domain and I can serve up routes easy
 
 v2 - customer-domain.com
-
-0. digitalharbor.com running on my server
 
 Option 1 - point to my server
   - requires traefik + LE on server with multiple domains configured for traefik
@@ -45,9 +50,15 @@ Option 1 - point to my server
 Option 2 - cloudflare pages
   - namecheap-ecosystem provider to setup namecheap domain dns to cloudflare dns
   - cloudflare pages configuration
+  - this won't be easy because I have to manually add the website to cloudflare then find zone id and generate api key... not sure that can be automated
 
 Option 3 - AWS CloudFront 
   - cloudfront + route53 with a CNAME record in namecheap pointing to the route53 dns hosted zone.
+
+Option 4 - GitHub pages
+  - terraform to create repository + pages
+  - workflow to create index.html... manual or via app
+  - namecheap domain records just like 1man1band.com... can test this easily with josh's repo
 
 
 ## Cloudfront
