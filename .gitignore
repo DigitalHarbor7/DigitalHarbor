@@ -176,3 +176,8 @@ pyrightconfig.json
 n
 ansible/vars.yml
 ansible/roles/traefik/templates/usersFile
+*.tf.vars
+*.terraform
+*.terraform.lock.hcl
+*terraform.tfstate
+*terraform.tfstate.backup
