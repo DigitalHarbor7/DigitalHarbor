@@ -13,7 +13,7 @@ resource "namecheap_domain_records" "_1man1band-com" {
 
   dynamic "record" {
     # GH Pages servers
-    for_each = ["185.189.108.153", "185.189.109.153", "185.189.110.153", "185.189.111.153"]
+    for_each = ["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]
 
     content {
       hostname = "@"
