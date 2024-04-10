@@ -74,6 +74,9 @@ provider "cloudflare" {
   api_token = var.cloudflare_api_token
 }
 
+data "cloudflare_accounts" "cloudflare_account_data" {
+  name = "cloudflare@pype.aleeas.com"
+}
 # Cloudflare Pages project with managing build config
 resource "cloudflare_pages_project" "build_config" {
   account_id        = var.cloudflare_account_id
@@ -82,14 +85,40 @@ resource "cloudflare_pages_project" "build_config" {
   source {
     type = "github"
     config {
-      owner             = "pypeaday"
-      repo_name         = "digital-harbor-1man1-band"
-      production_branch = "main"
+      owner                         = "pypeaday"
+      repo_name                     = "digital-harbor-1man1-band"
+      production_branch             = "main"
+      production_deployment_enabled = true
     }
   }
   build_config {
-    build_command   = ""
-    destination_dir = "_site"
-    root_dir        = "_site"
+    root_dir = "_site"
+  }
+  deployment_configs {
+    preview {}
+    production {}
   }
 }
+
+resource "cloudflare_pages_domain" "cf_1man1-band" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.build_config.name
+  domain       = var.domain
+}
+#
+# data "cloudflare_zones" "zone_1man1-band" {
+#   filter {
+#     name = var.domain
+#   }
+# }
+#
+# resource "cloudflare_record" "cf_1man1-band_record" {
+#   zone_id         = data.cloudflare_zones.zone_1man1-band.zones[0].id
+#   name            = "www"
+#   value           = cloudflare_pages_project.cf_1man1-band.subdomain
+#   type            = "CNAME"
+#   proxied         = true
+#   ttl             = 1
+#   allow_overwrite = true
+# }
+#
