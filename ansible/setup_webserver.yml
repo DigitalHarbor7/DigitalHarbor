@@ -9,13 +9,9 @@
   roles:
     - role: geerlingguy.docker
     - role: traefik
+    - role: nginx
 
   tasks:
-    - name: Install NGINX
-      apt:
-        name: nginx
-        state: present
-
     - name: Copy HTML files
       copy:
         src: "{{ static_website_path }}"
