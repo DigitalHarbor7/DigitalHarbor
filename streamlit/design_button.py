@@ -42,7 +42,30 @@ def generate_html_link(
     """
     Function to generate an HTML link with specified parameters and Tailwind CSS styles.
     """
-    return f'<a href="{url}" target="_blank" rel="noopener" class="button bg-gradient-to-br from-{gradient_start_color}-{gradient_start_value} to-{gradient_end_color}-{gradient_end_value} hover:from-{gradient_end_color}-{gradient_end_value} hover:to-{gradient_start_color}-{gradient_start_value} text-{text_color} font-bold py-2 px-4 rounded-full block mb-2 text-{text_size_id} flex items-center justify-center"> <img class="icon inline-block align-middle mr-2" <img class="icon inline-block align-middle mr-2" src="https://cdn.simpleicons.org/{text.lower()}/black/white" /> <span class="button-label">{text.title()}</span> </a>'
+    return f"""
+        <a href="{url}" target="_blank" rel="noopener" 
+        class="button 
+            bg-gradient-to-br 
+            from-{gradient_start_color}-{gradient_start_value} 
+            to-{gradient_end_color}-{gradient_end_value}
+            hover:from-{gradient_end_color}-{gradient_end_value}
+            hover:to-{gradient_start_color}-{gradient_start_value} 
+            text-{text_color}
+            font-bold 
+            py-5 
+            px-4 
+            rounded-3xl
+            block 
+            mb-2 
+            text-{text_size_id} 
+            flex
+            items-center 
+            justify-center"
+            > 
+        <img class="icon inline-block align-middle mr-2"
+            src="https://cdn.simpleicons.org/{text.lower()}/black/white" /> <span class="button-label">{text.title()}</span>
+        </a>
+    """
 
 
 def main(icons_list: List[str]):
