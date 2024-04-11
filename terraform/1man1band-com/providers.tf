@@ -10,6 +10,10 @@ terraform {
       version = "0.1.7"
     }
 
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "4.29.0"
+    }
     github = {
       source  = "integrations/github"
       version = "6.2.1"

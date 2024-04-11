@@ -25,35 +25,6 @@ resource "github_repository" "digital-harbor-1man1-band" {
   }
 }
 
-# Removing this stuff because this was for GH pages - cloudflare pages requires
-# custom dns, not A/CNAME records which requries a different terraform provier
-provider "namecheap" {
-  user_name = var.username
-  api_user  = var.username
-  api_key   = var.api_key
-}
-#
-# resource "namecheap_domain_records" "_1man1-band" {
-#   domain     = var.domain
-#   email_type = "NONE"
-#
-#   # GH Pages servers
-#   dynamic "record" {
-#     for_each = ["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]
-#
-#     content {
-#       hostname = "@"
-#       type     = "A"
-#       address  = record.value
-#     }
-#   }
-#
-#   record {
-#     hostname = "www"
-#     type     = "CNAME"
-#     address  = "pypeaday.github.io"
-#   }
-# }
 
 provider "namecheapecosystem" {
   username  = var.username
@@ -75,6 +46,7 @@ provider "cloudflare" {
 data "cloudflare_accounts" "cloudflare_account_data" {
   name = "cloudflare@pype.aleeas.com"
 }
+
 # Cloudflare Pages project with managing build config
 resource "cloudflare_pages_project" "build_config" {
   account_id        = var.cloudflare_account_id
