@@ -181,3 +181,4 @@ ansible/roles/traefik/templates/usersFile
 *.terraform.lock.hcl
 *terraform.tfstate
 *terraform.tfstate.backup
+.github/delete-workflows.sh
