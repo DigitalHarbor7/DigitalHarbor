@@ -47,3 +47,4 @@ Another QR code for [1man1band.com](https://1man1band.com)
 ## Roadmap
 - Custom and interactive button design (Coming Soon)
 - Other providers besides namecheap for DNS
+- Analytics!
