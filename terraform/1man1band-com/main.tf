@@ -28,21 +28,21 @@ resource "namecheap_domain_records" "_1man1band-com" {
   domain     = "1man1band.com"
   email_type = "NONE"
 
-  # GH Pages servers
-  dynamic "record" {
-    for_each = ["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]
-
-    content {
-      hostname = "@"
-      type     = "A"
-      address  = record.value
-    }
-  }
+  # # GH Pages servers
+  # dynamic "record" {
+  #   for_each = ["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]
+  #
+  #   content {
+  #     hostname = "@"
+  #     type     = "A"
+  #     address  = record.value
+  #   }
+  # }
 
   record {
     hostname = "www"
     type     = "CNAME"
-    address  = "pypeaday.github.io"
+    address  = "1man1.band"
   }
 }
 
