@@ -1,52 +1,11 @@
-variable "github_token" {}
-variable "github_user" {}
-
-provider "github" {
-  owner = var.github_user
-  token = var.github_token
-}
-
-resource "github_repository" "digital-harbor-1man1-band" {
-  name        = "digital-harbor-1man1-band"
-  description = "Josh's digital harbor"
-  archived    = true
-
-  visibility = "public"
-
-  template {
-    owner                = "DigitalHarbor7"
-    repository           = "DigitalHarbor-template"
-    include_all_branches = false
-  }
-
-  pages {
-    build_type = "workflow"
-    cname      = var.domain
-  }
-}
-
-
-provider "namecheapecosystem" {
-  username  = var.username
-  api_user  = var.username
-  api_token = var.api_key
-}
-# Create a new Namecheap domain DNS
-resource "namecheap_domain_dns" "mydns" {
-  provider = namecheapecosystem
-  domain   = var.domain
-
-  nameservers = cloudflare_zone.zone_1man1-band.name_servers
-}
-
 provider "cloudflare" {
   api_token = var.cloudflare_api_token
 }
 
 data "cloudflare_accounts" "cloudflare_account_data" {
+  # TODO: variable this
   name = "cloudflare@pype.aleeas.com"
 }
-
 # Cloudflare Pages project with managing build config
 resource "cloudflare_pages_project" "build_config" {
   account_id        = var.cloudflare_account_id
@@ -55,6 +14,7 @@ resource "cloudflare_pages_project" "build_config" {
   source {
     type = "github"
     config {
+      # owner                         = "DigitalHarbor7"
       owner                         = "pypeaday"
       repo_name                     = "DigitalHarbor"
       production_branch             = "main"
@@ -70,19 +30,19 @@ resource "cloudflare_pages_project" "build_config" {
     production {}
   }
 }
-resource "cloudflare_pages_domain" "cf_1man1-band" {
+resource "cloudflare_pages_domain" "cf_domain" {
   account_id   = var.cloudflare_account_id
   project_name = cloudflare_pages_project.build_config.name
   domain       = var.domain
 }
 
-resource "cloudflare_zone" "zone_1man1-band" {
+resource "cloudflare_zone" "zone" {
   account_id = var.cloudflare_account_id
   zone       = var.domain
 }
 
-resource "cloudflare_record" "cf_1man1-band_record_www" {
-  zone_id         = cloudflare_zone.zone_1man1-band.id
+resource "cloudflare_record" "cf_domain_record_www" {
+  zone_id         = cloudflare_zone.zone.id
   name            = "www"
   value           = var.domain
   type            = "CNAME"
@@ -91,8 +51,8 @@ resource "cloudflare_record" "cf_1man1-band_record_www" {
   allow_overwrite = true
 }
 
-resource "cloudflare_record" "cf_1man1-band_record" {
-  zone_id         = cloudflare_zone.zone_1man1-band.id
+resource "cloudflare_record" "cf_domain_record" {
+  zone_id         = cloudflare_zone.zone.id
   name            = var.domain
   value           = "${replace(var.domain, ".", "-")}.pages.dev"
   type            = "CNAME"
