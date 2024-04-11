@@ -1,8 +1,8 @@
 # Digital Harbor
 
-#[![☁ ️Deploy to Cloudflare Pages](https://github.com/DigitalHarbor7/DigitalHarbor/actions/workflows/cloudflare-pages-deployment.yml/badge.svg)](https://github.com/DigitalHarbor7/DigitalHarbor/actions/workflows/cloudflare-pages-deployment.yml)# Deployment
+#[![☁ ️Deploy to Cloudflare Pages](https://github.com/DigitalHarbor7/DigitalHarbor/actions/workflows/cloudflare-pages-deployment.yml/badge.svg)](https://github.com/DigitalHarbor7/DigitalHarbor/actions/workflows/cloudflare-pages-deployment.yml)
 
-[![🌱 Deploy site to GH Pages](https://github.com/doompony/DigitalHarbor/actions/workflows/main.yml/badge.svg)](https://github.com/doompony/DigitalHarbor/actions/workflows/main.yml)
+#[![🌱 Deploy site to GH Pages](https://github.com/doompony/DigitalHarbor/actions/workflows/main.yml/badge.svg)](https://github.com/doompony/DigitalHarbor/actions/workflows/main.yml)
 
 ## Sales Pitch
 
