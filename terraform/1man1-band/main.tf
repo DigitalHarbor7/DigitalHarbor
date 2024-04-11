@@ -9,11 +9,12 @@ provider "github" {
 resource "github_repository" "digital-harbor-1man1-band" {
   name        = "digital-harbor-1man1-band"
   description = "Josh's digital harbor"
+  archived    = true
 
   visibility = "public"
 
   template {
-    owner                = "pypeaday"
+    owner                = "DigitalHarbor7"
     repository           = "DigitalHarbor-template"
     include_all_branches = false
   }
@@ -82,8 +83,7 @@ resource "cloudflare_pages_project" "build_config" {
   source {
     type = "github"
     config {
-      owner = "pypeaday"
-      # repo_name                     = "digital-harbor-1man1-band"
+      owner                         = "pypeaday"
       repo_name                     = "DigitalHarbor"
       production_branch             = "main"
       production_deployment_enabled = true

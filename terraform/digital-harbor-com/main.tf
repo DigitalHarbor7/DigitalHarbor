@@ -25,8 +25,7 @@ resource "namecheap_domain_records" "digital-harbor-com" {
   record {
     hostname = "www"
     type     = "CNAME"
-    # TODO: still being hosted on doompony - change when apprpriate
-    address = "doompony.github.io"
+    address  = "digitalharbor7.github.io"
   }
 }
 
