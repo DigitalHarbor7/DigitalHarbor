@@ -50,6 +50,7 @@ Option 0 - cloudflare pages WINNER WINNER
   - cloudflare zone config is supported in terraform - see 1man1-band
   - TODO: tempalte and modularize this stuff in a way that makes sense
   - bring caribbean kings into here and josh's other sites... try to get 1man1.band to serve up his DH from here, not the seperate repo. If I can do that then the seperate repo thing won't be necessary at all... just need to run a github action that wrangler deploys
+  - TODO: link organization github to a cloudflare account and use it for owner of all repos
 
 Option 1 - point to my server
   - requires traefik + LE on server with multiple domains configured for traefik
