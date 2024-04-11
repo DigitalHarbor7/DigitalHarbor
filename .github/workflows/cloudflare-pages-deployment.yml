@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      # TODO: remove this
+      - develop
 
 jobs:
   build-and-deploy:
