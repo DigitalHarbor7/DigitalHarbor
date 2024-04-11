@@ -30,7 +30,7 @@
 0. Ansible for server setup
   * cron job on server to clone... easy
   * git obvi
-1. Traefik config for multiple domains + LE
+1. Traefik config for multiple domains + LE (just one domain - will use CF pages for everyone else)
 2. DNS to server with terraform namecheap
 3. Actions setup to deploy code to server
 
@@ -44,34 +44,17 @@ v1 - digitalharbor.com/customer/ only
 
 v2 - customer-domain.com
 
+Option 0 - cloudflare pages WINNER WINNER
+  - namecheap-ecosystem provider to setup namecheap domain dns to cloudflare dns
+  - cloudflare pages configuration
+  - cloudflare zone config is supported in terraform - see 1man1-band
+  - TODO: tempalte and modularize this stuff in a way that makes sense
+  - bring caribbean kings into here and josh's other sites... try to get 1man1.band to serve up his DH from here, not the seperate repo. If I can do that then the seperate repo thing won't be necessary at all... just need to run a github action that wrangler deploys
+
 Option 1 - point to my server
   - requires traefik + LE on server with multiple domains configured for traefik
 
-Option 2 - cloudflare pages
-  - namecheap-ecosystem provider to setup namecheap domain dns to cloudflare dns
-  - cloudflare pages configuration
-  - this won't be easy because I have to manually add the website to cloudflare then find zone id and generate api key... not sure that can be automated
 
-Option 3 - AWS CloudFront 
-  - cloudfront + route53 with a CNAME record in namecheap pointing to the route53 dns hosted zone.
-
-Option 4 - GitHub pages
-  - terraform to create repository + pages
-  - workflow to create index.html... manual or via app
-  - namecheap domain records just like 1man1band.com... can test this easily with josh's repo
-
-
-## Cloudfront
-
-1. Terraform for deployment to cloudfront (cloudfront,s3, route 53?)
-2. DNS with namecheap with or without route 53 I'm sure... not sure what the easiest way to do that is since idk exactly what route 53 accomplishes
-
-
-
-## GH Pages (Can't stick with this for stripe)
-
-1. Actions Setup to deploy to GH Pages
-2. Terraform for namecheap DNS (I haven't done this successfully yet... need to practice)
 
 ## QR generation
 
