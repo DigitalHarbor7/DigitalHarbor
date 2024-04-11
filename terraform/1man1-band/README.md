@@ -2,9 +2,4 @@
 
 setup for 1man1.band
 
-1. custom dns
-2. github repo with terraform
-
-## TODOs
-
-Deploy this to cloudflare pages
+deployed to CF Pages with custom dns configured via terraform in namecheap and CF
