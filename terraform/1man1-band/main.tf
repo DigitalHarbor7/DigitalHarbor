@@ -77,34 +77,34 @@ provider "cloudflare" {
 data "cloudflare_accounts" "cloudflare_account_data" {
   name = "cloudflare@pype.aleeas.com"
 }
-# Cloudflare Pages project with managing build config
-resource "cloudflare_pages_project" "build_config" {
-  account_id        = var.cloudflare_account_id
-  name              = replace(var.domain, ".", "-")
-  production_branch = "main"
-  source {
-    type = "github"
-    config {
-      owner                         = "pypeaday"
-      repo_name                     = "digital-harbor-1man1-band"
-      production_branch             = "main"
-      production_deployment_enabled = true
-    }
-  }
-  build_config {
-    root_dir = "_site"
-  }
-  deployment_configs {
-    preview {}
-    production {}
-  }
-}
-
-resource "cloudflare_pages_domain" "cf_1man1-band" {
-  account_id   = var.cloudflare_account_id
-  project_name = cloudflare_pages_project.build_config.name
-  domain       = var.domain
-}
+# # Cloudflare Pages project with managing build config
+# resource "cloudflare_pages_project" "build_config" {
+#   account_id        = var.cloudflare_account_id
+#   name              = replace(var.domain, ".", "-")
+#   production_branch = "main"
+#   source {
+#     type = "github"
+#     config {
+#       owner                         = "pypeaday"
+#       repo_name                     = "digital-harbor-1man1-band"
+#       production_branch             = "main"
+#       production_deployment_enabled = true
+#     }
+#   }
+#   build_config {
+#     root_dir = "_site"
+#   }
+#   deployment_configs {
+#     # preview {}
+#     production {}
+#   }
+# }
+#
+# resource "cloudflare_pages_domain" "cf_1man1-band" {
+#   account_id   = var.cloudflare_account_id
+#   project_name = cloudflare_pages_project.build_config.name
+#   domain       = var.domain
+# }
 #
 # data "cloudflare_zones" "zone_1man1-band" {
 #   filter {
