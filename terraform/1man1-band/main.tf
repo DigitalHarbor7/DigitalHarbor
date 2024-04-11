@@ -75,6 +75,11 @@ resource "cloudflare_pages_domain" "cf_1man1-band" {
   project_name = cloudflare_pages_project.build_config.name
   domain       = var.domain
 }
+resource "cloudflare_pages_domain" "cf_www-1man1-band" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.build_config.name
+  domain       = "www.${var.domain}"
+}
 
 resource "cloudflare_zone" "zone_1man1-band" {
   account_id = var.cloudflare_account_id
@@ -84,7 +89,7 @@ resource "cloudflare_zone" "zone_1man1-band" {
 resource "cloudflare_record" "cf_1man1-band_record_www" {
   zone_id         = cloudflare_zone.zone_1man1-band.id
   name            = "www"
-  value           = var.domain
+  value           = "${replace(var.domain, ".", "-")}.pages.dev"
   type            = "CNAME"
   proxied         = true
   ttl             = 1
