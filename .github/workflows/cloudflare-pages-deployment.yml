@@ -1,0 +1,30 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Install latest version of Wrangler
+        run: npm install -g wrangler
+
+      - name: Set deployment variables and deploy
+        run: |
+          for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o -name "qr" -o name "example" \)); do
+            echo "Deploying $dir"
+            PROJECT_NAME=$(basename "$dir")
+            npx wrangler pages publish "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME"
+          done
