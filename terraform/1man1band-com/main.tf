@@ -54,6 +54,12 @@ resource "cloudflare_pages_domain" "my_domain" {
   domain       = var.domain
 }
 
+resource "cloudflare_pages_domain" "www_my_domain" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.build_config.name
+  domain       = "www.${var.domain}"
+}
+
 resource "cloudflare_zone" "my_zone" {
   account_id = var.cloudflare_account_id
   zone       = var.domain
@@ -62,7 +68,7 @@ resource "cloudflare_zone" "my_zone" {
 resource "cloudflare_record" "my_record_www" {
   zone_id         = cloudflare_zone.my_zone.id
   name            = "www"
-  value           = var.domain
+  value           = "${replace(var.domain, ".", "-")}.pages.dev"
   type            = "CNAME"
   proxied         = true
   ttl             = 1
