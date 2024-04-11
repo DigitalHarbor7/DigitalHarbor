@@ -4,27 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caribbean Kings</title>
+  <title>Carribbean Kings</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
   <!-- Include the Tailwind CSS framework -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/jamaica.png" />
 
   <style>
     body {
-      background: linear-gradient(to bottom, #73972D, #F9D457, #000000);
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("assets/josh_banner.jpeg");
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      /* Set the height to at least the viewport height */
+      margin: 0;
     }
 
     .button {
       margin-bottom: 20px;
     }
 
+    .button {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Other button styles */
+
     .icon {
-      width: 24px;
-      /* Adjust to the desired width */
-      height: 24px;
-      /* Adjust to the desired height */
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Add a glow border to the YouTube video */
+    iframe {
+      border: 5px solid #808080 !important;
+      box-shadow: 0 0 15px #808080 !important;
+      max-width: 100%;
+      /* Make sure the video is responsive */
     }
   </style>
 
@@ -33,29 +53,34 @@
 <body class="flex justify-center items-center min-h-screen">
   <div class="container mx-auto">
     <div class="max-w-lg mx-auto text-center">
-
-      <img src="images/pic4.jpeg" alt="Digital Harbor" width="300" height="300" class="mx-auto">
+      <img src="assets/images/pic4.jpeg" alt="Josh1" width="150" height="150" class="mx-auto mt-4 rounded-full">
       <h1 class="text-3xl text-white font-bold mt-4">👑Caribbean Kings👑</h1>
       <div class="text-white mt-4">
-        <p>We are the Caribbean Kings entertainment group
+        <p>
+          We are the Caribbean Kings entertainment group
         </p>
       </div>
       <div class="mt-8">
 
-        <!-- Instagram  -->
-        <a href="http://instagram.com/caribbean_kingss" target="_blank" rel="noopener"
-          class="button bg-gradient-to-br from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-          <img class="icon inline-block align-middle mr-2" src="https://cdn.simpleicons.org/instagram/black/white">
-          <span class="button-label">Instagram</span>
-        </a>
-        <!-- YouTube video -->
-        <div class="flex justify-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/_4WcbWNFQpo?si=dcZHTtOpBFrHKm-8"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen class="video"></iframe>
-        </div>
+        <!-- Instagram Button with Tailwind CSS classes -->
 
+        <a href="http://instagram.com/caribbean_kingss" target="_blank" rel="noopener"
+          class="button bg-gradient-to-br from-pink-600 to-purple-600 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-4 rounded-full block mb-2 text-2xl flex items-center justify-center">
+          <img class="icon inline-block align-middle mr-2" src="https://cdn.simpleicons.org/instagram/black/white" />
+          <span class="button-label ml-3">Instagram</span>
+        </a>
+
+
+      </div>
+      <!-- Embedded Youtube Video -->
+      <div class="mt-8">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_4WcbWNFQpo?si=dcZHTtOpBFrHKm-8"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="mt-8 text-white text-center">
+        <p>Email - JoshPayneMusic@gmail.com</p>
         <footer class="text-center mt-8">
           <p class="text-gray-500">View source <a href="https://github.com/DigitalHarbor7/DigitalHarbor" target="_blank"
               rel="noopener" class="text-blue-500 hover:text-blue-700">here</a>.</p>
@@ -63,9 +88,7 @@
         </footer>
       </div>
     </div>
-
   </div>
-
 </body>
 
 </html>
