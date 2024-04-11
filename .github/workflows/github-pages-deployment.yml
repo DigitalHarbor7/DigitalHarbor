@@ -1,5 +1,5 @@
 ---
-name: 🌱 Deploy site
+name: 🌱 Deploy site to GH Pages
 on:
   workflow_dispatch:
   push:
