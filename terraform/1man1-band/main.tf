@@ -83,8 +83,7 @@ resource "cloudflare_pages_project" "build_config" {
   source {
     type = "github"
     config {
-      owner = "pypeaday"
-      # repo_name                     = "digital-harbor-1man1-band"
+      owner                         = "pypeaday"
       repo_name                     = "DigitalHarbor"
       production_branch             = "main"
       production_deployment_enabled = true
