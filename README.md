@@ -16,7 +16,7 @@ I'm here to help by building your [Digital Harbor](https://mydigitalharbor.com)
 The cost to build your site is $100, then the my options are:
 
 1. hand it off - you handle hosting
-2. host it at `https://doompony.github.io/DigitalHarbor/{Your Route}.html` for $5/month. [Example](https://doompony.github.io/DigitalHarbor/example.html)
+2. host it at `https://mydigitalharbor.com/{Your Route}` for $5/month. [Example](https://mydigitalharbor.com/1man1-band)
 4. host it at a custom domain: $200 Domain Setup (DNS, SSL, etc.) + $10/month + Domain Cost [1man1band.com](https://1man1band.com)
 
 ## QR Codes
@@ -43,3 +43,7 @@ Another QR code for [1man1band.com](https://1man1band.com)
 1. Your Digital Harbor is inspired from the [Little Link](https://littlelink.io) project. Your Digital Harbor is built with tailwind css and uses [simpleicons](https://simpleicons.org)
 2. I host your page for you (the main service of Digital Harbor)
 3. Artisanal QR Codes generated with Stable Diffusion
+
+## Roadmap
+- Custom and interactive button design (Coming Soon)
+- Other providers besides namecheap for DNS
