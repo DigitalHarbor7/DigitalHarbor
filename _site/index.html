@@ -77,14 +77,6 @@
 
 
   <script>
-    var baseUrl = "https://mydigitalharbor.com/";
-    // uncomment when doing local - don't commit it though
-    // var baseUrl = "http://localhost:8000/";
-
-    function goToPage(page) {
-      event.preventDefault(); // Prevent default behavior of anchor tag
-      window.open(baseUrl + page, '_blank').focus();
-    }
     // Function to open/close the sidebar
     function toggleSidebar() {
       var sidebar = document.getElementById("sidebar");
@@ -152,7 +144,7 @@
         </a>
 
         <!-- example -->
-        <a href="javascript:void(0);" onclick="goToPage('example')" target="_blank" rel="noopener"
+        <a href="example/" target="_blank" rel="noopener"
           class="button bg-gradient-to-br from-indigo-500 to-pink-700 hover:from-pink-700 hover:to-indigo-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
           <img class="icon" src="/assets/images/unicorn.png">
           <span class="button-label">Example Digital Harbor</span>
@@ -165,7 +157,7 @@
         </a>
 
         <!-- Caribbean Kings -->
-        <a href="javascript:void(0);" onclick="goToPage('carribbean-kings')" target=" _blank" rel="noopener"
+        <a href="carribbean-kings/" target=" _blank" rel="noopener"
           class="button bg-gradient-to-br from-yellow-500 to-green-700 hover:from-green-700 hover:to-yellow-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
           <img class="icon" src="/carribbean-kings/assets/images/jamaica.png">
           <span class="button-label">Caribbean Kings</span>
