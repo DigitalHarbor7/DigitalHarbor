@@ -37,7 +37,7 @@ Verify doomopny is empty and all DH stuff is in Org
 
 v1 - digitalharbor.com/customer/ only
 
-1. this is on GH pages, so SSL is handled for me on my domain and I can serve up routes easy
+1. this is on Cloudflare pages, so SSL is handled for me on my domain and I can serve up routes easy
 
 v2 - customer-domain.com
 
