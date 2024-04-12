@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #2c3e50, #2c3e50);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <!-- Images will be loaded here -->
+  </div>
+
+  <script>
+    window.onload = function () {
+      var gallery = document.getElementById("gallery");
+
+      // Function to fetch images and display them in the gallery
+      function fetchImages() {
+        fetch('/qr/index.json')
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(folder => {
+              folder.images.forEach(image => {
+                var img = document.createElement('img');
+                img.src = folder.folder + '/' + image;
+                img.alt = image;
+                img.className = "w-full h-auto";
+                gallery.appendChild(img);
+              });
+            });
+          })
+          .catch(error => console.error('Error fetching images:', error));
+      }
+
+      // Call the function to fetch and display images
+      fetchImages();
+    }
+  </script>
+</body>
+
+</html>
