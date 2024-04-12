@@ -4,7 +4,7 @@ import json
 
 def generate_image_list(root_dir):
     image_list = []
-    for folder_name, _, files in os.walk(root_dir):
+    for folder_name, _, files in os.walk(f"{root_dir}/digital-harbor"):
         if files:
             folder_images = [f for f in files if f.endswith(".png")]
             if folder_images:
@@ -19,7 +19,7 @@ def generate_json_file(image_list, output_file):
 
 
 if __name__ == "__main__":
-    root_dir = "_site/qr/digital-harbor"
+    root_dir = "_site/qr"
     output_file = "_site/qr/index.json"
 
     image_list = generate_image_list(root_dir)
