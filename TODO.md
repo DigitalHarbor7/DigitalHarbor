@@ -1,18 +1,15 @@
 # TODOs
 
+domain: mydigitalharbor.com
+
 ## Git
 
-1. move everything off doomopny to pypeaday
-2. look for any reerences to pages on doompony gh
-
+Verify doomopny is empty and all DH stuff is in Org
 
 ## Initial setup I need to do
 
-1. Buy a test domain (use mydigitalharbor.com and send it to VM, eventually to linode server)
+1. cloudflare/namecheap modules in terraform
 2. Template out traefik config with Ansible if using a server, multiple domains + LE
-3. Practice with terraform namecheap provider
-    * deploy something to GH Pages with SSL and custom domain 
-    * setup DNS to GH Pages from namecheap with terraform
 4. create markata template from index.html and code to use Markdown and build with Markata
 
 ## Links/buttons
