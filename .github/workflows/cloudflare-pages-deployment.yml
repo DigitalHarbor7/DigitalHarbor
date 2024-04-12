@@ -14,13 +14,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          ref: main
+      #   with:
+      #     ref: main
 
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.sha }}
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
+      #   with:
+      #     ref: ${{ github.sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -34,25 +34,42 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
-          MAIN_COMMIT=$(git rev-parse main)
-          CURRENT_COMMIT=${{ github.sha }}
           for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o -name "payment" -o -name "qr" -o -name "example" \)); do
-            diff_output=$(git diff --name-only $MAIN_COMMIT $CURRENT_COMMIT -- $dir)
               echo "Deploying $dir"
               PROJECT_NAME=$(basename "$dir")
               npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" else
-            else
-              echo "Skipping deployment for $dir as there are no file changes."
             fi
           done
 
           # For people with multiple domains - like josh having 1man1.band and 1man1band.com, to ensure I have just the 1 index.html I'll hardcode the seperate project deployment
-          diff_output=$(git diff --name-only $MAIN_COMMIT $CURRENT_COMMIT -- _site/1man1-band)
-          if [[ -n $diff_output ]]; then
-            echo "deploying 1man1band.com"
-            npx wrangler pages deploy "_site/1man1-band" --project-name="1man1band-com"
-          else 
-            echo "Skipping 1man1band.com"
-          fi
+          echo "deploying 1man1band.com"
+          npx wrangler pages deploy "_site/1man1-band" --project-name="1man1band-com"
 
           npx wrangler pages deploy "_site" --project-name="mydigitalharbor-com"
+
+      # - name: Set deployment variables and deploy only if there's changes
+      #   env:
+      #     CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      #   run: |
+      #     MAIN_COMMIT=$(git rev-parse main)
+      #     CURRENT_COMMIT=${{ github.sha }}
+      #     for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o -name "payment" -o -name "qr" -o -name "example" \)); do
+      #       diff_output=$(git diff --name-only $MAIN_COMMIT $CURRENT_COMMIT -- $dir)
+      #         echo "Deploying $dir"
+      #         PROJECT_NAME=$(basename "$dir")
+      #         npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" else
+      #       else
+      #         echo "Skipping deployment for $dir as there are no file changes."
+      #       fi
+      #     done
+
+      #     # For people with multiple domains - like josh having 1man1.band and 1man1band.com, to ensure I have just the 1 index.html I'll hardcode the seperate project deployment
+      #     diff_output=$(git diff --name-only $MAIN_COMMIT $CURRENT_COMMIT -- _site/1man1-band)
+      #     if [[ -n $diff_output ]]; then
+      #       echo "deploying 1man1band.com"
+      #       npx wrangler pages deploy "_site/1man1-band" --project-name="1man1band-com"
+      #     else 
+      #       echo "Skipping 1man1band.com"
+      #     fi
+
+      #     npx wrangler pages deploy "_site" --project-name="mydigitalharbor-com"
