@@ -11,19 +11,13 @@
 
     }
   </style>
-</head>
-
-<body>
-  <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-    <!-- Images will be loaded here -->
-  </div>
-
-  <script>
+  <script defer>
     window.onload = function () {
       var gallery = document.getElementById("gallery");
 
       // Function to fetch images and display them in the gallery
       function fetchImages() {
+        console.log("fetching images")
         fetch('/qr/index.json')
           .then(response => response.json())
           .then(data => {
@@ -32,18 +26,31 @@
                 var img = document.createElement('img');
                 img.src = folder.folder + '/' + image;
                 img.alt = image;
-                img.className = "w-full h-auto";
+                img.className = "w-8 h-8 object-cover rounded-sm";
+                img.classList.add("m-auto"); // Center the image
                 gallery.appendChild(img);
               });
             });
           })
           .catch(error => console.error('Error fetching images:', error));
       }
-
-      // Call the function to fetch and display images
+      console.log("invoking function")
       fetchImages();
+
     }
   </script>
+</head>
+
+<body>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-semibold mb-4">Image Gallery</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div id="gallery"></div>
+
+      <!-- Images will be loaded here -->
+    </div>
+  </div>
+
 </body>
 
 </html>
