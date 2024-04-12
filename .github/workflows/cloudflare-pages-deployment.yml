@@ -27,7 +27,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
-          for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o -name "qr" -o -name "example" \)); do
+          for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o name "payment" -o -name "qr" -o -name "example" \)); do
             echo "Deploying $dir"
             PROJECT_NAME=$(basename "$dir")
             npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME"
