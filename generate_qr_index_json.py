@@ -19,7 +19,7 @@ def generate_json_file(image_list, output_file):
 
 
 if __name__ == "__main__":
-    root_dir = "_site/qr"
+    root_dir = "_site/qr/digital-harbor"
     output_file = "_site/qr/index.json"
 
     image_list = generate_image_list(root_dir)
