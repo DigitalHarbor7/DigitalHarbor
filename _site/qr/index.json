@@ -3,8 +3,11 @@
         "folder": "digital-harbor",
         "images": [
             "08179-4087718973-Eiffel Tower in the snow with a sky background, andreas rocha, matte painting concept art, a detailed matte painting.png",
-            "qr1.png",
-            "qr2.png"
+            "pirate-ship.png",
+            "mech.png",
+            "pyramid.png",
+            "pirate-ship2.png",
+            "eiffel-tower.png"
         ]
     },
     {
@@ -17,13 +20,6 @@
             "image(3).png",
             "image(5).png",
             "image(6).png"
-        ]
-    },
-    {
-        "folder": "carribbean-kings/example2",
-        "images": [
-            "qr-base.png",
-            "qr-raw.png"
         ]
     },
     {
