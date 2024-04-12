@@ -40,6 +40,6 @@ jobs:
           # For people with multiple domains - like josh having 1man1.band and 1man1band.com, to ensure I have just the 1 index.html I'll hardcode the seperate project deployment
           if [[ $(git diff --name-only ${{ github.sha }} -- _site/1man1-band) ]]; then
             npx wrangler pages deploy "_site/1man1-band" --project-name="1man1band-com"
-          done
+          fi
 
           npx wrangler pages deploy "_site" --project-name="mydigitalharbor-com"
