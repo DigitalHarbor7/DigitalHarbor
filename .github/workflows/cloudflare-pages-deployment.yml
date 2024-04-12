@@ -28,7 +28,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
           for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o -name "payment" -o -name "qr" -o -name "example" \)); do
-          diff_output=$(git diff --name-only ${{ github.sha }} -- $dir)
+          diff_output=$(git diff --name-only main...${{ github.sha }} -- $dir)
           if [[ -n $diff_output ]]; then
             echo "Deploying $dir"
             PROJECT_NAME=$(basename "$dir")
@@ -39,7 +39,7 @@ jobs:
           done
 
           # For people with multiple domains - like josh having 1man1.band and 1man1band.com, to ensure I have just the 1 index.html I'll hardcode the seperate project deployment
-          diff_output=$(git diff --name-only ${{ github.sha }} -- _site/1man1-band)
+          diff_output=$(git diff --name-only main...${{ github.sha }} -- _site/1man1-band)
           if [[ -n $diff_output ]]; then
             echo "deploying 1man1band.com"
             npx wrangler pages deploy "_site/1man1-band" --project-name="1man1band-com"
