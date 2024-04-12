@@ -5,52 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Gallery</title>
+  <!-- Include the Tailwind CSS framework -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(to bottom, #2c3e50, #2c3e50);
-
     }
   </style>
-  <script defer>
-    window.onload = function () {
-      var gallery = document.getElementById("gallery");
-
-      // Function to fetch images and display them in the gallery
-      function fetchImages() {
-        console.log("fetching images")
-        fetch('/qr/index.json')
-          .then(response => response.json())
-          .then(data => {
-            data.forEach(folder => {
-              folder.images.forEach(image => {
-                var img = document.createElement('img');
-                img.src = folder.folder + '/' + image;
-                img.alt = image;
-                img.className = "w-8 h-8 object-cover rounded-sm";
-                img.classList.add("m-auto"); // Center the image
-                gallery.appendChild(img);
-              });
-            });
-          })
-          .catch(error => console.error('Error fetching images:', error));
-      }
-      console.log("invoking function")
-      fetchImages();
-
-    }
-  </script>
 </head>
 
 <body>
   <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-semibold mb-4">Image Gallery</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <div id="gallery"></div>
+    <h1 class="text-3xl font-semibold text-white mb-4">Image Gallery</h1>
+    <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+    <script defer>
+      window.onload = function () {
+        var gallery = document.getElementById("gallery");
 
-      <!-- Images will be loaded here -->
-    </div>
+        // Function to fetch images and display them in the gallery
+        function fetchImages() {
+          fetch('/qr/index.json')
+            .then(response => response.json())
+            .then(data => {
+              data.forEach(folder => {
+                folder.images.forEach(image => {
+                  var img = document.createElement('img');
+                  img.src = folder.folder + '/' + image;
+                  img.alt = image;
+                  img.className = "w-full h-auto object-cover rounded-lg"; // Set image width to full width of parent container
+                  img.classList.add("mx-auto"); // Center the image horizontally
+                  gallery.appendChild(img);
+                });
+              });
+            })
+            .catch(error => console.error('Error fetching images:', error));
+        }
+
+        // Call the function to fetch and display images
+        fetchImages();
+      }
+    </script>
   </div>
-
 </body>
 
 </html>
