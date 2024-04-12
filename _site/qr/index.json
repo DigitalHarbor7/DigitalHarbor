@@ -1,0 +1,42 @@
+[
+    {
+        "folder": "digital-harbor",
+        "images": [
+            "08179-4087718973-Eiffel Tower in the snow with a sky background, andreas rocha, matte painting concept art, a detailed matte painting.png",
+            "qr1.png",
+            "qr2.png"
+        ]
+    },
+    {
+        "folder": "1man1band",
+        "images": [
+            "image(1).png",
+            "image(4).png",
+            "image.png",
+            "image(2).png",
+            "image(3).png",
+            "image(5).png",
+            "image(6).png"
+        ]
+    },
+    {
+        "folder": "carribbean-kings/example2",
+        "images": [
+            "qr-base.png",
+            "qr-raw.png"
+        ]
+    },
+    {
+        "folder": "carribbean-kings/example1",
+        "images": [
+            "qr-example.png",
+            "qr-template.png"
+        ]
+    },
+    {
+        "folder": "carribbean-kings/sd-data",
+        "images": [
+            "08051-1338781332-masterpiece, best quality, mecha, no humans, black armor, blue eyes, science fiction, fire, laser canon beam, war, conflict, des.png"
+        ]
+    }
+]
