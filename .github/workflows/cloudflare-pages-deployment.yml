@@ -37,7 +37,7 @@ jobs:
           for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o -name "payment" -o -name "qr" -o -name "example" \)); do
               echo "Deploying $dir"
               PROJECT_NAME=$(basename "$dir")
-              npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" else
+              npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" 
           done
 
           # For people with multiple domains - like josh having 1man1.band and 1man1band.com, to ensure I have just the 1 index.html I'll hardcode the seperate project deployment
