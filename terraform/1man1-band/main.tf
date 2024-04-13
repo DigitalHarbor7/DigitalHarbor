@@ -36,7 +36,7 @@ resource "namecheap_domain_dns" "mydns" {
   provider = namecheapecosystem
   domain   = var.domain
 
-  nameservers = cloudflare_zone.zone_1man1-band.name_servers
+  nameservers = cloudflare_zone.my_zone.name_servers
 }
 
 provider "cloudflare" {
@@ -59,6 +59,7 @@ resource "cloudflare_pages_project" "build_config" {
       repo_name                     = "DigitalHarbor"
       production_branch             = "main"
       production_deployment_enabled = true
+      preview_branch_includes       = ["develop"]
     }
   }
   build_config {
@@ -66,28 +67,37 @@ resource "cloudflare_pages_project" "build_config" {
     root_dir = "_site/1man1band"
   }
   deployment_configs {
-    # preview {}
+    preview {}
     production {}
   }
 }
-resource "cloudflare_pages_domain" "cf_1man1-band" {
+resource "cloudflare_pages_domain" "my_domain" {
   account_id   = var.cloudflare_account_id
   project_name = cloudflare_pages_project.build_config.name
   domain       = var.domain
 }
-resource "cloudflare_pages_domain" "cf_www-1man1-band" {
+resource "cloudflare_pages_domain" "www_my_domain" {
   account_id   = var.cloudflare_account_id
   project_name = cloudflare_pages_project.build_config.name
   domain       = "www.${var.domain}"
 }
 
-resource "cloudflare_zone" "zone_1man1-band" {
+resource "cloudflare_zone" "my_zone" {
   account_id = var.cloudflare_account_id
   zone       = var.domain
 }
 
-resource "cloudflare_record" "cf_1man1-band_record_www" {
-  zone_id         = cloudflare_zone.zone_1man1-band.id
+resource "cloudflare_record" "my_record_develop" {
+  zone_id         = cloudflare_zone.my_zone.id
+  name            = "develop"
+  value           = "develop.${replace(var.domain, ".", "-")}.pages.dev"
+  type            = "CNAME"
+  proxied         = true
+  ttl             = 1
+  allow_overwrite = true
+}
+resource "cloudflare_record" "my_record_www" {
+  zone_id         = cloudflare_zone.my_zone.id
   name            = "www"
   value           = "${replace(var.domain, ".", "-")}.pages.dev"
   type            = "CNAME"
@@ -96,8 +106,8 @@ resource "cloudflare_record" "cf_1man1-band_record_www" {
   allow_overwrite = true
 }
 
-resource "cloudflare_record" "cf_1man1-band_record" {
-  zone_id         = cloudflare_zone.zone_1man1-band.id
+resource "cloudflare_record" "my_record" {
+  zone_id         = cloudflare_zone.my_zone.id
   name            = var.domain
   value           = "${replace(var.domain, ".", "-")}.pages.dev"
   type            = "CNAME"
