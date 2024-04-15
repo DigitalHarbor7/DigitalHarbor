@@ -21,21 +21,7 @@ The cost to build your site is one-time fee of $100, and I remain available for 
 
 ## QR Codes
 
-Here are some examples of QR Codes
-
->I will generate QR Codes for you for $25/code that you choose to use
-
-QR code for [Digital Harbor](https://mydigitalharbor.com)
-![Example](_site/qr/digital-harbor/qr1.png)
-
-QR code for [Digital Harbor](https://mydigitalharbor.com)
-![Example](_site/qr/digital-harbor/qr2.png)
-
-QR code for [1man1band.com](https://1man1band.com)
-![Example](_site/qr/1man1band/image.png)
-
-Another QR code for [1man1band.com](https://1man1band.com)
-![Example](_site/qr/1man1band/image(1).png)
+See QR code examples [here](https://mydigitalharbor.com/qr)
 
 
 ## Services
