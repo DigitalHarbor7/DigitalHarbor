@@ -21,7 +21,6 @@ jobs:
 
       - name: Tag the version
         run: |
-          # make sure we're going to get all the tags?
           git config remote.origin.fetch '+refs/tags/*:refs/tags/*'
           git fetch -a
           # find most recent tag
@@ -41,6 +40,7 @@ jobs:
           next_tag="v$next_number"
           echo "Next tag: $next_tag"
           # Print the next tag
+          git tag $next_tag
           git push origin $next_tag
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
