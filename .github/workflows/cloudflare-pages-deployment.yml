@@ -34,6 +34,8 @@ jobs:
 
           # Increment the highest number by 1
           next_number=$(($highest_number + 1))
+          # Github is like... not getting this with just +1
+          next_number=$(($next_number + 1))
 
           # Set a variable to the next highest number
           next_tag="v$next_number"
