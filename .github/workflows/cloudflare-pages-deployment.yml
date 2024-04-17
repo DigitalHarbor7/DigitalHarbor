@@ -37,10 +37,9 @@ jobs:
 
           # Set a variable to the next highest number
           next_tag="v$next_number"
-
+          echo "Next tag: $next_tag"
           # Print the next tag
-          git tag $next_tag
-          git push --tags
+          git push origin $next_tag
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
         if: github.ref == 'refs/heads/main'
