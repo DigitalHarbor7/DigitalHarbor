@@ -21,7 +21,7 @@ jobs:
 
       - name: Tag the version
         run: |
-
+          git fetch -a
           # find most recent tag
           # Get the list of git tags
           tags=$(git tag --sort=-version:refname)
