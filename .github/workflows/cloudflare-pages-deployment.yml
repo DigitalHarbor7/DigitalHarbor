@@ -40,7 +40,7 @@ jobs:
           highest_tag=$(echo "$tags" | head -n 1 | sed 's/v//')
 
           # Convert the highest tag to an integer
-          highest_number=$((10#$highest_tag))
+          highest_number=$(($highest_tag))
 
           # Increment the highest number by 1
           next_number=$((highest_number + 1))
