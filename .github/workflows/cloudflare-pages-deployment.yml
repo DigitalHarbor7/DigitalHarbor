@@ -10,6 +10,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
@@ -17,20 +19,8 @@ jobs:
       #   with:
       #     ref: main
 
-      - name: Pages branch
+      - name: Tag the version
         run: |
-          # Get the current branch name
-          branch=$(git rev-parse --abbrev-ref HEAD)
-
-          # Check if the current branch is "main"
-          if [ "$branch" == "main" ]; then
-            echo "You are on the main branch."
-
-            git checkout -b page
-            git push --set-upstream origin page -f
-          else
-            echo "You are not on the main branch."
-          fi
 
           # find most recent tag
           # Get the list of git tags
@@ -51,6 +41,15 @@ jobs:
           # Print the next tag
           git tag next_tag
           git push --tags
+      # Commit all changed files back to the repository
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        if: github.ref == 'refs/heads/main'
+        with:
+          branch: pages
+          push_options: '--force'
+          create_branch: true
+          commit_message: "Deploy to Cloudflare Pages"
+
 
       # - name: Checkout code
       #   uses: actions/checkout@v2
