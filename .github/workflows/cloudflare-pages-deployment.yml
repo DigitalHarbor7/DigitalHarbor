@@ -39,7 +39,7 @@ jobs:
           next_tag="v$next_number"
 
           # Print the next tag
-          git tag next_tag
+          git tag $next_tag
           git push --tags
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
