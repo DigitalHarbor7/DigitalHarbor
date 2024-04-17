@@ -17,6 +17,29 @@ jobs:
       #   with:
       #     ref: main
 
+      - name: Pages branch
+        run: |
+          git checkout -b page
+          git push --set-upstream origin page -f
+          # find most recent tag
+          # Get the list of git tags
+          tags=$(git tag --sort=-version:refname)
+
+          # Extract the highest number from the tags
+          highest_tag=$(echo "$tags" | head -n 1 | sed 's/v//')
+
+          # Convert the highest tag to an integer
+          highest_number=$((10#$highest_tag))
+
+          # Increment the highest number by 1
+          next_number=$((highest_number + 1))
+
+          # Set a variable to the next highest number
+          next_tag="v$next_number"
+
+          # Print the next tag
+          echo "Next tag: $next_tag"
+
       # - name: Checkout code
       #   uses: actions/checkout@v2
       #   with:
