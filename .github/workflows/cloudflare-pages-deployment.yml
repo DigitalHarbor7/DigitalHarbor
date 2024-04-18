@@ -39,6 +39,8 @@ jobs:
             echo $@
           }
 
+          ls -alh
+
           # pip install git+https://github.com/DigitalHarbor7/digital-harbor-site-generator.git
           pip install -e digital-harbor-site-generator
           dhsg build --site-configs ./site-configs --output-dir _site --assets-dir --templates-dir ./templates
