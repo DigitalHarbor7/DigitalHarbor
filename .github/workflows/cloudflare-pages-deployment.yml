@@ -23,6 +23,7 @@ jobs:
         continue-on-error: true
         with:
           repository: DigitalHarbor7/digital-harbor-site-generator
+          ref: refs/heads/main
           token: ${{ secrets.GH_ACCESS_TOKEN }}
 
 
