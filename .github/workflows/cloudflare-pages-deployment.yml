@@ -19,6 +19,12 @@ jobs:
       #   with:
       #     ref: main
 
+      - uses: actions/checkout@v1  
+        with:
+          repository: DigitalHarbor7/digital-harbor-site-generator
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -31,7 +37,8 @@ jobs:
             echo $@
           }
 
-          pip install git+https://github.com/DigitalHarbor7/digital-harbor-site-generator.git
+          # pip install git+https://github.com/DigitalHarbor7/digital-harbor-site-generator.git
+          pip install -e digital-harbor-site-generator
           dhsg build --site-configs ./site-configs --output-dir _site --assets-dir --templates-dir ./templates
 
           # git checkout -b pages
