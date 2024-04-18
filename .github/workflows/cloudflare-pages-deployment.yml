@@ -45,7 +45,7 @@ jobs:
           pip install -e ../digital-harbor-site-generator
           dhsg build --site-configs ./site-configs --output-dir _site --assets-dir --templates-dir ./templates
 
-          # git checkout -b pages
+          git checkout -b pages
           # git add _static
           # git commit -m "Build site"
 
