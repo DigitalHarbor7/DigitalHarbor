@@ -42,14 +42,11 @@ jobs:
           # Print the next tag
           git tag $next_tag
           git push origin $next_tag
-      # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        # if: github.ref == 'refs/heads/main'
-        with:
-          branch: pages
-          push_options: '--force'
-          create_branch: true
-          commit_message: "Deploy to Cloudflare Pages"
+      - name: Tag the version
+        # if: github.ref == 'refs/heads/main' 
+        run: |
+          git checkout -b pages
+          git push -u origin pages --force
 
 
       # - name: Checkout code
