@@ -51,18 +51,18 @@ def generate_html_link(
             hover:from-{gradient_end_color}-{gradient_end_value}
             hover:to-{gradient_start_color}-{gradient_start_value} 
             text-{text_color}
-            font-bold 
-            py-5 
+            font-inter
+            font-bold
+            py-4
             px-4 
-            rounded-3xl
+            rounded-full
             block 
-            mb-2 
             text-{text_size_id} 
             flex
             items-center 
             justify-center"
             > 
-        <img class="icon inline-block align-middle mr-2"
+        <img class="icon h-8 w-8 inline-block align-middle mr-2"
             src="https://cdn.simpleicons.org/{text.lower()}/black/white" /> <span class="button-label">{text.title()}</span>
         </a>
     """
@@ -149,21 +149,10 @@ def main(icons_list: List[str]):
         <head>
             <title>Custom Button Preview</title>
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
             <!-- Include the Tailwind CSS framework -->
             <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
             <style>
-                body {{
-                    font-family: 'Open Sans', Arial, sans-serif;
-                    padding: 0;
-                    margin: 0;
-                }}
-                .button {{
-                    margin-bottom: 20px;
-                }}
-                .icon {{
-                    width: 24px;
-                    height: 24px;
-                }}
             </style>
         </head>
         <body>

@@ -10,12 +10,72 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       #   with:
       #     ref: main
+
+      - uses: actions/checkout@v1  
+        continue-on-error: true
+        with:
+          repository: DigitalHarbor7/digital-harbor-site-generator
+          ref: refs/heads/main
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Build site
+        run: |
+          # placeholde dhsg function that just echos command
+          dhsg () {
+            echo $@
+          }
+
+          ls -alh
+
+          # pip install git+https://github.com/DigitalHarbor7/digital-harbor-site-generator.git
+          pip install -e ../digital-harbor-site-generator
+          dhsg build --site-configs ./site-configs --output-dir _site --assets-dir --templates-dir ./templates
+
+          # git checkout -b pages
+          # git add _static
+          # git commit -m "Build site"
+
+      - name: Tag the version
+        run: |
+          git config remote.origin.fetch '+refs/tags/*:refs/tags/*'
+          git fetch -a
+          # find most recent tag
+          # Get the list of git tags
+          tags=$(git tag --sort=-version:refname)
+
+          # Extract the highest number from the tags
+          highest_tag=$(echo "$tags" | head -n 1 | sed 's/v//')
+
+          # Convert the highest tag to an integer
+          highest_number=$(($highest_tag))
+
+          # Increment the highest number by 1
+          next_number=$(($highest_number + 1))
+
+          # Set a variable to the next highest number
+          next_tag="v$next_number"
+          echo "Next tag: $next_tag"
+          # Print the next tag
+          git tag $next_tag
+          git push origin $next_tag
+      - name: Deploy site to prd
+        if: github.ref == 'refs/heads/main' 
+        run: git push -u origin pages --force
+
 
       # - name: Checkout code
       #   uses: actions/checkout@v2
@@ -37,7 +97,7 @@ jobs:
           for dir in $(find _site/* -maxdepth 0 -type d -not \( -name "assets" -o -name "payment" -o -name "qr" -o -name "example" \)); do
               echo "Deploying $dir"
               PROJECT_NAME=$(basename "$dir")
-              npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" 
+              npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" || echo "failed deploying $PROJECT_NAME"
           done
 
           # For people with multiple domains - like josh having 1man1.band and 1man1band.com, to ensure I have just the 1 index.html I'll hardcode the seperate project deployment
