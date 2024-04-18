@@ -3,9 +3,10 @@ name: ☁ ️Deploy to Cloudflare Pages
 on:
   push:
     branches:
-      - main
-      # TODO: remove this
-      - develop
+      # - main
+      # - develop
+      - pages
+      - pages-dev
 
 jobs:
   build-and-deploy:
@@ -16,37 +17,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      #   with:
-      #     ref: main
-
-      - uses: actions/checkout@v1  
-        with:
-          repository: DigitalHarbor7/digital-harbor-site-generator
-          ref: refs/heads/main
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-
-
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.10"
-
-      - name: Build site
-        run: |
-          # placeholde dhsg function that just echos command
-          dhsg () {
-            echo $@
-          }
-
-          ls -alh
-
-          # pip install git+https://github.com/DigitalHarbor7/digital-harbor-site-generator.git
-          pip install -e ../digital-harbor-site-generator
-          dhsg build --site-configs ./site-configs --output-dir _site --assets-dir --templates-dir ./templates
-
-          git checkout -b pages
-          # git add _static
-          # git commit -m "Build site"
 
       - name: Tag the version
         run: |
@@ -71,15 +41,6 @@ jobs:
           # Print the next tag
           git tag $next_tag
           git push origin $next_tag
-      - name: Deploy site to prd
-        if: github.ref == 'refs/heads/main' 
-        run: git push -u origin pages --force
-
-
-      # - name: Checkout code
-      #   uses: actions/checkout@v2
-      #   with:
-      #     ref: ${{ github.sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
