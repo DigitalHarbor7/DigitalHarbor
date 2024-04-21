@@ -9,7 +9,7 @@ on:
       - pages-dev
 
 jobs:
-  build-and-deploy:
+  tag-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
