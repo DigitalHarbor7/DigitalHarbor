@@ -2,10 +2,10 @@
 name: 🌱 Deploy site to GH Pages
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     # - main
-  #     - pages
+  push:
+    branches:
+      # - main
+      - pages
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
