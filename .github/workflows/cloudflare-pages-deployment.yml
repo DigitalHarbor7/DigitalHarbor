@@ -21,15 +21,17 @@ jobs:
       contents: write
 
     steps:
+      # TODO: when run via workflow_run it's only checking out the main branch - not sure why
+      # TODO: what happens when the workflow is kicked off from pushing to pages/-dev from generator repo?
       - name: Checkout main code
         uses: actions/checkout@v2
-        if: github.ref_name == 'main'
+        if: ${{ github.event.workflow_run.head_branch == 'main' }}
         with:
           ref: pages
 
       - name: Checkout develop code
         uses: actions/checkout@v2
-        if: github.ref_name == 'develop'
+        if: ${{ github.event.workflow_run.head_branch == 'develop' }}
         with:
           ref: pages-dev
 
@@ -69,6 +71,8 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
+          ls -alh _site
+
           # deploy me first
           npx wrangler pages deploy "_site" --project-name="mydigitalharbor-com"
           # Look just for files for sites that have their own domain, the rest are just routes on my site
