@@ -29,7 +29,9 @@ jobs:
       - name: Push to DigitalHarbor
         env:
           # Use this token so that the push kicks off the deployment workflow
-          GH_TOKEN: ${{ secrets. GH_ACCESS_TOKEN}}
+          GH_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          # DH_GH_SELF_ACCESS_TOKEN was just made but if this works I can delete it
+          # GH_TOKEN: ${{ secrets.DH_GH_SELF_ACCESS_TOKEN }}
         run: |
           if [[ "$GITHUB_REF" == "refs/heads/main" ]]; then
             target_branch="pages"
