@@ -40,10 +40,11 @@ jobs:
           # wasn't getting other branches on fetch
           git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
           git fetch -a
+          # cherry pick the deployment branch
+          git cherry-pick origin/$target_branch
+          # then check it out
           git checkout $target_branch
-          git reset $GITHUB_REF_NAME --soft
-          git add .
-          echo "making commit"
-          git commit -m "Update site with Digital Harbor changes"
+          # then reset locally to where I just cherry-picked the source branch
+          git reset ${{ github.ref_name }}
           # this will trigger CF Deployment with wrangler
           git push -u origin $target_branch:$target_branch --force
