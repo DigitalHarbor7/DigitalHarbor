@@ -38,3 +38,9 @@ I also can create custom QR codes that are highly artisan. See examples [here](h
 - Custom and interactive button design (Coming Soon)
 - Other providers besides namecheap for DNS
 - Analytics!
+
+## Build process
+
+Site can be updated from DigitalHarbor or from whatever repo the site-configs are in, currently the generator repo.
+In this repo, on develop or main a workflow runs which checks-out pages-dev or pages, rebases onto develop or main, and then pushes back which will kick off the workflow to deploy to cloudflare. This is when I want to update the landing page or qr examples.
+Customer sites generated with my configuration get built in another repo, and in a workflow for develop/main that repo copies the generated site into pages-dev/pages branch of DigitalHarbor (there should never be git conflicts since the files touched should always be completely different) and force pushes to that branch, which should only ever include customer site updates
