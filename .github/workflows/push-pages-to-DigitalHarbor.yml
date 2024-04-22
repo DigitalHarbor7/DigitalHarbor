@@ -41,7 +41,7 @@ jobs:
           git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
           git fetch -a
           # cherry pick the deployment branch
-          git cherry-pick $target_branch
+          git cherry-pick origin/$target_branch
           # then check it out
           git checkout $target_branch
           # then reset locally to where I just cherry-picked the source branch
