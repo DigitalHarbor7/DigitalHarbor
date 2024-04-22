@@ -85,11 +85,6 @@ jobs:
               npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" || echo "failed deploying $PROJECT_NAME"
           done
 
-          # For people with multiple domains - like josh having 1man1.band and 1man1band.com, to ensure I have just the 1 index.html I'll hardcode the seperate project deployment
-          # TODO: I think with site generator duplicating this it can go away since there's just 2 versions of the site
-          echo "deploying 1man1band.com"
-          npx wrangler pages deploy "_site/1man1-band" --project-name="1man1band-com"
-
       # - name: Set deployment variables and deploy only if there's changes
       #   env:
       #     CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
