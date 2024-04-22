@@ -1,0 +1,72 @@
+name: ☁ ️Push pages branch in DigitalHarbor
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      # - pages
+      # - pages-dev
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: true
+          # ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Get tag for site url
+        id: get_tag
+        run: |
+          git config remote.origin.fetch '+refs/tags/*:refs/tags/*'
+          git fetch -a
+          # find most recent tag
+          # Get the list of git tags
+          tags=$(git tag --sort=-version:refname)
+
+          # Extract the highest number from the tags
+          highest_tag=$(echo "$tags" | head -n 1 | sed 's/v//')
+
+          # Convert the highest tag to an integer
+          highest_number=$(($highest_tag))
+
+          # Increment the highest number by 1
+          next_number=$(($highest_number + 1))
+
+          # Set a variable to the next highest number
+          next_tag="v$next_number"
+          echo "Next tag: $next_tag"
+          # set output
+          echo "::set-output name=next_tag::$next_tag"
+
+      - name: Push to DigitalHarbor
+        run: |
+          if [[ "$GITHUB_REF" == "refs/heads/main" ]]; then
+            target_branch="pages"
+          # if on dev then add `-dev` to target_branch
+          elif [[ "$GITHUB_REF" == "refs/heads/develop" ]]; then
+            target_branch="pages-dev"
+          fi
+
+          git config user.email "mdh-www@github.com"
+          git config user.name "github[bot]"
+          # wasn't getting other branches on fetch
+          git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+          git fetch -a
+          git checkout $target_branch
+          git merge $GITHUB_REF_NAME
+          echo "making commit"
+          git commit -m "Update site with Digital Harbor changes"
+          # this will trigger CF Deployment with wrangler
+          git push -u origin $target_branch:$target_branch
