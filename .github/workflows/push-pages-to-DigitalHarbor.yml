@@ -18,37 +18,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          persist-credentials: true
+          persist-credentials: false
           # ref: main
 
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.10"
-
-      - name: Get tag for site url
-        id: get_tag
-        run: |
-          git config remote.origin.fetch '+refs/tags/*:refs/tags/*'
-          git fetch -a
-          # find most recent tag
-          # Get the list of git tags
-          tags=$(git tag --sort=-version:refname)
-
-          # Extract the highest number from the tags
-          highest_tag=$(echo "$tags" | head -n 1 | sed 's/v//')
-
-          # Convert the highest tag to an integer
-          highest_number=$(($highest_tag))
-
-          # Increment the highest number by 1
-          next_number=$(($highest_number + 1))
-
-          # Set a variable to the next highest number
-          next_tag="v$next_number"
-          echo "Next tag: $next_tag"
-          # set output
-          echo "::set-output name=next_tag::$next_tag"
 
       - name: Push to DigitalHarbor
         run: |
