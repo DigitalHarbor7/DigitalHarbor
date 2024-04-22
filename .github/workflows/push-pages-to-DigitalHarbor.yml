@@ -41,8 +41,12 @@ jobs:
           git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
           git fetch -a
           git checkout $target_branch
-          git rebase ${{ github.ref_name}}
-          git add . || echo "nothing to add"
-          git commit -m "Update site with Digital Harbor changes" || echo "no commit to make"
+          echo "rebasing $target_branch on $GITHUB_REF_NAME"
+          # don't reset... this gets rid of anything on develop/main... 
+          # git reset $GITHUB_REF_NAME --soft
+          git merge $GITHUB_REF_NAME
+          git add .
+          echo "making commit"
+          git commit -m "Update site with Digital Harbor changes"
           # this will trigger CF Deployment with wrangler
           git push -u origin $target_branch:$target_branch --force
