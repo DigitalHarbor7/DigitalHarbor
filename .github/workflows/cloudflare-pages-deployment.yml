@@ -23,13 +23,13 @@ jobs:
     steps:
       - name: Checkout main code
         uses: actions/checkout@v2
-        if: github.ref_name == 'main'
+        if: ${{ github.ref_name == 'main' }}
         with:
           ref: pages
 
       - name: Checkout develop code
         uses: actions/checkout@v2
-        if: github.ref_name == 'develop'
+        if: ${{ github.ref_name == 'develop' }}
         with:
           ref: pages-dev
 
