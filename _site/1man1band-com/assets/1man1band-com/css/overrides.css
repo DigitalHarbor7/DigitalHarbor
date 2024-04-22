@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("../josh_banner.jpeg") !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    /* min-height: 100vh; */
+    /* Set the height to at least the viewport height */
+    /* margin: 0; */
+}
