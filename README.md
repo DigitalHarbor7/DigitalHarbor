@@ -21,14 +21,18 @@ The cost to build your site is one-time fee of $100, and I remain available for 
 
 ## QR Codes
 
-See QR code examples [here](https://mydigitalharbor.com/qr)
+# TODO: this example page
+I will create branded QR Codes for your link page or existing website - see examples [here](https://mydigitalharbor.com/qr-branded)
 
+# TODO: change link to qr-stable-diffusion or something
+I also can create custom QR codes that are highly artisan. See examples [here](https://mydigitalharbor.com/qr) and please contact me for inquiries at mydigitalharbor@pype.dev
 
 ## Services
 
 1. Your Digital Harbor is inspired from the [Little Link](https://littlelink.io) project. Your Digital Harbor is built with tailwind css and uses [simpleicons](https://simpleicons.org)
 2. I host your page for you (the main service of Digital Harbor)
-3. Artisanal QR Codes generated with Stable Diffusion
+3. Branded QR Codes
+4. Artisanal QR Codes generated with Stable Diffusion
 
 ## Roadmap
 - Custom and interactive button design (Coming Soon)
