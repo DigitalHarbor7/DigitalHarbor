@@ -21,26 +21,16 @@ The cost to build your site is one-time fee of $100, and I remain available for 
 
 ## QR Codes
 
-# TODO: this example page
-I will create branded QR Codes for your link page or existing website - see examples [here](https://mydigitalharbor.com/qr-branded)
+See QR code examples [here](https://mydigitalharbor.com/qr)
 
-# TODO: change link to qr-stable-diffusion or something
-I also can create custom QR codes that are highly artisan. See examples [here](https://mydigitalharbor.com/qr) and please contact me for inquiries at mydigitalharbor@pype.dev
 
 ## Services
 
 1. Your Digital Harbor is inspired from the [Little Link](https://littlelink.io) project. Your Digital Harbor is built with tailwind css and uses [simpleicons](https://simpleicons.org)
 2. I host your page for you (the main service of Digital Harbor)
-3. Branded QR Codes
-4. Artisanal QR Codes generated with Stable Diffusion
+3. Artisanal QR Codes generated with Stable Diffusion
 
 ## Roadmap
 - Custom and interactive button design (Coming Soon)
 - Other providers besides namecheap for DNS
 - Analytics!
-
-## Build process
-
-Site can be updated from DigitalHarbor or from whatever repo the site-configs are in, currently the generator repo.
-In this repo, on develop or main a workflow runs which checks-out pages-dev or pages, rebases onto develop or main, and then pushes back which will kick off the workflow to deploy to cloudflare. This is when I want to update the landing page or qr examples.
-Customer sites generated with my configuration get built in another repo, and in a workflow for develop/main that repo copies the generated site into pages-dev/pages branch of DigitalHarbor (there should never be git conflicts since the files touched should always be completely different) and force pushes to that branch, which should only ever include customer site updates
