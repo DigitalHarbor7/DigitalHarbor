@@ -41,7 +41,9 @@ jobs:
           git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
           git fetch -a
           git checkout $target_branch
-          git reset $GITHUB_REF_NAME --soft
+          # don't reset... this gets rid of anything on develop/main... 
+          # git reset $GITHUB_REF_NAME --soft
+          git merge $GITHUB_REF_NAME
           git add .
           echo "making commit"
           git commit -m "Update site with Digital Harbor changes"
