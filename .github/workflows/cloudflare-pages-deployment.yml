@@ -21,15 +21,24 @@ jobs:
       contents: write
 
     steps:
-      # TODO: when run via workflow_run it's only checking out the main branch - not sure why
-      # TODO: what happens when the workflow is kicked off from pushing to pages/-dev from generator repo?
-      - name: Checkout main code
+      - name: Checkout main code (Push event)
+        uses: actions/checkout@v2
+        if: ${{ github.event.ref == 'refs/heads/main' }}
+        with:
+          ref: pages
+      - name: Checkout develop code (Push event)
+        uses: actions/checkout@v2
+        if: ${{ github.event.ref == 'refs/heads/develop' }}
+        with:
+          ref: pages-dev
+
+      - name: Checkout main code (Workflow Run event)
         uses: actions/checkout@v2
         if: ${{ github.event.workflow_run.head_branch == 'main' }}
         with:
           ref: pages
 
-      - name: Checkout develop code
+      - name: Checkout develop code (Workflow Run event)
         uses: actions/checkout@v2
         if: ${{ github.event.workflow_run.head_branch == 'develop' }}
         with:
