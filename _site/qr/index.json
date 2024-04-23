@@ -1,8 +1,9 @@
 [
     {
-        "folder": "digital-harbor/RevAnimated",
+        "folder": "RevAnimated",
         "images": [
             "galaxy.png",
+            "08179-4087718973-Eiffel Tower in the snow with a sky background, andreas rocha, matte painting concept art, a detailed matte painting.png",
             "ice-cream2.png",
             "beach-sunrise.png",
             "ice-cream.png",
@@ -18,6 +19,12 @@
             "pirate-ship2.png",
             "dolphins.png",
             "eiffel-tower.png"
+        ]
+    },
+    {
+        "folder": "carribbean-kings/sd-data",
+        "images": [
+            "08051-1338781332-masterpiece, best quality, mecha, no humans, black armor, blue eyes, science fiction, fire, laser canon beam, war, conflict, des.png"
         ]
     }
 ]
