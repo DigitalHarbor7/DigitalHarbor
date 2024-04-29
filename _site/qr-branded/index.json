@@ -1,10 +1,19 @@
 [
     {
-        "folder": ".",
+        "folder": "flashback",
         "images": [
             "qr-burst-rounded-circles.png",
+            "flashback-rounded-square-square.png",
             "qr-circle-viewfinder-rounded-circles.png",
-            "qr-circle-viewfinder-drop-circles.png"
+            "qr-circle-viewfinder-drop-circles.png",
+            "flashback-rounded-rounded-square.png"
+        ]
+    },
+    {
+        "folder": "reveal",
+        "images": [
+            "rel-2.png",
+            "reveal-1.png"
         ]
     }
 ]
