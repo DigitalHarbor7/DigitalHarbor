@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(to bottom, #2c3e50, #2c3e50);
+    /* Gradient with dark slate gray */
+}
+
+/* Add a glow border to the YouTube video */
+iframe {
+    border: 5px solid #808080 !important;
+    box-shadow: 0 0 15px #808080 !important;
+    max-width: 100%;
+    /* Make sure the video is responsive */
+}
