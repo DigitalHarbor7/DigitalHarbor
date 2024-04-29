@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Gallery </title>
+
+    <!-- Include the Tailwind CSS framework -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <meta name="description" content="Reveal's Digital Harbor">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://mydigitalharbor.com/reveal-fitness">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Reveal Fitness">
+    <meta property="og:description" content="Reveal's Digital Harbor">
+    <meta property="og:image" content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mydigitalharbor.com">
+    <meta property="twitter:url" content="https://mydigitalharbor.com/reveal-fitness">
+    <meta name="twitter:title" content="Reveal Fitness">
+    <meta name="twitter:description" content="Reveal's Digital Harbor">
+    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <style>
+        body {
+            background: linear-gradient(to bottom, #2c3e50, #2c3e50);
+        }
+
+        .button {
+            background-color: #3490dc;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #2779bd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-semibold text-white mb-4">QR Codes Gallery
+        </h1>
+
+        <!-- Modal for displaying enlarged images -->
+        <div id="modal"
+            class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden flex justify-center items-center">
+            <div id="modal-content" class="bg-white p-4 max-w-full max-h-full overflow-auto">
+                <img id="modal-image" src="" alt="" class="mx-auto">
+            </div>
+        </div>
+        <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+        <script defer>
+            window.onload = function () {
+                var gallery = document.getElementById("gallery");
+                var modal = document.getElementById("modal");
+                var modalImage = document.getElementById("modal-image");
+
+                // Function to fetch images and display them in the gallery
+                function fetchImages() {
+                    fetch('index.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            data.forEach(folder => {
+                                folder.images.forEach(image => {
+                                    var img = document.createElement('img');
+                                    img.src = folder.folder + '/' + image;
+                                    img.alt = image;
+                                    img.className = "w-full h-auto object-cover rounded-lg cursor-pointer"; // Set image width to full width of parent container and add cursor pointer
+                                    img.classList.add("mx-auto"); // Center the image horizontally
+                                    img.addEventListener('click', function () {
+                                        openModal(folder.folder + '/' + image);
+                                    });
+                                    gallery.appendChild(img);
+                                });
+                            });
+                        })
+                        .catch(error => console.error('Error fetching images:', error));
+                }
+
+                // Function to open modal and display clicked image
+                function openModal(imageUrl) {
+                    modalImage.src = imageUrl;
+                    modal.classList.remove('hidden');
+                }
+
+                // Function to close modal
+                modal.addEventListener('click', function () {
+                    modal.classList.add('hidden');
+                });
+
+                // Call the function to fetch and display images
+                fetchImages();
+            }
+        </script>
+    </div>
+    <div class="text-center py-4">
+        <a href="/" class="button">⚓ Digital Harbor Homepage</a>
+    </div>
+
+    <footer>
+        <footer class="text-center mt-8">
+            <p class="text-gray-500">View source <a href="https://github.com/DigitalHarbor7/DigitalHarbor"
+                    target="_blank" rel="noopener" class="text-blue-500 hover:text-blue-700">here</a></p>
+
+            <p class="text-gray-500">Stable Diffusion Model <a href="https://civitai.com/models/7371/rev-animated"
+                    target="_blank" rel="noopener" class="text-blue-500 hover:text-blue-700">RevAnimated</a>
+                Model Author Credit: <a href="https://civitai.com/user/Zovya" target="_blank" rel="noopener"
+                    class="text-blue-500 hover:text-blue-700">Zovya</a>
+            </p>
+            <p class="text-gray-500">Stable Diffusion Model <a
+                    href="https://civitai.com/models/123313?modelVersionId=158155" target="_blank" rel="noopener"
+                    class="text-blue-500 hover:text-blue-700">ArtUniverse v8.0</a>
+                Model Author Credit: <a href="https://civitai.com/user/wildzzz" target="_blank" rel="noopener"
+                    class="text-blue-500 hover:text-blue-700">wildzzz</a>
+            </p>
+        </footer>
+    </footer>
+</body>
+
+</html>
