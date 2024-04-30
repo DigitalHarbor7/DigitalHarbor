@@ -182,3 +182,4 @@ ansible/roles/traefik/templates/usersFile
 *terraform.tfstate
 *terraform.tfstate.backup
 .github/delete-workflows.sh
+fractal/*
