@@ -61,26 +61,10 @@ DNS with Namecheap and Cloudflare depending on the site.
 
 ### QR Codes
 
-QR Codes at basically just math - given some text anyone can encode that text
+QR Codes are basically just math - given some text anyone can encode that text
 into a QR code that a QR reader can then decode. Part of my services is that I
-will provide artistically crafted QR Codes for any link whether I am handling
-the hosting of the link site or not, the only caveat to them is that they are
-tied to the text... So if you choose `myurl.com` today and in the future change
-your website to `mynewbiz.com` then all the QR Codes will still point to
-`myurl.com`... Probably not surprising but worth mentioning.
-
-## Developer Notes
-
-### QR Codes
-
-Link: https://doompony.github.io/REPO
-Initially generate with https://qrdex.io/
-Format with `qr/scripts/main.py` to get base for ControlNet
-Generated with A1111 WebUI
-
-### Setup
-
-2. Add images/refs appropriately and app buttons
-3. `python -m http.server -d dist 8000` to view locally at `http://localhost:8000/`
-5. Generate QR Codes with A1111
-6. Distribute QR Codes
+will provide branded or artistically crafted QR Codes for any link whether I am
+handling the hosting of the link site or not, the only caveat to them is that
+they are tied to the text... So if you choose `myurl.com` today and in the
+future change your website to `mynewbiz.com` then all the QR Codes will still
+point to `myurl.com`... Probably not surprising but worth mentioning.
