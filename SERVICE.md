@@ -2,17 +2,6 @@
 
 See [INFO.md](INFO.md) for more details on the components
 
-## Options (Sales Pitch Below)
-
-The cost to build your site is $100, then the my options are:
-
-1. hand it off - you handle hosting
-2. host it at `https://doompony.github.io/DigitalHarbor/{Your Route}.html` for $5/month. [Example](https://doompony.github.io/DigitalHarbor/example.html)
-4. host it at a custom domain: $200 Domain Setup (DNS, SSL, etc.) + $10/month + Domain Cost [1man1band.com](https://1man1band.com)
-
-In any event - I will provide QR codes for $25/code
-
-[Example QR Codes](https://github.com/doompony/little-link-qr-template/tree/main/qr/example1)
 
 ## Sales Pitch
 
@@ -29,8 +18,7 @@ to just being a folder with some files and pictures in it. If you had this
 folder on your computer, you could open it up in a web browser like Google
 Chrome and click around like a regular website (example: https://1man1band.com).
 
-My primary offering is to build that web page. I charge $100 for building it
-and then I'll happily hand it off to you to handle hosting...
+My primary offering is to build that web page and host it...
 
 What is hosting? Well, you have the webpage as files, but now you want to put
 it on the internet. This requires a few things and I'll work backwards with
@@ -64,4 +52,5 @@ you want to do it yourself you'll have a lot of fun and also plenty to learn.
 > that you have a nice link like [1man1band.com](https://www.1man1band.com). I
 > charge a $200 setup fee for assisting with the domain purchase and DNS setup,
 > and then $10/month to monitor and site and ensure the link is regularly up.
-> Note that domains need to be renewed every year, this cost is depenent on the domain and I will work with you on managing that or not
+> Note that domains need to be renewed every year, this cost is depenent on the
+domain and I will work with you on managing that if you'd like
