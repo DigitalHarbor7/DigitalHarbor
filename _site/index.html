@@ -2,228 +2,199 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Harbor</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
-  <!-- Include the Tailwind CSS framework -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Harbor, Inc.</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Drop anchor in your digital harbor!">
+    <!-- Include the Tailwind CSS framework -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/mydigitalharbor-xom/images/favicon.ico">
+    <!-- Include root css for basic styling -->
+    <link rel="stylesheet" href="/assets/mydigitalharbor-xom/css/main.css">
+    <!-- Include the local css file if it exists -->
+    <link rel="stylesheet" href="/assets/mydigitalharbor-xom/css/overrides.css">
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://mydigitalharbor.com">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Digital Harbor">
-  <meta property="og:description" content="Drop anchor in your digital harbor!">
-  <meta property="og:image"
-    content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg?token=Vm1rLWuLX8N2ATMKLNQR2NLE0p06uT6aHzZ8Qtx86Pg&height=800&width=1200&expires=33249013390">
+    <meta name="description" content="Drop anchor in your digital harbor!">
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="mydigitalharbor.com">
-  <meta property="twitter:url" content="https://mydigitalharbor.com">
-  <meta name="twitter:title" content="Digital Harbor">
-  <meta name="twitter:description" content="Drop anchor in your digital harbor!">
-  <meta name="twitter:image"
-    content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg?token=Vm1rLWuLX8N2ATMKLNQR2NLE0p06uT6aHzZ8Qtx86Pg&height=800&width=1200&expires=33249013390">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://mydigitalharbor.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digital Harbor, Inc.">
+    <meta property="og:description" content="Drop anchor in your digital harbor!">
+    <meta property="og:image"
+        content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg?token=Vm1rLWuLX8N2ATMKLNQR2NLE0p06uT6aHzZ8Qtx86Pg&height=800&width=1200&expires=33249013390">
 
-  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mydigitalharbor.com">
+    <meta property="twitter:url" content="https://mydigitalharbor.com">
+    <meta name="twitter:title" content="Digital Harbor, Inc.">
+    <meta name="twitter:description" content="Drop anchor in your digital harbor!">
+    <meta name="twitter:image"
+        content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg?token=Vm1rLWuLX8N2ATMKLNQR2NLE0p06uT6aHzZ8Qtx86Pg&height=800&width=1200&expires=33249013390">
 
-  <style>
-    body {
-      background: linear-gradient(to bottom, #2c3e50, #2c3e50);
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
-    }
+    <style>
+        body {
+            background: linear-gradient(to bottom, #2c3e50, #2c3e50);
+            /* Gradient with dark slate gray */
+        }
 
-    .button {
-      margin-bottom: 20px;
-    }
-
-    .icon {
-      width: 24px;
-      height: 24px;
-    }
-
-    /* Define styles for the sidebar */
-    .sidebar {
-      width: 0;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #1a202c;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-      color: #fff;
-    }
-
-    /* Define styles for sidebar links */
-    .sidebar a {
-      padding: 10px 20px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #fff;
-      display: block;
-      transition: 0.3s;
-    }
-
-    /* Hover effect for sidebar links */
-    .sidebar a:hover {
-      background-color: #2c3e50;
-    }
-
-    /* Style the sidebar toggle button */
-    .sidebar-toggle {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      color: #fff;
-    }
-
-    /* Style the close button */
-    .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      color: #fff;
-    }
-  </style>
-
-
-  <script>
-    // Function to open/close the sidebar
-    function toggleSidebar() {
-      var sidebar = document.getElementById("sidebar");
-      if (sidebar.style.width === "250px") {
-        sidebar.style.width = "0";
-      } else {
-        sidebar.style.width = "250px";
-      }
-    }
-  </script>
+        /* Add a glow border to the YouTube video */
+        iframe {
+            border: 5px solid #808080 !important;
+            box-shadow: 0 0 15px #808080 !important;
+            max-width: 100%;
+            /* Make sure the video is responsive */
+        }
+    </style>
 
 </head>
 
 <body class="flex justify-center items-center min-h-screen">
-  <!-- <body class="flex"> -->
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
-    <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">&times;</a>
-    <h2 class="text-xl font-bold py-4 px-2 text-center">Menu</h2>
-    <ul>
-      <li><a href="/qr/">Epic QR Code Gallery</a></li>
-      <li><a href="/qr-branded/">Branded QR Code Gallery</a></li>
-      <li><a href="/payment/">Subscribe!</a></li>
-    </ul>
-  </div>
+    <div class="container mx-auto">
+        <div class="max-w-lg mx-auto text-center">
+            <img class="mx-auto mt-8 rounded-full" width="150" height="150"
+                src="/assets/mydigitalharbor-xom/images/primary.png" alt="">
+            <h1 class="text-3xl text-white font-bold mt-4">Digital Harbor</h1>
+            <div class="text-white mt-4 mb-8">
+                <p>Digital Harbor is a simple place to drop anchor. Bring your links to your
+                    harbor and let your audience set sail from there to find you online ⛵. <br>
+                    <br> I offer hosting, link page building, and custom QR codes to set you apart
+                    in the digital ocean.
+                </p>
+            </div>
 
-  <!-- Sidebar toggle button -->
-  <div class="sidebar-toggle" onclick="toggleSidebar()">
-    &#9776;
-  </div>
+            <div class="bg-gray-800 p-4 max-w-lg rounded-lg mb-4">
+                <h2 class="text-xl font-bold text-white mb-2">The Biz</h2>
 
-  <!-- Homepage Content -->
-  <div class="container mx-auto">
-    <div class="max-w-lg mx-auto text-center">
-      <img src="/assets/images/dh.png" width="150" height="150" class="mx-auto">
-      <h1 class="text-3xl text-white font-bold mt-4">Digital Harbor</h1>
-      <div class="text-white mt-4">
-        <p>Digital Harbor is a simple place to drop anchor. Bring your links to your harbor and let your audience set
-          sail from there to find you online ⛵.
-          <br>
-          <br>
-          I offer hosting, link page building, and custom QR codes to set you apart in the digital ocean.
-        </p>
-      </div>
-      <div class="mt-8">
 
-        <!--Contact Section -->
-        <div class="bg-gray-800 p-4 rounded-lg mb-4">
-          <h2 class="text-xl font-bold text-white mb-2">The Biz</h2>
 
-          <!-- Github -->
-          <a href="https://www.github.com/DigitalHarbor7/DigitalHarbor" target="_blank" rel="noopener"
-            class="button bg-gradient-to-br from-gray-500 to-gray-700 hover:from-gray-700 hover:to-gray-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <img class="icon inline-block align-middle mr-2" src="/assets/images/icons/github.svg">
-            <span class="button-label">GitHub</span>
-          </a>
-          <!-- Email -->
-          <a href="mailto:mydigitalharbor@pype.dev" target="_blank" rel="noopener"
-            class="button bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <img class="icon inline-block align-middle mr-2" src="/assets/images/icons/email.svg">
-            <span class="button-label">Inquire via Email</span>
-          </a>
+                <a href="https://www.github.com/DigitalHarbor7/DigitalHarbor" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-gray-500 to-gray-700 hover:from-gray-700 hover:to-gray-500 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="https://cdn.simpleicons.org/github/black/white" alt="" />
+                    <span class="button-label">Github</span>
+                </a>
+
+
+
+                <a href="mailto:mydigitalharbor@pype.dev" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="/assets/mydigitalharbor-xom/images/icons/email.svg" alt="" />
+                    <span class="button-label">Inquire via Email</span>
+                </a>
+
+
+
+            </div>
+
+
+
+            <p class="text-white">Organize your harbor with `docks` for related links!</p>
+            <br>
+
+
+            <div class="bg-gray-800 p-4 max-w-lg rounded-lg mb-4">
+                <h2 class="text-xl font-bold text-white mb-2">QR Codes</h2>
+
+
+
+                <a href="/qr" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="/assets/mydigitalharbor-xom/images/unicorn.png" alt="" />
+                    <span class="button-label">Highly Artisan QR Code Examples</span>
+                </a>
+
+
+
+                <a href="/qr-branded" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="/assets/mydigitalharbor-xom/images/unicorn.png" alt="" />
+                    <span class="button-label">Branded QR Code Examples</span>
+                </a>
+
+
+
+            </div>
+
+
+            <div class="bg-gray-800 p-4 max-w-lg rounded-lg mb-4">
+                <h2 class="text-xl font-bold text-white mb-2">Example Digital Harbors</h2>
+
+
+
+                <a href="/example" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="/example//assets/example/images/favicon.ico" alt="" />
+                    <span class="button-label">Example with buttons</span>
+                </a>
+
+
+
+                <a href="https://1man1band.com" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-blue-400 to-green-700 hover:from-green-700 hover:to-blue-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="https://1man1band.com//assets/1man1band-com/images/favicon.ico" alt="" />
+                    <span class="button-label">1man1band</span>
+                </a>
+
+
+
+                <a href="/caribbean-kings/" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-yellow-500 to-green-700 hover:from-green-700 hover:to-yellow-500 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="/caribbean-kings///assets/caribbean-kings/images/favicon.ico" alt="" />
+                    <span class="button-label">Caribbean Kings</span>
+                </a>
+
+
+
+                <a href="/flashback-martial-arts/" target="_blank" rel="noopener"
+                    class="button bg-gradient-to-br from-red-500 to-gray-700 hover:from-gray-700 hover:to-red-500 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
+                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
+                        src="/flashback-martial-arts///assets/flashback-martial-arts/images/favicon.ico" alt="" />
+                    <span class="button-label">Flashback</span>
+                </a>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="mt-8 text-white text-center">
+
+                <p>Contact Info - <a href="mailto:mydigitalharbor@pype.dev" target="_blank" rel="noopener"
+                        class="text-blue-500 hover:text-blue-700">mydigitalharbor@pype.dev</a></p>
+
+
+                <footer>
+                    <footer class="text-center mt-8">
+                        <p class="text-gray-500">View source <a
+                                href="https://github.com/DigitalHarbor7/DigitalHarbor/tree/v18/_site/mydigitalharbor-xom"
+                                target="_blank" rel="noopener" class="text-blue-500 hover:text-blue-700">here</a>.</p>
+                        <p class="text-gray-500">View QR Codes <a href="/assets/mydigitalharbor-xom/qr" target="_blank"
+                                rel="noopener" class="text-blue-500 hover:text-blue-700">here</a>.</p>
+                        <p>&copy; 2024 Digital Harbor. All rights reserved.</p>
+                    </footer>
+                </footer>
+            </div>
         </div>
-
-        <div class="bg-gray-800 p-4 rounded-lg mb-4">
-          <h2 class="text-xl font-bold text-white mb-2">QR Codes</h2>
-
-          <!-- QR Code examples -->
-          <a href="/qr" target="_blank" rel="noopener"
-            class="button bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <!-- <img class="icon inline-block align-middle mr-2" src="/assets/images/icons/email.svg"> -->
-            <span class="button-label">See Highly Customized QR Codes</span>
-          </a>
-          <!-- Branded QR Code examples -->
-          <a href="/qr-branded" target="_blank" rel="noopener"
-            class="button bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <!-- <img class="icon inline-block align-middle mr-2" src="/assets/images/icons/email.svg"> -->
-            <span class="button-label">See Branded QR Codes</span>
-          </a>
-
-        </div>
-
-        <div class="bg-gray-800 p-4 rounded-lg mb-4">
-          <h2 class="text-xl font-bold text-white mb-2">Example Digital Harbors</h2>
-
-
-          <!-- example -->
-          <a href="example/" target="_blank" rel="noopener"
-            class="button bg-gradient-to-br from-indigo-500 to-pink-700 hover:from-pink-700 hover:to-indigo-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <img class="icon" src="/assets/images/unicorn.png">
-            <span class="button-label">Example Buttons</span>
-          </a>
-          <!-- 1man1band -->
-          <a href="https://1man1band.com" target="_blank" rel="noopener"
-            class="button bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <img class="icon" src="/1man1-band/assets/1man1-band/images/1man1band.jpg">
-            <span class="button-label"> 1man1band</span>
-          </a>
-
-          <!-- Caribbean Kings -->
-          <a href="caribbean-kings/" target=" _blank" rel="noopener"
-            class="button bg-gradient-to-br from-yellow-500 to-green-700 hover:from-green-700 hover:to-yellow-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <img class="icon" src="/caribbean-kings/assets/caribbean-kings/images/jamaica.png">
-            <span class="button-label"> Caribbean Kings</span>
-          </a>
-
-          <!-- Flashback -->
-          <a href="flashback-martial-arts/" target=" _blank" rel="noopener"
-            class="button bg-gradient-to-br from-red-500 to-gray-700 hover:from-gray-700 hover:to-red-500 text-white font-bold py-2 px-4 rounded-full block mb-2 text-lg flex items-center justify-center">
-            <img class="icon" src="/flashback-martial-arts/assets/flashback-martial-arts/images/FlashbackRound.png">
-            <span class="button-label"> Flashback</span>
-          </a>
-
-        </div>
-        <footer>
-          <footer class="text-center mt-8">
-            <p class="text-gray-500">View source <a href="https://github.com/DigitalHarbor7/DigitalHarbor"
-                target="_blank" rel="noopener" class="text-blue-500 hover:text-blue-700">here</a>.</p>
-            <p>&copy; 2024 Digital Harbor. All rights reserved.</p>
-          </footer>
-        </footer>
-      </div>
-    </div>
-
-  </div>
-
 </body>
 
 </html>
