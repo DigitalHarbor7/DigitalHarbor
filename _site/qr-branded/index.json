@@ -1,19 +1,33 @@
 [
     {
-        "folder": "flashback",
+        "folder": "freedom-church",
         "images": [
-            "qr-burst-rounded-circles.png",
-            "flashback-rounded-square-square.png",
-            "qr-circle-viewfinder-rounded-circles.png",
-            "qr-circle-viewfinder-drop-circles.png",
-            "flashback-rounded-rounded-square.png"
+            "signal-2024-05-28-194934_002.png"
+        ]
+    },
+    {
+        "folder": "happy-bellies",
+        "images": [
+            "happy-bellies-facebook.png",
+            "happy-bellies-join-our-team.png",
+            "happy-bellies-google.png"
         ]
     },
     {
         "folder": "reveal",
         "images": [
-            "rel-2.png",
-            "reveal-1.png"
+            "reveal-1.png",
+            "rel-2.png"
+        ]
+    },
+    {
+        "folder": "flashback",
+        "images": [
+            "qr-burst-rounded-circles.png",
+            "qr-circle-viewfinder-rounded-circles.png",
+            "qr-circle-viewfinder-drop-circles.png",
+            "flashback-rounded-rounded-square.png",
+            "flashback-rounded-square-square.png"
         ]
     }
 ]
