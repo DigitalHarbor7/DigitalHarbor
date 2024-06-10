@@ -2491,14 +2491,10 @@ input[type="radio"]:focus+label:before {
 }
 
 .image.phone .inner:before,
-.image.phone .inner:after {
-	content: '';
-	position: absolute;
-	left: 50%;
-}
+.image.phone .inner:after,
 
 .image.phone .inner:before {
-	top: -1.375em;
+	/* top: -1.375em; */
 	margin-left: -1em;
 	width: 2em;
 	height: 0.25em;
@@ -2507,7 +2503,7 @@ input[type="radio"]:focus+label:before {
 }
 
 .image.phone .inner:after {
-	bottom: -2.75em;
+	/* bottom: -2.75em; */
 	margin-left: -1em;
 	width: 2em;
 	height: 2em;
@@ -2527,7 +2523,7 @@ input[type="radio"]:focus+label:before {
 }
 
 .image.phone:after {
-	height: 3.5em;
+	height: 2.5em;
 	border-radius: 0 0 1em 1em;
 	border-top: 0;
 }
