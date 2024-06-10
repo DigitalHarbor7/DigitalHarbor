@@ -165,6 +165,14 @@ textarea {
 	width: device-width;
 }
 
+.font-light {
+	font-weight: normal;
+}
+
+.text-sm {
+	font-size: 14px;
+}
+
 body {
 	-ms-overflow-style: scrollbar;
 }
