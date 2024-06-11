@@ -1,200 +1,496 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Harbor, Inc.</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Include the Tailwind CSS framework -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/x-icon" href="/assets/mydigitalharbor-xom/images/favicon.ico">
-    <!-- Include root css for basic styling -->
-    <link rel="stylesheet" href="/assets/mydigitalharbor-xom/css/main.css">
-    <!-- Include the local css file if it exists -->
-    <link rel="stylesheet" href="/assets/mydigitalharbor-xom/css/overrides.css">
-
-    <meta name="description" content="Drop anchor in your digital harbor!">
-
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://mydigitalharbor.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Digital Harbor, Inc.">
-    <meta property="og:description" content="Drop anchor in your digital harbor!">
-    <meta property="og:image"
-        content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg?token=Vm1rLWuLX8N2ATMKLNQR2NLE0p06uT6aHzZ8Qtx86Pg&height=800&width=1200&expires=33249013390">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="mydigitalharbor.com">
-    <meta property="twitter:url" content="https://mydigitalharbor.com">
-    <meta name="twitter:title" content="Digital Harbor, Inc.">
-    <meta name="twitter:description" content="Drop anchor in your digital harbor!">
-    <meta name="twitter:image"
-        content="https://opengraph.b-cdn.net/production/documents/e3e698e1-7a27-4847-aeb9-77d5844e1966.jpg?token=Vm1rLWuLX8N2ATMKLNQR2NLE0p06uT6aHzZ8Qtx86Pg&height=800&width=1200&expires=33249013390">
-
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-
-    <style>
-        body {
-            background: linear-gradient(to bottom, #2c3e50, #2c3e50);
-            /* Gradient with dark slate gray */
-        }
-
-        /* Add a glow border to the YouTube video */
-        iframe {
-            border: 5px solid #808080 !important;
-            box-shadow: 0 0 15px #808080 !important;
-            max-width: 100%;
-            /* Make sure the video is responsive */
-        }
-    </style>
-
+	<title>Digital Harbor</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
 </head>
 
-<body class="flex justify-center items-center min-h-screen">
-    <div class="container mx-auto">
-        <div class="max-w-lg mx-auto text-center">
-            <img class="mx-auto mt-8 rounded-full" width="150" height="150"
-                src="/assets/mydigitalharbor-xom/images/primary.png" alt="">
-            <h1 class="text-3xl text-white font-bold mt-4">Digital Harbor</h1>
-            <div class="text-white mt-4 mb-8">
-                <p>Digital Harbor is a simple place to drop anchor. Bring your links to your
-                    harbor and let your audience set sail from there to find you online ⛵. <br>
-                    <br> I offer hosting, link page building, and custom QR codes to set you apart
-                    in the digital ocean.
-                </p>
-            </div>
+<body class="is-preload">
 
-            <div class="bg-gray-800 p-4 max-w-lg rounded-lg mb-4">
-                <h2 class="text-xl font-bold text-white mb-2">The Biz</h2>
+	<!-- Header -->
+	<header id="header">
+		<div class="content">
+			<h1><a href="#">Digital Harbor</a><span class="font-light text-sm"> v2.0</span></h1>
+			<p>Drop anchor in the digital ocean<br />
+				QR Codes | Hosting | Link Page Building | Maintanence</p>
+			<ul class="actions">
+				<li><a href="#qr-branded" class="button primary icon solid fa-qrcode">Branded
+						QR Codes</a></li>
+				<li><a href="#qr-artisan" class="button icon solid fa-qrcode">Artisan QR
+						Codes</a>
+				</li>
+			</ul>
+		</div>
+		<div class="image phone">
+			<!-- <div class="image qr_frame"> -->
+			<div class="inner"><img src="images/pirate-ship.png" alt="" /></div>
+		</div>
+	</header>
 
+	<!-- One -->
+	<!-- <section id="one" class="wrapper style2 special">
+		<header class="major">
+			<h2>Sed ipsum magna lorem tempus amet<br />
+				vehicula et gravida elementum</h2>
+		</header>
+		<ul class="icons major">
+			<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>
+			<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>
+			<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>
+		</ul>
+	</section> -->
 
+	<!-- Two -->
+	<section id="two" class="wrapper">
+		<div class="inner alt">
+			<section class="spotlight" id="qr-branded">
+				<div class="image"><img src="images/happy-bellies.png" alt="" /></div>
+				<div class="content">
+					<h3>Branded QR Codes</h3>
+					<p>Modern design adds consistency to your brand.
+						Eye-catching, branded QR codes increase scans and visibility.
+						Codes can be used to direct your audience to your website, online review, or to promote
+						specific.
+						<a href="https://mydigitalharbor.com/qr-branded">See more examples!</a>
+					</p>
+				</div>
+			</section>
+			<section class="spotlight" id="qr-artisan">
+				<!-- <div class="image"><img src="images/pirate-ship.png" alt="" /></div> -->
+				<div class="image"><img src="images/opera.png" alt="" /></div>
+				<div class="content">
+					<h3>Exotic QR Codes</h3>
+					<p>Unique QR Codes for your business or events.
+						<a href="https://mydigitalharbor.com/qr">See more examples!</a>
+					</p>
+				</div>
+			</section>
+			<section class="spotlight">
+				<div class="image"><img src="images/dh4.png" alt="" /></div>
+				<div class="content">
+					<h3>Hosting and Link Pages</h3>
+					<p>I'll build and maintain a link page associated with your QR Codes.</p>
+				</div>
+			</section>
+			<section class="special">
+				<ul class="icons labeled">
+					<li><span class="icon solid brands fa-github"><span class="label"> <a
+									href="https://github.com/DigitalHarbor7/DigitalHarbor">Digital Harbor GitHub
+									Page</a>
+							</span></span></li>
+					<br>
+					<li><span class="fas fa-anchor"><span class="label"> <a
+									href="https://mydigitalharbor.com/example">Example
+									Digital Harbor</a>
+							</span></span></li>
+				</ul>
+			</section>
+		</div>
+	</section>
 
-                <a href="https://www.github.com/DigitalHarbor7/DigitalHarbor" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-gray-500 to-gray-700 hover:from-gray-700 hover:to-gray-500 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="https://cdn.simpleicons.org/github/black/white" alt="" />
-                    <span class="button-label">Github</span>
-                </a>
+	<!-- Three -->
+	<section id="three" class="wrapper style2 special">
+		<header class="major">
+			<h2>Who Am I?</h2>
+			<p>I'm a passionate individual working primarily in digital infrastructure.<br />
+				I know web hosting and marketing are a challenge and Digital
+				Harbor is my attempt to offer quality of life improvements to
+				small businesses, musicians, etc. through managed hosting and QR
+				code services.</p>
+		</header>
+		<ul class="actions special">
+			<li><a href="mailto:nic@mydigitalharbor.com" class="button primary icon solid fa-at">Contact Me!</a>
+			</li>
+			<li><a href="https://mydigitalharbor.com/mydigitalharbor-xom" class="button icon solid fa-anchor">Learn
+					More</a></li>
+		</ul>
+	</section>
 
+	<!-- Four -->
+	<!-- <section id="four" class="wrapper">
+		<div class="inner">
 
+			<header class="major">
+				<h2>Elements</h2>
+			</header>
 
-                <a href="mailto:mydigitalharbor@pype.dev" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="/assets/mydigitalharbor-xom/images/icons/email.svg" alt="" />
-                    <span class="button-label">Inquire via Email</span>
-                </a>
+			<section>
+				<h4>Text</h4>
+				<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is
+					<em>emphasized</em>.
+					This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+					This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this
+						is a link</a>.
+				</p>
+				<hr />
+				<header>
+					<h4>Heading with a Subtitle</h4>
+					<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+				</header>
+				<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non
+					faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan
+					varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+				<header>
+					<h5>Heading with a Subtitle</h5>
+					<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+				</header>
+				<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non
+					faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan
+					varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+				<hr />
+				<h2>Heading Level 2</h2>
+				<h3>Heading Level 3</h3>
+				<h4>Heading Level 4</h4>
+				<h5>Heading Level 5</h5>
+				<h6>Heading Level 6</h6>
+				<hr />
+				<h5>Blockquote</h5>
+				<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus
+					euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
+					volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor
+					sit amet nullam adipiscing eu felis.</blockquote>
+				<h5>Preformatted</h5>
+				<pre><code>i = 0;
 
+while (!deck.isInOrder()) {
+  print 'Iteration ' + i;
+  deck.shuffle();
+  i++;
+}
 
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+			</section>
 
-            </div>
+			<section>
+				<h4>Lists</h4>
+				<div class="row">
+					<div class="col-6 col-12-medium">
+						<h5>Unordered</h5>
+						<ul>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Sagittis adipiscing.</li>
+							<li>Felis enim feugiat.</li>
+						</ul>
+						<h5>Alternate</h5>
+						<ul class="alt">
+							<li>Dolor pulvinar etiam.</li>
+							<li>Sagittis adipiscing.</li>
+							<li>Felis enim feugiat.</li>
+						</ul>
+					</div>
+					<div class="col-6 col-12-medium">
+						<h5>Ordered</h5>
+						<ol>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Etiam vel felis viverra.</li>
+							<li>Felis enim feugiat.</li>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Etiam vel felis lorem.</li>
+							<li>Felis enim et feugiat.</li>
+						</ol>
+						<h5>Icons</h5>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+							</li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+							</li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<h5>Actions</h5>
+				<div class="row">
+					<div class="col-6 col-12-medium">
+						<ul class="actions">
+							<li><a href="#" class="button primary">Default</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions small">
+							<li><a href="#" class="button primary small">Small</a></li>
+							<li><a href="#" class="button small">Small</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary">Default</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary small">Small</a></li>
+							<li><a href="#" class="button small">Small</a></li>
+						</ul>
+					</div>
+					<div class="col-6 col-12-medium">
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Default</a></li>
+							<li><a href="#" class="button fit">Default</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary small fit">Small</a></li>
+							<li><a href="#" class="button small fit">Small</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
 
+			<section>
+				<h4>Table</h4>
+				<h5>Default</h5>
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Item One</td>
+								<td>Ante turpis integer aliquet porttitor.</td>
+								<td>29.99</td>
+							</tr>
+							<tr>
+								<td>Item Two</td>
+								<td>Vis ac commodo adipiscing arcu aliquet.</td>
+								<td>19.99</td>
+							</tr>
+							<tr>
+								<td>Item Three</td>
+								<td> Morbi faucibus arcu accumsan lorem.</td>
+								<td>29.99</td>
+							</tr>
+							<tr>
+								<td>Item Four</td>
+								<td>Vitae integer tempus condimentum.</td>
+								<td>19.99</td>
+							</tr>
+							<tr>
+								<td>Item Five</td>
+								<td>Ante turpis integer aliquet porttitor.</td>
+								<td>29.99</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2"></td>
+								<td>100.00</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
 
+				<h5>Alternate</h5>
+				<div class="table-wrapper">
+					<table class="alt">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Item One</td>
+								<td>Ante turpis integer aliquet porttitor.</td>
+								<td>29.99</td>
+							</tr>
+							<tr>
+								<td>Item Two</td>
+								<td>Vis ac commodo adipiscing arcu aliquet.</td>
+								<td>19.99</td>
+							</tr>
+							<tr>
+								<td>Item Three</td>
+								<td> Morbi faucibus arcu accumsan lorem.</td>
+								<td>29.99</td>
+							</tr>
+							<tr>
+								<td>Item Four</td>
+								<td>Vitae integer tempus condimentum.</td>
+								<td>19.99</td>
+							</tr>
+							<tr>
+								<td>Item Five</td>
+								<td>Ante turpis integer aliquet porttitor.</td>
+								<td>29.99</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2"></td>
+								<td>100.00</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</section>
 
-            <p class="text-white">Organize your harbor with `docks` for related links!</p>
-            <br>
+			<section>
+				<h4>Buttons</h4>
+				<ul class="actions">
+					<li><a href="#" class="button primary">Primary</a></li>
+					<li><a href="#" class="button">Default</a></li>
+				</ul>
+				<ul class="actions">
+					<li><a href="#" class="button large">Large</a></li>
+					<li><a href="#" class="button">Default</a></li>
+					<li><a href="#" class="button small">Small</a></li>
+				</ul>
+				<ul class="actions fit">
+					<li><a href="#" class="button fit">Fit</a></li>
+					<li><a href="#" class="button primary fit">Fit</a></li>
+					<li><a href="#" class="button fit">Fit</a></li>
+				</ul>
+				<ul class="actions fit small">
+					<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+					<li><a href="#" class="button fit small">Fit + Small</a></li>
+					<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+				</ul>
+				<ul class="actions">
+					<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+					<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+				</ul>
+				<ul class="actions">
+					<li><span class="button primary disabled">Disabled</span></li>
+					<li><span class="button disabled">Disabled</span></li>
+				</ul>
+			</section>
 
+			<section>
+				<h4>Form</h4>
+				<form method="post" action="#">
+					<div class="row gtr-uniform">
+						<div class="col-6 col-12-xsmall">
+							<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+						</div>
+						<div class="col-6 col-12-xsmall">
+							<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+						</div>
+						<div class="col-12">
+							<select name="demo-category" id="demo-category">
+								<option value="">- Category -</option>
+								<option value="1">Manufacturing</option>
+								<option value="1">Shipping</option>
+								<option value="1">Administration</option>
+								<option value="1">Human Resources</option>
+							</select>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+							<label for="demo-priority-low">Low</label>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="demo-priority-normal" name="demo-priority">
+							<label for="demo-priority-normal">Normal</label>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="demo-priority-high" name="demo-priority">
+							<label for="demo-priority-high">High</label>
+						</div>
+						<div class="col-6 col-12-small">
+							<input type="checkbox" id="demo-copy" name="demo-copy">
+							<label for="demo-copy">Email me a copy</label>
+						</div>
+						<div class="col-6 col-12-small">
+							<input type="checkbox" id="demo-human" name="demo-human" checked>
+							<label for="demo-human">Not a robot</label>
+						</div>
+						<div class="col-12">
+							<textarea name="demo-message" id="demo-message" placeholder="Enter your message"
+								rows="6"></textarea>
+						</div>
+						<div class="col-12">
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" class="primary" /></li>
+								<li><input type="reset" value="Reset" /></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+			</section>
 
-            <div class="bg-gray-800 p-4 max-w-lg rounded-lg mb-4">
-                <h2 class="text-xl font-bold text-white mb-2">QR Codes</h2>
+			<section>
+				<h4>Image</h4>
+				<h5>Fit</h5>
+				<div class="box alt">
+					<div class="row gtr-uniform">
+						<div class="col-12"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+					</div>
+				</div>
+				<h5>Left &amp; Right</h5>
+				<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan
+					interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
+					faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu
+					faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
+					ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
+					accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt
+					felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit
+					adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
+					praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus
+					vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer
+					ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu
+					faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
+					ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
+					accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+				<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan
+					interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
+					faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu
+					faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
+					ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
+					accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt
+					felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit
+					adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
+					praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus
+					vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer
+					ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu
+					faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
+					ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
+					accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+			</section>
 
+		</div>
+	</section> -->
 
+	<!-- Footer -->
+	<footer id="footer">
+		<!-- <ul class="icons">
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+		</ul> -->
+		<p class="copyright">&copy; Digital Harbor, Inc. <br>Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+	</footer>
 
-                <a href="/qr" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="/assets/mydigitalharbor-xom/images/unicorn.png" alt="" />
-                    <span class="button-label">Highly Artisan QR Code Examples</span>
-                </a>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-
-
-                <a href="/qr-branded" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="/assets/mydigitalharbor-xom/images/unicorn.png" alt="" />
-                    <span class="button-label">Branded QR Code Examples</span>
-                </a>
-
-
-
-            </div>
-
-
-            <div class="bg-gray-800 p-4 max-w-lg rounded-lg mb-4">
-                <h2 class="text-xl font-bold text-white mb-2">Example Digital Harbors</h2>
-
-
-
-                <a href="/example" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-indigo-400 to-blue-600 hover:from-blue-600 hover:to-indigo-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="/example//assets/example/images/favicon.ico" alt="" />
-                    <span class="button-label">Example with buttons</span>
-                </a>
-
-
-
-                <a href="https://1man1band.com" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-blue-400 to-green-700 hover:from-green-700 hover:to-blue-400 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="https://1man1band.com//assets/1man1band-com/images/favicon.ico" alt="" />
-                    <span class="button-label">1man1band</span>
-                </a>
-
-
-
-                <a href="/caribbean-kings/" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-yellow-500 to-green-700 hover:from-green-700 hover:to-yellow-500 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="/caribbean-kings///assets/caribbean-kings/images/favicon.ico" alt="" />
-                    <span class="button-label">Caribbean Kings</span>
-                </a>
-
-
-
-                <a href="/flashback-martial-arts/" target="_blank" rel="noopener"
-                    class="button bg-gradient-to-br from-red-500 to-gray-700 hover:from-gray-700 hover:to-red-500 text-white font-inter font-bold py-4 px-4 mb-3 tb-3 rounded-full block text-xl flex items-center justify-center">
-                    <img class="icon h-8 w-8 inline-block align-middle mr-2"
-                        src="/flashback-martial-arts///assets/flashback-martial-arts/images/favicon.ico" alt="" />
-                    <span class="button-label">Flashback</span>
-                </a>
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-            <div class="mt-8 text-white text-center">
-
-                <p>Contact Info - <a href="mailto:mydigitalharbor@pype.dev" target="_blank" rel="noopener"
-                        class="text-blue-500 hover:text-blue-700">mydigitalharbor@pype.dev</a></p>
-
-
-                <footer>
-                    <footer class="text-center mt-8">
-                        <p class="text-gray-500">View source <a
-                                href="https://github.com/DigitalHarbor7/DigitalHarbor/tree/v18/_site/mydigitalharbor-xom"
-                                target="_blank" rel="noopener" class="text-blue-500 hover:text-blue-700">here</a>.</p>
-                        <p class="text-gray-500">View QR Codes <a href="/assets/mydigitalharbor-xom/qr" target="_blank"
-                                rel="noopener" class="text-blue-500 hover:text-blue-700">here</a>.</p>
-                        <p>&copy; 2024 Digital Harbor. All rights reserved.</p>
-                    </footer>
-                </footer>
-            </div>
-        </div>
 </body>
 
 </html>
