@@ -23,7 +23,7 @@ The cost to build your site is one-time fee of $100, and I remain available for 
 
 I will create branded QR Codes for your link page or existing website - see examples [here](https://mydigitalharbor.com/qr-branded)
 
-I also can create custom QR codes that are highly artisanal. See examples [here](https://mydigitalharbor.com/qr) and please contact me for inquiries at mydigitalharbor@pype.dev
+I also can create custom QR codes that are highly artisanal. See examples [here](https://mydigitalharbor.com/qr) and please contact me for inquiries at nic@mydigitalharbor.com
 
 ## Services
 
