@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👑 Caribbean Kings 👑</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --jamaica-green: #009B3A;
+            --jamaica-gold: #FED100;
+            --jamaica-black: #000000;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--jamaica-black) 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        .hero-pattern {
+            background-image: linear-gradient(45deg, var(--jamaica-green) 25%, transparent 25%),
+                          linear-gradient(-45deg, var(--jamaica-green) 25%, transparent 25%),
+                          linear-gradient(45deg, transparent 75%, var(--jamaica-green) 75%),
+                          linear-gradient(-45deg, transparent 75%, var(--jamaica-green) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            opacity: 0.1;
+        }
+        .profile-img-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .profile-img-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(45deg, var(--jamaica-green), var(--jamaica-gold));
+            border-radius: 1rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .profile-img-wrapper:hover::before {
+            opacity: 0.9;
+        }
+        .profile-img {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            transition: transform 0.3s;
+        }
+        .profile-img-wrapper:hover .profile-img {
+            transform: scale(1.02);
+        }
+        .link-card {
+            background: rgba(0, 155, 58, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 209, 0, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(254, 209, 0, 0.2), transparent);
+            transition: 0.5s;
+        }
+        .link-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--jamaica-gold);
+            box-shadow: 0 4px 20px rgba(254, 209, 0, 0.2);
+        }
+        .link-card:hover::before {
+            left: 100%;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--jamaica-green), var(--jamaica-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .video-container {
+            position: relative;
+            padding-top: 56.25%;
+            overflow: hidden;
+            border-radius: 1rem;
+            border: 2px solid var(--jamaica-gold);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="hero-pattern fixed inset-0 z-0"></div>
+    <div class="container max-w-2xl mx-auto py-8 md:py-16 relative z-10">
+        <div class="text-center mb-12" data-aos="fade-in" data-aos-duration="800">
+            <div class="profile-img-wrapper">
+                <img src="../assets/images/pic4.jpeg" alt="Caribbean Kings" class="profile-img shadow-xl mx-auto">
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Caribbean Kings</h1>
+            <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                Welcome to the vibrant world of Caribbean Kings entertainment! We bring the authentic sounds and energy of the Caribbean to every performance. 🌴🎵
+            </p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Connect With Us</h2>
+            <div class="space-y-4">
+                <a href="http://instagram.com/caribbean_kingss" 
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white" 
+                   target="_blank" rel="noopener">
+                   <svg class="w-6 h-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">Follow us on Instagram</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Featured Performance -->
+        <div class="mt-12" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Featured Performance</h2>
+            <div class="video-container shadow-2xl" data-aos="zoom-in" data-aos-delay="400">
+                <iframe 
+                    src="https://www.youtube.com/embed/_4WcbWNFQpo?si=dcZHTtOpBFrHKm-8" 
+                    title="Caribbean Kings Video"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
