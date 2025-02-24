@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Harbor - Professional Link Pages & QR Codes</title>
+    <meta name="description" content="Digital Harbor specializes in creating professional link pages and custom QR codes for businesses and individuals.">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Social Meta Tags -->
+    <meta property="og:title" content="Digital Harbor">
+    <meta property="og:description" content="Professional Link Pages & QR Codes">
+    <meta property="og:image" content="https://mydigitalharbor.com/assets/images/dh-og2.png">
+    <meta property="og:url" content="https://mydigitalharbor.com">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Digital Harbor</h1>
+            <p>Crafting Digital Experiences That Leave a Lasting Impact</p>
+            <img src="assets/images/pirate-ship.png" alt="Digital Harbor Logo">
+            <div class="header-buttons">
+                <a href="#link-pages" class="btn"><i class="fas fa-link"></i> Explore Our Work</a>
+                <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> Get Started</a>
+            </div>
+        </header>
+
+        <main>
+            <section id="link-pages" class="section">
+                <div class="feature">
+                    <div class="feature-content">
+                        <h3>Stunning Link Pages</h3>
+                        <p>Transform your digital presence with custom-designed link pages that perfectly represent your brand. Our pages are more than just links – they're a curated experience that tells your story and engages your audience.</p>
+                        <p>Each page is crafted with attention to detail, ensuring your brand's unique voice shines through while maintaining optimal user experience.</p>
+                        <a href="example/" class="btn"><i class="fas fa-eye"></i> View Examples</a>
+                    </div>
+                    <img src="assets/images/links-preview.png" alt="Link Pages Example">
+                </div>
+            </section>
+
+            <section id="qr-codes" class="section">
+                <h2 class="section-title">QR Code Solutions</h2>
+                <p class="section-description">Choose the perfect QR code style for your brand</p>
+                
+                <div class="qr-options">
+                    <div class="qr-option">
+                        <div class="qr-preview">
+                            <img src="assets/images/qr/professional/24-04-2024_08-50-21-qr.png" alt="Professional QR Code Example" class="main-preview">
+                            <div class="mini-previews">
+                                <img src="assets/images/qr/professional/26-04-2024_15-06-58-0-qr.png" alt="Professional QR Example 1">
+                                <img src="assets/images/qr/professional/26-04-2024_15-06-58-1-qr.png" alt="Professional QR Example 2">
+                            </div>
+                        </div>
+                        <div class="qr-content">
+                            <h3>Professional QR Codes</h3>
+                            <p>Clean, crisp, and perfectly scannable QR codes with your brand colors and logo. Ideal for business cards, product packaging, and marketing materials.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Brand color integration</li>
+                                <li><i class="fas fa-check"></i> Logo embedding</li>
+                                <li><i class="fas fa-check"></i> High scan reliability</li>
+                                <li><i class="fas fa-check"></i> Multiple format options</li>
+                            </ul>
+                            <a href="#" class="btn" onclick="showGallery('professional')"><i class="fas fa-qrcode"></i> View Professional Gallery</a>
+                        </div>
+                    </div>
+
+                    <div class="qr-option featured">
+                        <div class="qr-preview">
+                            <img src="assets/images/qr/artisanal/eiffel-tower.png" alt="Artisanal QR Code Example" class="main-preview">
+                            <div class="mini-previews">
+                                <img src="assets/images/qr/artisanal/beach-sunrise.png" alt="Artisanal QR Example 1">
+                                <img src="assets/images/qr/artisanal/galaxy.png" alt="Artisanal QR Example 2">
+                            </div>
+                        </div>
+                        <div class="qr-content">
+                            <h3>Artisanal QR Codes</h3>
+                            <p>Stunning, hand-crafted QR code designs that transform functional codes into works of art. Perfect for high-end brands, special events, and artistic installations.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-star"></i> Custom illustrations</li>
+                                <li><i class="fas fa-star"></i> Artistic integration</li>
+                                <li><i class="fas fa-star"></i> Unique patterns</li>
+                                <li><i class="fas fa-star"></i> Premium finishing options</li>
+                            </ul>
+                            <a href="#" class="btn btn-featured" onclick="showGallery('artisanal')"><i class="fas fa-palette"></i> View Artisanal Gallery</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Modal -->
+                <div id="gallery-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div id="professional-gallery" class="gallery-grid">
+                            <img src="assets/images/qr/professional/24-04-2024_08-50-21-qr.png" alt="Professional QR 1">
+                            <img src="assets/images/qr/professional/26-04-2024_15-06-58-0-qr.png" alt="Professional QR 2">
+                            <img src="assets/images/qr/professional/26-04-2024_15-06-58-1-qr.png" alt="Professional QR 3">
+                            <img src="assets/images/qr/professional/26-04-2024_15-06-58-2-qr.png" alt="Professional QR 4">
+                        </div>
+                        <div id="artisanal-gallery" class="gallery-grid">
+                            <img src="assets/images/qr/artisanal/eiffel-tower.png" alt="Artisanal QR 1">
+                            <img src="assets/images/qr/artisanal/beach-sunrise.png" alt="Artisanal QR 2">
+                            <img src="assets/images/qr/artisanal/galaxy.png" alt="Artisanal QR 3">
+                            <img src="assets/images/qr/artisanal/dolphins.png" alt="Artisanal QR 4">
+                            <img src="assets/images/qr/artisanal/darth-vader.png" alt="Artisanal QR 5">
+                            <img src="assets/images/qr/artisanal/ice-cream.png" alt="Artisanal QR 6">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hosting" class="section">
+                <div class="feature">
+                    <div class="feature-content">
+                        <h3>Reliable Hosting</h3>
+                        <p>Your digital presence deserves a stable foundation. Our professional hosting service ensures your content is always accessible, secure, and performing at its best.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> 99.9% Uptime Guarantee</li>
+                            <li><i class="fas fa-shield-alt"></i> Enhanced Security</li>
+                            <li><i class="fas fa-sync"></i> Regular Updates</li>
+                            <li><i class="fas fa-chart-line"></i> Performance Monitoring</li>
+                        </ul>
+                    </div>
+                    <img src="assets/images/dh4.png" alt="Web Hosting">
+                </div>
+            </section>
+
+            <section id="sites" class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <p>Discover how we've helped businesses and creators establish their digital presence:</p>
+                
+                <div class="sites-grid">
+                    <div class="site-card">
+                        <h4>1 Man 1 Band</h4>
+                        <p>Music performance and booking site</p>
+                        <div class="site-links">
+                            <a href="1man1-band/">Site</a>
+                            <a href="1man1-band/qr/">QR Gallery</a>
+                        </div>
+                    </div>
+
+                    <div class="site-card">
+                        <h4>Caribbean Kings</h4>
+                        <p>Caribbean entertainment and events</p>
+                        <div class="site-links">
+                            <a href="caribbean-kings/">Site</a>
+                        </div>
+                    </div>
+
+                    <div class="site-card">
+                        <h4>Flashback Martial Arts</h4>
+                        <p>Martial arts training and events</p>
+                        <div class="site-links">
+                            <a href="flashback-martial-arts/">Site</a>
+                            <a href="flashback-martial-arts/qr/">QR Gallery</a>
+                        </div>
+                    </div>
+
+                    <div class="site-card">
+                        <h4>Reveal Fitness</h4>
+                        <p>Personal training and fitness programs</p>
+                        <div class="site-links">
+                            <a href="reveal-fitness/">Site</a>
+                        </div>
+                    </div>
+
+                    <div class="site-card">
+                        <h4>Example Site</h4>
+                        <p>Demo of our link page capabilities</p>
+                        <div class="site-links">
+                            <a href="example/">Site</a>
+                            <a href="example/qr/">QR Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Ready to Set Sail?</h2>
+            <p>Let's create something extraordinary together. Whether you need a custom link page, artistic QR codes, or a complete digital presence, we're here to help.</p>
+            <div class="contact-buttons">
+                <a href="mailto:contact@mydigitalharbor.com" class="btn">
+                    <i class="fas fa-envelope"></i> Start Your Journey
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="social-links">
+                <a href="https://github.com/DigitalHarbor7" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:contact@mydigitalharbor.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Digital Harbor</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('onclick')) return; // Skip if has onclick handler
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Gallery modal functionality
+        const galleryModal = document.getElementById('gallery-modal');
+        const professionalGallery = document.getElementById('professional-gallery');
+        const artisanalGallery = document.getElementById('artisanal-gallery');
+
+        // QR code enlargement functionality
+        const qrModal = document.createElement('div');
+        qrModal.id = 'qr-modal';
+        qrModal.className = 'modal';
+        qrModal.innerHTML = `
+            <div class="modal-content qr-modal-content">
+                <span class="close">&times;</span>
+                <img id="enlarged-qr" src="" alt="Enlarged QR Code">
+            </div>
+        `;
+        document.body.appendChild(qrModal);
+
+        const enlargedQR = document.getElementById('enlarged-qr');
+
+        // Add click handlers to all QR code images
+        function addQRClickHandlers() {
+            const qrImages = document.querySelectorAll('.qr-preview img, .gallery-grid img');
+            qrImages.forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent gallery modal from closing
+                    enlargedQR.src = this.src;
+                    qrModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+        }
+
+        // Initialize click handlers
+        addQRClickHandlers();
+
+        function showGallery(type) {
+            galleryModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            if (type === 'professional') {
+                professionalGallery.style.display = 'grid';
+                artisanalGallery.style.display = 'none';
+            } else {
+                artisanalGallery.style.display = 'grid';
+                professionalGallery.style.display = 'none';
+            }
+        }
+
+        // Close button functionality for both modals
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.onclick = function() {
+                this.closest('.modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Click outside to close for both modals
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Preview image swapping
+        document.querySelectorAll('.mini-previews img').forEach(img => {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent enlargement when swapping
+                const mainPreview = this.closest('.qr-preview').querySelector('.main-preview');
+                const mainSrc = mainPreview.src;
+                mainPreview.src = this.src;
+                this.src = mainSrc;
+            });
+        });
+    </script>
+</body>
+</html>
