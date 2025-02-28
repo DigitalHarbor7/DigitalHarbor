@@ -77,12 +77,12 @@ jobs:
           ls -alh _site
 
           # deploy me first
-          npx wrangler pages deploy "_site" --project-name="mydigitalharbor-com"
+          npx wrangler pages deploy "website" --project-name="mydigitalharbor-com"
           # Look just for files for sites that have their own domain, the rest are just routes on my site
-          for dir in $(find _site/* \( -type d -name "*-band" -o -name "*-com" \) -maxdepth 0 -not \( -name "assets" -o -name "payment" -o -name "qr-branded" -o -name "qr" -o -name "example" \)); do
+          for dir in $(find website/* \( -type d -name "*-band" -o -name "*-com" \) -maxdepth 0 -not \( -name "assets" -o -name "payment" -o -name "qr-branded" -o -name "qr" -o -name "example" \)); do
               echo "Deploying $dir"
               PROJECT_NAME=$(basename "$dir")
-              npx wrangler pages deploy "_site/$PROJECT_NAME" --project-name="$PROJECT_NAME" || echo "failed deploying $PROJECT_NAME"
+              npx wrangler pages deploy "website/$PROJECT_NAME" --project-name="$PROJECT_NAME" || echo "failed deploying $PROJECT_NAME"
           done
 
       # - name: Set deployment variables and deploy only if there's changes
