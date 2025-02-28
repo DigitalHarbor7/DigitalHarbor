@@ -6,23 +6,30 @@
     <meta name="description" content="1Man1Band's Digital Harbor">
     <meta property="og:image" content="https://github.com/DigitalHarbor7/DigitalHarbor/blob/pages/_site/1man1band-com/assets/1man1band-com/images/josh_banner.jpeg?raw=true">
     <title>1Man1Band</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M9 19V6l12-3v13L9 19zm0 0v-6l12 3v6L9 19zm2-9.95v3.9L19 11v-3.9l-8 1.95z'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         :root {
-            --primary: #8b5cf6;
-            --secondary: #6366f1;
-            --accent: #ec4899;
-            --background: #111827;
-            --surface: #1f2937;
-            --text: #f3f4f6;
-            --text-secondary: #9ca3af;
+            --primary: #3b82f6;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+            --gradient-start: #3b82f6;
+            --gradient-end: #10b981;
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.95)), url('../assets/images/josh_banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             min-height: 100vh;
             color: var(--text);
         }
@@ -35,7 +42,7 @@
             content: '';
             position: absolute;
             inset: -3px;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
             border-radius: 1rem;
             opacity: 0.7;
             transition: opacity 0.3s;
@@ -56,9 +63,9 @@
             transform: scale(1.02);
         }
         .link-card {
-            background: rgba(31, 41, 55, 0.5);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -76,13 +83,13 @@
         .link-card:hover {
             transform: translateY(-2px);
             border-color: var(--accent);
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.4);
         }
         .link-card:hover::before {
             left: 100%;
         }
         .gradient-text {
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
