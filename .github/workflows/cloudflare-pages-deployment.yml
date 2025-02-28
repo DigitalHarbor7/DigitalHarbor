@@ -74,7 +74,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
-          ls -alh _site
+          ls -alh website
 
           # deploy me first
           npx wrangler pages deploy "website" --project-name="mydigitalharbor-com"
