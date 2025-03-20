@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Pypeaday's Tech Hub</title>
+  <meta name="description" content="Find me online!">
+  <meta name="author" content="Pypeaday">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    :root {
+      /* Main color scheme */
+      --bg-color: #0a0e17;
+      --bg-secondary: #141c2e;
+      --primary: #00e5ff;
+      --secondary: #7b42ff;
+      --text: #e0e0e0;
+      --text-muted: #8a8a8a;
+      --accent: #ff2a6d;
+      
+      /* Button colors */
+      --github-color: #333;
+      --resume-color: #0077b5;
+      --blog-color: #00c853;
+      --twitter-color: #1da1f2;
+      --discord-color: #5865f2;
+      --twitch-color: #9146ff;
+      --gitea-color: #609926;
+      --signal-color: #3a76f0;
+      --rick-color: #ff5252;
+      --harbor-color: #0096c7;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text);
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+      font-size: 18px;
+    }
+    
+    /* Circuit board background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(var(--primary) 1px, transparent 1px),
+        radial-gradient(var(--secondary) 1px, transparent 1px);
+      background-size: 50px 50px;
+      background-position: 0 0, 25px 25px;
+      opacity: 0.03;
+      z-index: -1;
+    }
+    
+    /* Animated gradient background */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(125deg, 
+                  rgba(0, 229, 255, 0.05) 0%, 
+                  rgba(123, 66, 255, 0.05) 50%, 
+                  rgba(255, 42, 109, 0.05) 100%);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      z-index: -2;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    /* Avatar styling */
+    .avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 229, 255, 0.7);
+    }
+    
+    .avatar i {
+      font-size: 100px;
+      color: var(--primary);
+      text-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+    }
+    
+    /* Animated rings around avatar */
+    .avatar-container {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .avatar-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 3px dashed var(--secondary);
+      opacity: 0.3;
+      animation: rotate 20s linear infinite;
+    }
+    
+    .ring-1 {
+      width: 240px;
+      height: 240px;
+      top: -20px;
+      left: -20px;
+    }
+    
+    .ring-2 {
+      width: 280px;
+      height: 280px;
+      top: -40px;
+      left: -40px;
+      border-color: var(--accent);
+      animation-direction: reverse;
+      animation-duration: 25s;
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 25px 0;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* Terminal-style title decoration */
+    h1::before {
+      content: '> ';
+      color: var(--accent);
+      position: absolute;
+      left: -40px;
+      animation: blink 1s step-end infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .bio {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 700px;
+      position: relative;
+      padding: 0 20px;
+    }
+    
+    /* Links container */
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    
+    /* Button styling */
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px 25px;
+      background-color: var(--bg-secondary);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 1.25rem;
+      transition: all 0.3s ease;
+      border-left: 6px solid transparent;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Hover effect for buttons */
+    .button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Button glow effect on hover */
+    .button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transform: translateX(-100%);
+      transition: 0.6s;
+    }
+    
+    .button:hover::after {
+      transform: translateX(100%);
+    }
+    
+    /* Button colors */
+    .button-github {
+      border-left-color: var(--github-color);
+    }
+    
+    .button-resume {
+      border-left-color: var(--resume-color);
+    }
+    
+    .button-default {
+      border-left-color: var(--blog-color);
+    }
+    
+    .button-twit {
+      border-left-color: var(--twitter-color);
+    }
+    
+    .button-discord {
+      border-left-color: var(--discord-color);
+    }
+    
+    .button-twitch {
+      border-left-color: var(--twitch-color);
+    }
+    
+    .button-gitea {
+      border-left-color: var(--gitea-color);
+    }
+    
+    .button-signal {
+      border-left-color: var(--signal-color);
+    }
+    
+    .button-harbor {
+      border-left-color: var(--harbor-color);
+    }
+    
+    /* Icon styling */
+    .button i {
+      font-size: 28px;
+      transition: transform 0.3s ease;
+      width: 32px;
+      text-align: center;
+    }
+    
+    .button:hover i {
+      transform: scale(1.2);
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+    
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer a:hover {
+      color: var(--secondary);
+    }
+    
+    /* Code block decoration */
+    .code-block {
+      position: absolute;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      opacity: 0.2;
+      z-index: -1;
+      user-select: none;
+    }
+    
+    .code-block-1 {
+      top: 10%;
+      left: 5%;
+      transform: rotate(-10deg);
+    }
+    
+    .code-block-2 {
+      bottom: 15%;
+      right: 5%;
+      transform: rotate(5deg);
+    }
+    
+    /* Matrix-like animation in the background */
+    .matrix-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    
+    .matrix-column {
+      position: absolute;
+      top: -100px;
+      width: 30px;
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      text-align: center;
+      animation: matrix-rain linear infinite;
+    }
+    
+    @keyframes matrix-rain {
+      0% { transform: translateY(-100px); }
+      100% { transform: translateY(calc(100vh + 100px)); }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+      
+      .profile-section {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h1::before {
+        left: -30px;
+      }
+      
+      .bio {
+        font-size: 1.2rem;
+      }
+      
+      .button {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+      }
+      
+      .button i {
+        font-size: 24px;
+      }
+      
+      .avatar {
+        width: 160px;
+        height: 160px;
+      }
+      
+      .avatar i {
+        font-size: 80px;
+      }
+      
+      .ring-1 {
+        width: 190px;
+        height: 190px;
+        top: -15px;
+        left: -15px;
+      }
+      
+      .ring-2 {
+        width: 220px;
+        height: 220px;
+        top: -30px;
+        left: -30px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h1::before {
+        left: -25px;
+      }
+      
+      .bio {
+        font-size: 1.1rem;
+      }
+      
+      .code-block {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Decorative code blocks -->
+  <div class="code-block code-block-1">
+    <pre>
+function init() {
+  const tech = ['Python', 'JavaScript', 'React'];
+  const passion = 'Building cool stuff';
+  return { tech, passion };
+}
+    </pre>
+  </div>
+  
+  <div class="code-block code-block-2">
+    <pre>
+class Developer {
+  constructor(name) {
+    this.name = name;
+    this.coffee = 100;
+  }
+  
+  code() {
+    while(this.coffee > 0) {
+      this.createAwesomeStuff();
+    }
+  }
+}
+    </pre>
+  </div>
+  
+  <!-- Matrix-like animation -->
+  <div class="matrix-rain" id="matrix-container"></div>
+
+  <div class="container">
+    <div class="profile-section">
+      <!-- Avatar with animated rings -->
+      <div class="avatar-container">
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar">
+          <i class="fas fa-code"></i>
+        </div>
+      </div>
+      
+      <!-- Title with terminal cursor effect -->
+      <h1>Pypeaday's Tech Hub</h1>
+      
+      <!-- Bio -->
+      <p class="bio">👋 Hello, below are where you can find me online! 🤓</p>
+    </div>
+    
+    <!-- Links Section -->
+    <div class="links-container">
+      <!-- Github -->
+      <a class="button button-github" href="https://www.github.com/pypeaday" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+        GitHub
+      </a>
+      
+      <!-- Resume -->
+      <a class="button button-resume" href="https://github.com/pypeaday/AltaCV/blob/me/nic.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-file-alt"></i>
+        Resume
+      </a>
+      
+      <!-- Blog -->
+      <a class="button button-default" href="https://pype.dev/" target="_blank" rel="noopener">
+        <i class="fas fa-blog"></i>
+        Blog
+      </a>
+      
+      <!-- Twitter -->
+      <a class="button button-twit" href="https://www.twitter.com/pypeaday" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+        Twitter
+      </a>
+      
+      <!-- Discord -->
+      <a class="button button-discord" href="https://discord.com/channels/957226093155336204/957226093696393278" target="_blank" rel="noopener">
+        <i class="fab fa-discord"></i>
+        Discord
+      </a>
+      
+      <!-- Twitch -->
+      <a class="button button-twitch" href="https://www.twitch.tv/pypeaday" target="_blank" rel="noopener">
+        <i class="fab fa-twitch"></i>
+        Twitch
+      </a>
+      
+      <!-- Digital Harbor -->
+      <a class="button button-harbor" href="https://mydigitalharbor.com" target="_blank" rel="noopener">
+        <i class="fas fa-anchor"></i>
+        Digital Harbor
+      </a>
+      
+      <!-- Gitea -->
+      <a class="button button-gitea" href="https://gitea.paynepride.com" target="_blank" rel="noopener">
+        <i class="fas fa-code-branch"></i>
+        Gitea (coming soon!)
+      </a>
+      
+      <!-- Signal -->
+      <a class="button button-signal" href="#" target="_blank" rel="noopener">
+        <i class="fas fa-comment-alt"></i>
+        Signal
+      </a>
+      
+      <!-- Rick Roll -->
+      <a class="button" href="https://pypeaday.github.io/rick/" target="_blank" rel="noopener" style="border-left-color: var(--rick-color);">
+        <i class="fas fa-surprise"></i>
+        Oops!
+      </a>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p>Need software development or consulting services? Contact me at <a href="mailto:nic@digitalharbor.dev">nic@digitalharbor.dev</a></p>
+    </div>
+  </div>
+
+  <!-- Inline script for matrix animation and other effects -->
+  <script>
+    // Create matrix rain effect
+    function createMatrixRain() {
+      const container = document.getElementById('matrix-container');
+      const width = window.innerWidth;
+      const columnCount = Math.floor(width / 30);
+      
+      for (let i = 0; i < columnCount; i++) {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        column.style.left = (i * 30) + 'px';
+        column.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        
+        // Add random binary/hex characters
+        for (let j = 0; j < 20; j++) {
+          const char = document.createElement('div');
+          char.textContent = Math.random() > 0.5 ? 
+            (Math.random() > 0.5 ? '0' : '1') : 
+            Math.floor(Math.random() * 16).toString(16).toUpperCase();
+          column.appendChild(char);
+        }
+        
+        container.appendChild(column);
+      }
+    }
+    
+    // Add a subtle parallax effect to the code blocks
+    document.addEventListener('mousemove', (e) => {
+      const codeBlocks = document.querySelectorAll('.code-block');
+      const moveX = (e.clientX - window.innerWidth / 2) / 50;
+      const moveY = (e.clientY - window.innerHeight / 2) / 50;
+      
+      codeBlocks.forEach(block => {
+        block.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${block.classList.contains('code-block-1') ? -10 : 5}deg)`;
+      });
+    });
+    
+    // Initialize matrix rain with a slight delay
+    setTimeout(createMatrixRain, 500);
+  </script>
+</body>
+</html>

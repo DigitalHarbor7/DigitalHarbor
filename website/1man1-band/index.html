@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="1Man1Band's Digital Harbor">
+    <meta property="og:image" content="https://github.com/DigitalHarbor7/DigitalHarbor/blob/pages/_site/1man1band-com/assets/1man1band-com/images/josh_banner.jpeg?raw=true">
+    <title>1Man1Band</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M9 19V6l12-3v13L9 19zm0 0v-6l12 3v6L9 19zm2-9.95v3.9L19 11v-3.9l-8 1.95z'/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+            --gradient-start: #3b82f6;
+            --gradient-end: #10b981;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.95)), url('../assets/images/josh_banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: var(--text);
+        }
+        .profile-img-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .profile-img-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 1rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .profile-img-wrapper:hover::before {
+            opacity: 0.9;
+        }
+        .profile-img {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            transition: transform 0.3s;
+        }
+        .profile-img-wrapper:hover .profile-img {
+            transform: scale(1.02);
+        }
+        .link-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.5s;
+        }
+        .link-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.4);
+        }
+        .link-card:hover::before {
+            left: 100%;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            object-fit: cover;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+        
+        .slideshow-container:hover .slide-nav {
+            opacity: 0.8;
+        }
+        
+        .slide-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 1 !important;
+        }
+        
+        .slide-nav.prev {
+            left: 1rem;
+        }
+        
+        .slide-nav.next {
+            right: 1rem;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="container max-w-2xl mx-auto py-8 md:py-16">
+        <div class="text-center mb-12" data-aos="fade-in" data-aos-duration="800">
+            <div class="profile-img-wrapper">
+                <img src="../assets/images/josh1.jpg" alt="1Man1Band" class="profile-img shadow-xl mx-auto">
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">1Man1Band</h1>
+            <p class="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
+                Joshua Payne is a One-Man-Band from Cedar Rapids, Iowa, and takes his years of performance experience from all genres to create a sound like no other. Imagine hearing multiple voices and instruments and seeing only one man on stage creating it all right before your eyes. Josh has performed on stages all over the world from big to small, creating music in any capacity he could.
+            </p>
+        </div>
+
+        <!-- Photo Slideshow -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Performance Highlights</h2>
+            <div class="slideshow-container">
+                <!-- Placeholder slides - replace src with actual photos when available -->
+                <img src="../assets/images/josh1.jpg" alt="Performance 1" class="slide active">
+                <img src="../assets/images/josh1.jpg" alt="Performance 2" class="slide">
+                <img src="../assets/images/josh1.jpg" alt="Performance 3" class="slide">
+                
+                <!-- Navigation buttons -->
+                <button class="slide-nav prev" aria-label="Previous slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="slide-nav next" aria-label="Next slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="mb-8" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Connect With Me</h2>
+            <div class="space-y-4">
+                <a href="https://instagram.com/1man1band34" 
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white" 
+                   target="_blank" rel="noopener">
+                   <svg class="w-6 h-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">Instagram</span>
+                </a>
+                
+                <a href="https://www.facebook.com/1man1band" 
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white" 
+                   target="_blank" rel="noopener">
+                   <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">Facebook</span>
+                </a>
+                
+                <a href="mailto:JoshPayneMusic@gmail.com" 
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white">
+                   <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">Email Me!</span>
+                </a>
+                
+                <a href="https://www.youtube.com/@1Man1Band34" 
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white" 
+                   target="_blank" rel="noopener">
+                   <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                       <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">YouTube</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Support Links -->
+        <div class="mb-8" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Support My Music</h2>
+            <div class="space-y-4">
+                <a href="https://www.venmo.com/JPayne3421" 
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white" 
+                   target="_blank" rel="noopener">
+                   <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                       <path d="M21.5 0h-19C1.12 0 0 1.12 0 2.5v19C0 22.88 1.12 24 2.5 24h19c1.38 0 2.5-1.12 2.5-2.5v-19C24 1.12 22.88 0 21.5 0zM19.1 8.8c0 3.42-2.86 7.98-5.18 11.2H8.68l-3.26-11.2h4.06l1.89 7.14c1.29-2.02 2.88-5.03 2.88-7.14 0-.95-.2-1.65-.51-2.21h3.89c-.27.57-.53 1.4-.53 2.21z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">Venmo</span>
+                </a>
+
+                <a href="https://cash.app/JPayne3421/amount" 
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white" 
+                   target="_blank" rel="noopener">
+                   <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                       <path d="M23.59 3.475a3.89 3.89 0 0 0-5.503-5.503L12 4.06 5.913-2.028A3.89 3.89 0 0 0 .41 3.475L6.497 9.56.41 15.647a3.89 3.89 0 0 0 5.503 5.503L12 15.062l6.087 6.088a3.89 3.89 0 0 0 5.503-5.503L17.503 9.56l6.087-6.085z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">Cash App</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Photo Gallery Link -->
+        <div class="mb-8" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Photo Gallery</h2>
+            <div class="space-y-4">
+                <a href="gallery/"
+                   class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="text-lg font-semibold">View Photo Gallery</span>
+                </a>
+                <a href="qr/"
+                  class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white">
+                   <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v-4m6 0h-2m2 0v4m-6 0h-2m2 0v4m-6-4h2m-2 0v4m0-11v-4m0 0h2m-2 0h10a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/>
+                   </svg>
+                   <span class="text-lg font-semibold">View QR Codes</span>
+               </a>
+           </div>
+       </div>
+
+       <!-- Featured Video Section -->
+        <div class="mt-12" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Featured Performance</h2>
+            <div class="relative">
+                <!-- Decorative frame -->
+                <div class="absolute -inset-4 bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--accent)] rounded-2xl opacity-75 blur-md"></div>
+                <!-- Video container with glass effect -->
+                <div class="relative bg-gray-900/60 p-4 rounded-xl backdrop-blur-sm border border-white/10">
+                    <div class="relative w-full" style="padding-bottom: 56.25%">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                            src="https://www.youtube.com/embed/CxV48r32GxM?si=7eLUxSYlIMpmf6Fx" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true
+            });
+
+            // Slideshow functionality
+            const slideshow = {
+                currentSlide: 0,
+                slides: document.querySelectorAll('.slide'),
+                prevButton: document.querySelector('.slide-nav.prev'),
+                nextButton: document.querySelector('.slide-nav.next'),
+                autoplayInterval: 5000, // 5 seconds between slides
+                autoplayTimeout: null,
+
+                init() {
+                    if (!this.slides.length) return;
+                    
+                    // Add click handlers
+                    this.prevButton.addEventListener('click', () => this.showSlide(this.currentSlide - 1));
+                    this.nextButton.addEventListener('click', () => this.showSlide(this.currentSlide + 1));
+                    
+                    // Start autoplay
+                    this.startAutoplay();
+                    
+                    // Pause autoplay on hover
+                    const container = document.querySelector('.slideshow-container');
+                    container.addEventListener('mouseenter', () => this.stopAutoplay());
+                    container.addEventListener('mouseleave', () => this.startAutoplay());
+                },
+
+                showSlide(index) {
+                    // Handle wrapping
+                    if (index < 0) index = this.slides.length - 1;
+                    if (index >= this.slides.length) index = 0;
+                    
+                    // Remove active class from current slide
+                    this.slides[this.currentSlide].classList.remove('active');
+                    
+                    // Add active class to new slide
+                    this.slides[index].classList.add('active');
+                    
+                    this.currentSlide = index;
+                },
+
+                startAutoplay() {
+                    this.stopAutoplay(); // Clear any existing timeout
+                    this.autoplayTimeout = setInterval(() => {
+                        this.showSlide(this.currentSlide + 1);
+                    }, this.autoplayInterval);
+                },
+
+                stopAutoplay() {
+                    if (this.autoplayTimeout) {
+                        clearInterval(this.autoplayTimeout);
+                        this.autoplayTimeout = null;
+                    }
+                }
+            };
+
+            // Initialize slideshow
+            slideshow.init();
+        });
+    </script>
+</body>
+</html>

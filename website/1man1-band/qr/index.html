@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Gallery | Joshua Payne - One Man Band</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .qr-card {
+            transition: transform 0.3s ease;
+        }
+        .qr-card:hover {
+            transform: scale(1.02);
+        }
+        .qr-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-white p-6">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header with back link -->
+        <div class="mb-8">
+            <a href="../" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <!-- Gallery Header -->
+        <h1 class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+            QR Code Gallery
+        </h1>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
+            <!-- QR Code 1 -->
+            <div class="glass-card qr-card rounded-lg p-4" data-aos="fade-up">
+                <img src="image.png" alt="QR Code 1" class="qr-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">QR Code 1</h3>
+                <p class="text-gray-300">Scan to access exclusive content</p>
+            </div>
+
+            <!-- QR Code 2 -->
+            <div class="glass-card qr-card rounded-lg p-4" data-aos="fade-up">
+                <img src="image(1).png" alt="QR Code 2" class="qr-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">QR Code 2</h3>
+                <p class="text-gray-300">Scan to access exclusive content</p>
+            </div>
+
+            <!-- QR Code 3 -->
+            <div class="glass-card qr-card rounded-lg p-4" data-aos="fade-up">
+                <img src="image(2).png" alt="QR Code 3" class="qr-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">QR Code 3</h3>
+                <p class="text-gray-300">Scan to access exclusive content</p>
+            </div>
+
+            <!-- QR Code 4 -->
+            <div class="glass-card qr-card rounded-lg p-4" data-aos="fade-up">
+                <img src="image(3).png" alt="QR Code 4" class="qr-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">QR Code 4</h3>
+                <p class="text-gray-300">Scan to access exclusive content</p>
+            </div>
+
+            <!-- QR Code 5 -->
+            <div class="glass-card qr-card rounded-lg p-4" data-aos="fade-up">
+                <img src="image(4).png" alt="QR Code 5" class="qr-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">QR Code 5</h3>
+                <p class="text-gray-300">Scan to access exclusive content</p>
+            </div>
+
+            <!-- QR Code 6 -->
+            <div class="glass-card qr-card rounded-lg p-4" data-aos="fade-up">
+                <img src="image(5).png" alt="QR Code 6" class="qr-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">QR Code 6</h3>
+                <p class="text-gray-300">Scan to access exclusive content</p>
+            </div>
+
+            <!-- QR Code 7 -->
+            <div class="glass-card qr-card rounded-lg p-4" data-aos="fade-up">
+                <img src="image(6).png" alt="QR Code 7" class="qr-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">QR Code 7</h3>
+                <p class="text-gray-300">Scan to access exclusive content</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
