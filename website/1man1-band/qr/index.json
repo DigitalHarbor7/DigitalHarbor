@@ -1,14 +1,39 @@
-[
-    {
-        "folder": ".",
-        "images": [
-            "image(1).png",
-            "image(2).png",
-            "image(3).png",
-            "image(4).png",
-            "image(5).png",
-            "image(6).png",
-            "image.png"
-        ]
-    }
-]
+{
+    "qrCodes": [
+        {
+            "title": "QR Code 1",
+            "description": "Scan to access exclusive content",
+            "image": "image.png"
+        },
+        {
+            "title": "QR Code 2",
+            "description": "Scan to access exclusive content",
+            "image": "image(1).png"
+        },
+        {
+            "title": "QR Code 3",
+            "description": "Scan to access exclusive content",
+            "image": "image(2).png"
+        },
+        {
+            "title": "QR Code 4",
+            "description": "Scan to access exclusive content",
+            "image": "image(3).png"
+        },
+        {
+            "title": "QR Code 5",
+            "description": "Scan to access exclusive content",
+            "image": "image(4).png"
+        },
+        {
+            "title": "QR Code 6",
+            "description": "Scan to access exclusive content",
+            "image": "image(5).png"
+        },
+        {
+            "title": "QR Code 7",
+            "description": "Scan to access exclusive content",
+            "image": "image(6).png"
+        }
+    ]
+}
