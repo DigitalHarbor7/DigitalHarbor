@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QR Codes - Digital Harbor</title>
+    <meta name="description" content="Gallery of artisanal QR codes by Digital Harbor">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+        :root {
+            --ocean-deep: #020B13;
+            --ocean-blue: #0A2533;
+            --wave-blue: #0096C7;
+            --ocean-foam: #FFFFFF;
+            --neon-blue: #48CAE4;
+            --text-primary: #FFFFFF;
+            --text-secondary: #90E0EF;
+            --accent: #48CAE4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, #010608 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Wave animations */
+        .waves-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100vh;
+            background-repeat: repeat-x;
+            background-size: 50% 100%;
+            animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            opacity: 0.6;
+            transform-origin: center bottom;
+        }
+
+        .wave-1 {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23041C2C' fill-opacity='0.4' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            animation-duration: 25s;
+            height: 120vh;
+            opacity: 0.8;
+        }
+
+        .wave-2 {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23062436' fill-opacity='0.3' d='M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,154.7C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            animation-duration: 35s;
+            animation-direction: reverse;
+            height: 110vh;
+            opacity: 0.7;
+        }
+
+        .wave-3 {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23020B13' fill-opacity='0.5' d='M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,112C672,128,768,192,864,192C960,192,1056,128,1152,106.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            animation-duration: 45s;
+            height: 130vh;
+            opacity: 0.9;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateX(0) translateY(0) scale(1.1);
+            }
+            50% {
+                transform: translateX(-25%) translateY(-15px) scale(1);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0) scale(1.1);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(10, 37, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 2px solid rgba(0, 150, 199, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 150, 199, 0.2);
+        }
+
+        .nautical-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(72, 202, 228, 0.5);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 150, 199, 0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(0, 150, 199, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            background: rgba(10, 37, 51, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(0, 150, 199, 0.2);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(72, 202, 228, 0.2), transparent);
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            left: 100%;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--neon-blue);
+            box-shadow: 
+                0 0 25px rgba(0, 150, 199, 0.3),
+                0 0 5px rgba(72, 202, 228, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 11, 19, 0.95);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90vh;
+            background: var(--ocean-blue);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--wave-blue);
+            box-shadow: 0 0 30px rgba(0, 150, 199, 0.4);
+        }
+
+        .modal img {
+            max-width: 100%;
+            max-height: calc(90vh - 4rem);
+            display: block;
+            border-radius: 8px;
+            border: 1px solid rgba(72, 202, 228, 0.3);
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            background: rgba(72, 202, 228, 0.1);
+            transform: rotate(90deg);
+        }
+
+        .gallery-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(10, 37, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border-top: 2px solid rgba(0, 150, 199, 0.3);
+        }
+
+        .gallery-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-footer a:hover {
+            text-shadow: 0 0 8px rgba(72, 202, 228, 0.6);
+        }
+
+        /* Nautical decorations */
+        .anchor-decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .anchor-1 {
+            top: 10%;
+            right: 5%;
+            font-size: 4rem;
+            transform: rotate(15deg);
+        }
+
+        .anchor-2 {
+            bottom: 15%;
+            left: 5%;
+            font-size: 3rem;
+            transform: rotate(-10deg);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .nautical-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .wave {
+                animation: none;
+            }
+            
+            .gallery-item:hover {
+                transform: none;
+            }
+            
+            .close:hover {
+                transform: none;
+            }
+        }
+
+        /* Loading optimization */
+        .gallery-item img {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item img.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Wave Animation -->
+    <div class="waves-container">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+    </div>
+
+    <!-- Nautical decorations -->
+    <div class="anchor-decoration anchor-1">⚓</div>
+    <div class="anchor-decoration anchor-2">⚓</div>
+
+    <div class="container">
+        <header class="header" data-aos="fade-down">
+            <a href="../" class="back-link">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Digital Harbor
+            </a>
+            <h1 class="nautical-title">QR Treasures</h1>
+            <p>Discover our collection of artisanal QR codes, each one a unique digital beacon</p>
+        </header>
+
+        <main data-aos="fade-up" data-aos-delay="200">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="eiffel-tower.png" alt="Eiffel Tower QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="08179-4087718973-Eiffel Tower in the snow with a sky background, andreas rocha, matte painting concept art, a detailed matte painting.png" alt="Snowy Eiffel Tower QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="nyc-cyberpunk.png" alt="Cyberpunk NYC QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="nyc-cyberpunk2.png" alt="Cyberpunk NYC Alternative QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="beach-sunrise.png" alt="Beach Sunrise QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="galaxy.png" alt="Galaxy QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="opera.png" alt="Opera House QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="opera2.png" alt="Opera House Alternative QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="pirate-ship.png" alt="Pirate Ship QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="pirate-ship2.png" alt="Pirate Ship Alternative QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="dolphins.png" alt="Dolphins QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="darth-vader.png" alt="Darth Vader QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="ice-cream.png" alt="Ice Cream QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="ice-cream2.png" alt="Ice Cream Alternative QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="mech.png" alt="Mech Robot QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="palm-trees.png" alt="Palm Trees QR Code" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="pyramid.png" alt="Pyramid QR Code" loading="lazy">
+                </div>
+            </div>
+        </main>
+
+        <footer class="gallery-footer" data-aos="fade-up">
+            <p>Ready to set sail with a unique QR code design? <a href="../#contact">Drop anchor and get in touch</a></p>
+        </footer>
+    </div>
+
+    <!-- Modal for enlarged view -->
+    <div class="modal" id="qr-modal">
+        <div class="modal-content">
+            <button class="close">&times;</button>
+            <img id="enlarged-qr" src="" alt="Enlarged QR Code">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            mirror: false
+        });
+
+        // QR code enlargement functionality
+        const modal = document.getElementById('qr-modal');
+        const enlargedQR = document.getElementById('enlarged-qr');
+        const closeBtn = document.querySelector('.close');
+
+        // Add click handlers to all QR code images
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            // Image loading optimization
+            img.onload = function() {
+                this.classList.add('loaded');
+            };
+            
+            // If image is already cached, it might be loaded before JS runs
+            if (img.complete) {
+                img.classList.add('loaded');
+            }
+            
+            // Modal functionality
+            img.addEventListener('click', function() {
+                enlargedQR.src = this.src;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close button functionality
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Click outside to close
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Keyboard accessibility - close on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -34,6 +34,7 @@
             --link-bg: rgba(10, 37, 51, 0.95);
             --text-primary: #FFFFFF;
             --text-secondary: #90E0EF;
+            --accent-gold: #E6C670;
         }
         body {
             background: linear-gradient(135deg, var(--ocean-deep) 0%, #010608 100%);
@@ -44,6 +45,18 @@
             overflow-x: hidden;
             color: var(--ocean-foam);
         }
+        
+        /* Enhanced wave animations */
+        .waves-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
         .wave {
             position: fixed;
             bottom: 0;
@@ -80,6 +93,31 @@
             opacity: 0.9;
         }
 
+        /* Surface water effect */
+        .water-surface {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(72, 202, 228, 0.05) 0%, transparent 50%),
+                linear-gradient(0deg, rgba(0, 150, 199, 0.03) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .water-reflection {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 30%, rgba(72, 202, 228, 0.03) 100%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
         @keyframes wave {
             0% {
                 transform: translateX(0) translateY(0) scale(1.1);
@@ -91,10 +129,81 @@
                 transform: translateX(-50%) translateY(0) scale(1.1);
             }
         }
+        
+        /* Floating elements */
+        .float {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Nautical decorations */
+        .nautical-decoration {
+            position: absolute;
+            opacity: 0.15;
+            color: var(--neon-blue);
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .anchor-1 {
+            top: 15%;
+            right: 10%;
+            font-size: 3rem;
+            transform: rotate(15deg);
+        }
+        
+        .anchor-2 {
+            bottom: 20%;
+            left: 8%;
+            font-size: 2.5rem;
+            transform: rotate(-10deg);
+        }
+        
+        .ship-1 {
+            top: 30%;
+            left: 5%;
+            font-size: 2rem;
+        }
+        
+        .lighthouse-1 {
+            bottom: 30%;
+            right: 5%;
+            font-size: 2rem;
+        }
+        
+        /* Title styling */
         .nautical-title {
             font-family: 'Playfair Display', serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(72, 202, 228, 0.3);
+            letter-spacing: 0.05em;
+            position: relative;
         }
+        
+        .nautical-title::before, .nautical-title::after {
+            content: '~';
+            position: absolute;
+            color: var(--accent-gold);
+            font-size: 0.7em;
+            opacity: 0.8;
+        }
+        
+        .nautical-title::before {
+            left: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .nautical-title::after {
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        /* Enhanced link cards */
         .link-card {
             background: var(--link-bg);
             backdrop-filter: blur(10px);
@@ -108,6 +217,7 @@
                 0 4px 15px rgba(0, 150, 199, 0.3),
                 0 0 0 1px rgba(0, 150, 199, 0.4);
         }
+        
         .link-card:hover {
             transform: translateY(-2px) scale(1.02);
             border-color: var(--neon-blue);
@@ -117,6 +227,7 @@
                 0 0 5px rgba(72, 202, 228, 0.6),
                 inset 0 0 20px rgba(72, 202, 228, 0.2);
         }
+        
         .link-card::before {
             content: '';
             position: absolute;
@@ -132,9 +243,57 @@
             );
             transition: 0.5s;
         }
+        
         .link-card:hover::before {
             left: 100%;
         }
+        
+        /* Section styling */
+        .section-header {
+            position: relative;
+            padding: 0 0.5rem;
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0.7;
+        }
+        
+        /* Section divider */
+        .section-divider {
+            position: relative;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--wave-blue), transparent);
+            margin: 2rem auto;
+            width: 80%;
+            max-width: 300px;
+            opacity: 0.6;
+        }
+        
+        .section-divider::before, .section-divider::after {
+            content: '•';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+        
+        .section-divider::before {
+            left: 10px;
+        }
+        
+        .section-divider::after {
+            right: 10px;
+        }
+        
+        /* Background grid */
         .tech-grid {
             background-image: 
                 radial-gradient(rgba(6, 36, 54, 0.3) 1px, transparent 1px),
@@ -142,18 +301,45 @@
             background-size: 20px 20px, 100px 100px;
             background-position: 0 0, 10px 10px;
         }
+        
+        /* Text effects */
         .glow-text {
             text-shadow: 0 0 10px rgba(117, 230, 218, 0.5);
         }
+        
         .compass-spin {
             animation: compass 2s ease-in-out infinite;
+            display: inline-block;
+            font-size: 1.2em;
+            margin: 0 0.2em;
+            vertical-align: middle;
         }
+        
         @keyframes compass {
             0%, 100% { transform: rotate(-5deg); }
             50% { transform: rotate(5deg); }
         }
+        
+        /* Main container styling */
+        .main-container {
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 37, 51, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 150, 199, 0.3);
+            border-radius: 1rem;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(0, 150, 199, 0.2),
+                inset 0 0 30px rgba(0, 150, 199, 0.1);
+            overflow: hidden;
+        }
+        
+        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
-            .wave { animation: none; }
+            .wave, .float, .compass-spin { 
+                animation: none; 
+            }
         }
     </style>
 </head>
@@ -164,17 +350,35 @@
         <div class="wave wave-2"></div>
         <div class="wave wave-3"></div>
     </div>
+    
+    <!-- Water surface effect -->
+    <div class="water-surface"></div>
+    
+    <!-- Nautical decorations -->
+    <div class="nautical-decoration anchor-1">⚓</div>
+    <div class="nautical-decoration anchor-2">⚓</div>
+    <div class="nautical-decoration ship-1">🚢</div>
+    <div class="nautical-decoration lighthouse-1">🏝️</div>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-8 py-12 max-w-4xl relative z-10 bg-[#0A2533]/95 rounded-xl backdrop-blur-md border-2 border-[#0096C7]/40 shadow-2xl mt-12">
+    <div class="container mx-auto px-8 py-12 max-w-4xl relative z-10 main-container mt-12">
+        <div class="water-reflection"></div>
+        
         <!-- Header Section -->
         <div class="text-center mb-12" data-aos="fade-down" data-aos-duration="800">
-            <h1 class="nautical-title text-4xl md:text-6xl font-bold mb-4 text-wave-blue glow-text bg-clip-text bg-gradient-to-r from-wave-blue to-ocean-foam">Digital Harbor</h1>
-            <p class="text-lg md:text-xl text-[#90E0EF] max-w-2xl mx-auto font-medium">
+            <div class="relative inline-block mb-6">
+                <img src="../assets/images/dh.png" alt="Digital Harbor Logo" class="w-24 h-24 mx-auto float" style="filter: drop-shadow(0 0 10px rgba(72, 202, 228, 0.5));">
+            </div>
+            
+            <h1 class="nautical-title text-4xl md:text-6xl font-bold mb-4 text-wave-blue glow-text bg-clip-text bg-gradient-to-r from-wave-blue to-ocean-foam relative inline-block">Digital Harbor</h1>
+            
+            <p class="text-lg md:text-xl text-[#90E0EF] max-w-2xl mx-auto font-medium mt-4">
                 Digital Harbor is a simple place to drop anchor. Bring your links to your harbor and let your audience set sail from there to find you online 
-                <span class="inline-block compass-spin">🧭</span>
+                <span class="compass-spin">🧭</span>
             </p>
         </div>
+        
+        <div class="section-divider"></div>
 
         <!-- Links Section -->
         <div class="space-y-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
@@ -184,7 +388,7 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                     </svg>
-                    The Biz
+                    <span class="section-header">The Biz</span>
                 </h2>
                 <a href="https://www.github.com/DigitalHarbor7/DigitalHarbor" 
                    class="link-card block p-6 rounded-xl flex items-center gap-4 group hover:text-ocean-foam" 
@@ -202,6 +406,8 @@
                     <span class="text-lg font-semibold tracking-wide text-white">Inquire via Email</span>
                 </a>
             </div>
+            
+            <div class="section-divider"></div>
 
             <!-- QR Codes Section -->
             <div class="space-y-2 py-4">
@@ -209,9 +415,9 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
                     </svg>
-                    QR Codes
+                    <span class="section-header">QR Codes</span>
                 </h2>
-                <a href="/qr" class="link-card block p-4 rounded-lg flex items-center gap-3 group">
+                <a href="qr/" class="link-card block p-6 rounded-xl flex items-center gap-4 group hover:text-ocean-foam">
                     <svg class="w-6 h-6 text-wave-blue group-hover:text-ocean-foam" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
@@ -219,7 +425,13 @@
                 </a>
             </div>
         </div>
+        
+        <!-- Footer -->
+        <div class="mt-12 text-center text-sm text-[#90E0EF]/70">
+            <p>Digital Harbor © 2023</p>
+        </div>
     </div>
+    
     <script>
         AOS.init({
             duration: 800,
