@@ -69,6 +69,8 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            user-select: none;
         }
         .link-card::before {
             content: '';
@@ -99,61 +101,42 @@
         .slideshow-container {
             position: relative;
             width: 100%;
+            padding-bottom: 66.67%; /* 3:2 aspect ratio */
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            user-select: none;
             height: 300px;
             overflow: hidden;
             border-radius: 0.75rem;
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(59, 130, 246, 0.3);
+            margin-bottom: 2rem;
         }
         
         .slide {
+            display: none;
             position: absolute;
-            width: 100%;
-            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            object-fit: cover;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
         }
         
         .slide.active {
+            display: block;
             opacity: 1;
-        }
-        
-        .slide-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 1rem;
-            cursor: pointer;
-            border: none;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            opacity: 0;
-        }
-        
-        .slideshow-container:hover .slide-nav {
-            opacity: 0.8;
-        }
-        
-        .slide-nav:hover {
-            background: rgba(0, 0, 0, 0.8);
-            opacity: 1 !important;
-        }
-        
-        .slide-nav.prev {
-            left: 1rem;
-        }
-        
-        .slide-nav.next {
-            right: 1rem;
         }
     </style>
 </head>
@@ -174,28 +157,17 @@
             <h2 class="text-2xl font-bold mb-6 text-center gradient-text">Performance Highlights</h2>
             <div class="slideshow-container">
                 <!-- Placeholder slides - replace src with actual photos when available -->
-                <img src="https://mydigitalharbor.com/assets/images/josh1.jpg" alt="Performance 1" class="slide active">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/josh-1009-F.jpg" alt="Performance 2" class="slide">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/josh-1016-F.jpg" alt="Performance 3" class="slide">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/josh-1022-F.jpg" alt="Performance 4" class="slide">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/josh-1023-F.jpg" alt="Performance 5" class="slide">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/josh-1035-F.jpg" alt="Performance 6" class="slide">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/signal-2025-05-05-200047.jpeg" alt="Performance 7" class="slide">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/signal-2025-05-05-200207.jpeg" alt="Performance 8" class="slide">
-                <img src="https://mydigitalharbor.com/1man1-band/gallery/signal-2025-05-05-200213.jpeg" alt="Performance 9" class="slide">
+                <!-- <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/Josh-1009-F.jpg" alt="Performance 2" class="slide"> -->
+                <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/Josh-1016-F.jpg" alt="Performance 3" class="slide">
+                <!-- <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/Josh-1022-F.jpg" alt="Performance 4" class="slide"> -->
+                <!-- <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/Josh-1023-F.jpg" alt="Performance 5" class="slide"> -->
+                <!-- <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/Josh-1035-F.jpg" alt="Performance 6" class="slide"> -->
+                <!-- <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/signal-2025-05-05-200047.jpeg" alt="Performance 7" class="slide"> -->
+                <!-- <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/signal-2025-05-05-200207.jpeg" alt="Performance 8" class="slide"> -->
+                <img src="https://raw.githubusercontent.com/DigitalHarbor7/DigitalHarbor/refs/heads/main/website/1man1-band/gallery/signal-2025-05-05-200213.jpeg" alt="Performance 9" class="slide">
 
                 
-                <!-- Navigation buttons -->
-                <button class="slide-nav prev" aria-label="Previous slide">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                    </svg>
-                </button>
-                <button class="slide-nav next" aria-label="Next slide">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </button>
+
             </div>
         </div>
 
@@ -233,7 +205,7 @@
                    class="link-card block p-4 rounded-xl flex items-center gap-4 group hover:text-white" 
                    target="_blank" rel="noopener">
                    <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-                       <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                       <path d="M23.59 3.475a3.89 3.89 0 0 0-5.503-5.503L12 4.06 5.913-2.028A3.89 3.89 0 0 0 .41 3.475L6.497 9.56.41 15.647a3.89 3.89 0 0 0 5.503 5.503L12 15.062l6.087 6.088a3.89 3.89 0 0 0 5.503-5.503L17.503 9.56l6.087-6.085z"/>
                    </svg>
                    <span class="text-lg font-semibold">YouTube</span>
                 </a>
@@ -313,7 +285,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
                 duration: 800,
-                easing: 'ease-out',
                 once: true
             });
 
@@ -321,53 +292,43 @@
             const slideshow = {
                 currentSlide: 0,
                 slides: document.querySelectorAll('.slide'),
-                prevButton: document.querySelector('.slide-nav.prev'),
-                nextButton: document.querySelector('.slide-nav.next'),
-                autoplayInterval: 5000, // 5 seconds between slides
-                autoplayTimeout: null,
+                autoplayInterval: null,
 
                 init() {
-                    if (!this.slides.length) return;
-                    
-                    // Add click handlers
-                    this.prevButton.addEventListener('click', () => this.showSlide(this.currentSlide - 1));
-                    this.nextButton.addEventListener('click', () => this.showSlide(this.currentSlide + 1));
-                    
-                    // Start autoplay
+                    this.showSlide(0);
                     this.startAutoplay();
                     
-                    // Pause autoplay on hover
-                    const container = document.querySelector('.slideshow-container');
-                    container.addEventListener('mouseenter', () => this.stopAutoplay());
-                    container.addEventListener('mouseleave', () => this.startAutoplay());
+                    // Add click handler to advance slides
+                    document.querySelector('.slideshow-container').addEventListener('click', () => {
+                        this.nextSlide();
+                        // Restart autoplay timer to prevent immediate auto-advance
+                        this.startAutoplay();
+                    });
                 },
 
                 showSlide(index) {
-                    // Handle wrapping
-                    if (index < 0) index = this.slides.length - 1;
-                    if (index >= this.slides.length) index = 0;
-                    
                     // Remove active class from current slide
                     this.slides[this.currentSlide].classList.remove('active');
                     
-                    // Add active class to new slide
-                    this.slides[index].classList.add('active');
-                    
+                    // Update current slide index
                     this.currentSlide = index;
+                    
+                    // Add active class to new slide
+                    this.slides[this.currentSlide].classList.add('active');
+                },
+
+                nextSlide() {
+                    const next = (this.currentSlide + 1) % this.slides.length;
+                    this.showSlide(next);
                 },
 
                 startAutoplay() {
-                    this.stopAutoplay(); // Clear any existing timeout
-                    this.autoplayTimeout = setInterval(() => {
-                        this.showSlide(this.currentSlide + 1);
-                    }, this.autoplayInterval);
-                },
-
-                stopAutoplay() {
-                    if (this.autoplayTimeout) {
-                        clearInterval(this.autoplayTimeout);
-                        this.autoplayTimeout = null;
+                    // Clear any existing interval
+                    if (this.autoplayInterval) {
+                        clearInterval(this.autoplayInterval);
                     }
+                    // Start new autoplay interval - change every 5 seconds
+                    this.autoplayInterval = setInterval(() => this.nextSlide(), 5000);
                 }
             };
 
