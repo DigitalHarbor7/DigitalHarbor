@@ -18,6 +18,126 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(0, 0, 0);
+            z-index: 1000;
+        }
+        .lightbox.active {
+            display: block;
+        }
+        .lightbox-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-img-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .nav-button {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .nav-button svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            transition: transform 0.3s ease;
+        }
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-50%) scale(1.05);
+        }
+        .nav-button:hover svg {
+            transform: scale(1.2);
+        }
+        .prev-button {
+            left: 40px;
+        }
+        .next-button {
+            right: 40px;
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.1);
+        }
+        .lightbox-close svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            transition: transform 0.3s ease;
+        }
+        .lightbox-close:hover svg {
+            transform: scale(1.2);
+        }
+        .counter {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: white;
+            font-size: 14px;
+            z-index: 1001;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
@@ -39,10 +159,72 @@
         </h1>
 
         <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
-            <!-- Gallery items will be added here -->
-            <div class="glass-card rounded-lg p-4 text-center">
-                <p class="text-gray-400">Photos coming soon!</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Josh-1009-F.jpg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" onclick="openLightbox(0)">
+                <img src="Josh-1009-F.jpg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- Josh-1016-F.jpg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(1)">
+                <img src="Josh-1016-F.jpg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- Josh-1022-F.jpg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox(2)">
+                <img src="Josh-1022-F.jpg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- Josh-1023-F.jpg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" onclick="openLightbox(3)">
+                <img src="Josh-1023-F.jpg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- Josh-1035-F.jpg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(4)">
+                <img src="Josh-1035-F.jpg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- signal-2025-05-05-200047.jpeg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox(5)">
+                <img src="signal-2025-05-05-200047.jpeg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- signal-2025-05-05-200207.jpeg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" onclick="openLightbox(6)">
+                <img src="signal-2025-05-05-200207.jpeg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+
+            <!-- signal-2025-05-05-200213.jpeg -->
+            <div class="glass-card rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(7)">
+                <img src="signal-2025-05-05-200213.jpeg" alt="Joshua Payne performing" class="w-full h-64 object-cover">
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <div class="lightbox-img-container">
+                    <img src="" alt="Joshua Payne performing" class="lightbox-img" id="lightbox-img">
+                </div>
+                <div class="nav-button prev-button" onclick="prevImage()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    Previous
+                </div>
+                <div class="nav-button next-button" onclick="nextImage()">
+                    Next
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+                <div class="lightbox-close" onclick="closeLightbox()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </div>
+                <div class="counter" id="counter"></div>
             </div>
         </div>
     </div>
@@ -51,6 +233,98 @@
         AOS.init({
             duration: 800,
             once: true
+        });
+
+        // Lightbox functionality
+        const images = [
+            'Josh-1009-F.jpg',
+            'Josh-1016-F.jpg',
+            'Josh-1022-F.jpg',
+            'Josh-1023-F.jpg',
+            'Josh-1035-F.jpg',
+            'signal-2025-05-05-200047.jpeg',
+            'signal-2025-05-05-200207.jpeg',
+            'signal-2025-05-05-200213.jpeg'
+        ];
+        let currentImageIndex = 0;
+
+        function updateCounter() {
+            const counter = document.getElementById('counter');
+            counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        }
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = images[currentImageIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateCounter();
+
+            // Preload next and previous images
+            const nextIndex = (currentImageIndex + 1) % images.length;
+            const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+            new Image().src = images[nextIndex];
+            new Image().src = images[prevIndex];
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.style.transform = 'translateX(20px)';
+            lightboxImg.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                lightboxImg.src = images[currentImageIndex];
+                lightboxImg.style.transform = 'translateX(0)';
+                lightboxImg.style.opacity = '1';
+                updateCounter();
+                
+                // Preload next image
+                const nextIndex = (currentImageIndex + 1) % images.length;
+                new Image().src = images[nextIndex];
+            }, 150);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.style.transform = 'translateX(-20px)';
+            lightboxImg.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                lightboxImg.src = images[currentImageIndex];
+                lightboxImg.style.transform = 'translateX(0)';
+                lightboxImg.style.opacity = '1';
+                updateCounter();
+                
+                // Preload previous image
+                const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+                new Image().src = images[prevIndex];
+            }, 150);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Click outside to close
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
         });
     </script>
 </body>
